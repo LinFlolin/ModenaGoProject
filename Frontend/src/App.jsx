@@ -1,26 +1,31 @@
 import { useState } from 'react'
 import './App.css'
-import Home from './Componenti/Home'
-import Info from './Componenti/Info'
-import Sfida from './Componenti/Sfida'
-import LuoghiFigo from './Componenti/LuoghiFigo'
-import{Router,Routes} from 'react-router-dom'
+import{Route,Routes} from 'react-router-dom'
 import GETLuoghiAttrazione from './Componenti/GetData'
+import { Navbar } from './Componenti/Navbar'
+import {Home,Info,Sfida,LuoghiFigo} from './Componenti'
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      {/* <GETLuoghiAttrazione></GETLuoghiAttrazione> */}
-      <Home/>
-      <Info/>
-      <Sfida/>
-      <LuoghiFigo/>
-     
-     
+    <div className='APP'>
+      <Navbar/>
+      <Routes>
+        <Route path='/home' element={<Home/>} />
+        <Route path='/info' element={<Info/>} />
+        <Route path='/luoghi' element={<LuoghiFigo/>} />
+        <Route path='/sfide' element={<Sfida/>} />
+      </Routes>
+      
     </div>
-  )
+  ) 
+    // <div className='App'> 
+    //   {/* <GETLuoghiAttrazione></GETLuoghiAttrazione> */}
+    //   Navbar
+    // </div>
+
+  
 }
 
 export default App

@@ -1,11 +1,7 @@
-import { Component } from "react";
+import React from 'react'
 
-class Sfida extends Component{
-    render(){
-        return(
-            <div> Sfida</div>
-        )
-    }
+export const Sfida = () => {
+  return (
+    <div>Sfida</div>
+  )
 }
-
-export default Sfida 

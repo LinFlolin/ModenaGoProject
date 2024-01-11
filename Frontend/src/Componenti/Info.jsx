@@ -1,11 +1,7 @@
-import { Component } from "react";
+import React from 'react'
 
-class Info extends Component{
-    render(){
-        return(
-            <div> Info</div>
-        )
-    }
+export const Info = () => {
+  return (
+    <div>Info</div>
+  )
 }
-
-export default Info 

@@ -1,11 +1,7 @@
-import { Component } from "react";
+import React from 'react'
 
-class LuoghiFigo extends Component{
-    render(){
-        return(
-            <div> LuoghiFigo</div>
-        )
-    }
+export const LuoghiFigo = () => {
+  return (
+    <div>LuoghiFigo</div>
+  )
 }
-
-export default LuoghiFigo
