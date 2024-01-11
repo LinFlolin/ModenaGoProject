@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import LuoghiAtrazione 
+from .models import LuoghiAttrazione 
 
-class LuoghiAtrazioneAdmin (admin.ModelAdmin):
+class LuoghiAttrazioneAdmin (admin.ModelAdmin):
     list_display =('titolo','descrizione','sfida')
 
 # Register your models here.
-    admin.site.register(LuoghiAtrazione,)
+    admin.site.register(LuoghiAttrazione,)
 
