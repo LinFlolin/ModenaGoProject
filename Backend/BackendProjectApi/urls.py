@@ -17,10 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from Api import views 
+from Api.views import LuoghiAttrazioneView
 
 routers = routers.DefaultRouter()
-routers.register('LuoghiAtrazioni', views.LuoghiAtrazioneView,'LuoghiAtrazioni' )
+routers.register('LuoghiAtrazioni', LuoghiAttrazioneView,'LuoghiAtrazioni' )
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(routers.urls)),

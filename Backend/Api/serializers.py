@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import LuoghiAtrazione 
+from .models import LuoghiAttrazione 
 
-class LuoghiAtrazioneSerialiazer (serializers.ModelSerializer) :
+class LuoghiAttrazioneSerialiazer (serializers.ModelSerializer) :
     class Meta :
-        model = LuoghiAtrazione 
-        fields=('id','titolo','descrizione','sfida')
+        model = LuoghiAttrazione 
+        fields=('id','Titolo','Descrizione','Sfida')
