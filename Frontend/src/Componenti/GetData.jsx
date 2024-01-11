@@ -29,7 +29,7 @@ class GETLuoghiAttrazione extends Component{
                     (posts.length?
                     posts.map(post => 
                     <div key={post.id}>
-                      {post.Descrizione}
+                      {post.Titolo}
                     </div>):
                     null)
                     

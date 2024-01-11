@@ -1,5 +1,5 @@
 {
-  "name": "fronend",
+  "name": "my-first-react-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -13,7 +13,7 @@
     "axios": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.1"
+    "react-router-dom": "^6.21.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
