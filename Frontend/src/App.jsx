@@ -1,15 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import{Route,Routes} from 'react-router-dom'
-import GETLuoghiAttrazione from './Componenti/GetData'
+// import GETLuoghiAttrazione from './Componenti/Pagine/GetData'
 import { Navbar } from './Componenti/Navbar'
-import {Home,Info,Sfida,LuoghiFigo} from './Componenti'
-
-
+import {Home,Sfida,LuoghiFigo,Info} from './Componenti/Pagine'
 
 function App() {
   return (
     <div className='APP'>
+      
       <Navbar/>
       <Routes>
         <Route path='/home' element={<Home/>} />
