@@ -21,6 +21,7 @@ from Api.views import LuoghiAttrazioneView
 
 routers = routers.DefaultRouter()
 routers.register('LuoghiAtrazioni', LuoghiAttrazioneView,'LuoghiAtrazioni' )
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(routers.urls)),
