@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from 'axios'
 
-class GETLuoghiAttrazione extends Component{
+export class GetData extends Component{
 
     constructor(props){
         super(props)
@@ -26,12 +26,17 @@ class GETLuoghiAttrazione extends Component{
         return(
             <div>
                 {
-                    (posts.length?
-                    posts.map(post => 
-                    <div key={post.id}>
-                      {post.Titolo}
-                    </div>):
-                    null)
+                 <ul>
+                    {posts.map(item =>(
+                        <div className="container ">
+                            <li key={item.id}>
+                             {item.Titolo}
+                            </li>
+
+                        </div>
+                        
+                    ))}
+                 </ul>
                     
                     
                 }
@@ -39,4 +44,3 @@ class GETLuoghiAttrazione extends Component{
         )
     }
 }
-export default GETLuoghiAttrazione

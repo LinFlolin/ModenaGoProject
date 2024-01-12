@@ -1,4 +1,8 @@
 .container{
-    display: block;
+    padding: none ;
+    display: flex;
     background-color: aqua;
+}
+ul {
+    padding: 0;
 }

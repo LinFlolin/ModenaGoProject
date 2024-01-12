@@ -3,7 +3,7 @@ import './App.css'
 import{Route,Routes} from 'react-router-dom'
 // import GETLuoghiAttrazione from './Componenti/Pagine/GetData'
 import { Navbar } from './Componenti/Navbar'
-import {Home,Sfida,LuoghiFigo,Info} from './Componenti/Pagine'
+import {GetData,Sfida,LuoghiFigo,Info} from './Componenti/Pagine'
 
 function App() {
   return (
@@ -11,11 +11,12 @@ function App() {
       
       <Navbar/>
       <Routes>
-        <Route path='/home' element={<Home/>} />
+        <Route path='/home' element={<GetData/>} />
         <Route path='/info' element={<Info/>} />
         <Route path='/luoghi' element={<LuoghiFigo/>} />
         <Route path='/sfide' element={<Sfida/>} />
       </Routes>
+
       
     </div>
   ) 
