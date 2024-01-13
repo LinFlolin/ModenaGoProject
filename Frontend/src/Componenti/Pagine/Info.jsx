@@ -1,9 +1,9 @@
 import React from 'react'
-import {Map} from './Map'
+import {Mappa} from './Mappa'
 export const Info = () => {
   return (
-    <div >
-      <Map/>
+    <div>
+      <Mappa/>
     </div>
   )
 }
