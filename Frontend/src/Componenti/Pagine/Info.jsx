@@ -3,7 +3,8 @@ import {Mappa} from './Mappa'
 export const Info = () => {
   return (
     <div>
-      <Mappa/>
+      Info
+      
     </div>
   )
 }

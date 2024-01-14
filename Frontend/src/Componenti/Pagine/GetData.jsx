@@ -28,8 +28,8 @@ export class GetData extends Component{
                 {
                  <ul>
                     {posts.map(item =>(
-                        <div className="container ">
-                            <li key={item.id}>
+                        <div className="container " key={item.id}>
+                            <li >
                              {item.Titolo}
                             </li>
 
