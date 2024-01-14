@@ -8,15 +8,14 @@ import{
   InfoWindow
 }
 from '@vis.gl/react-google-maps'
-import { useState } from 'react';
-export function Mappa() {
 
-  const[Open,setOpen ] = useState(false);
+export function Mappa () {
   const position = {
     lat: 44.646420,
     lng: 10.926023
      
   };
+  
   return(
     <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
     <div style={{height: "100vh"}}>
@@ -26,12 +25,14 @@ export function Mappa() {
             background={'gray'}
           />
         </AdvancedMarker>
-        {open && (
+        {open &&(
           <InfoWindow position={position} onCloseClick={() => setOpen(false)} >
             <p>Heii Modena</p>
           </InfoWindow>
         )}     
+
       </Map>
+      
     </div>
     </APIProvider>
 
