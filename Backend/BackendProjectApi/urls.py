@@ -5,8 +5,8 @@ from rest_framework import routers
 from Api.views import LuoghiAttrazioneView, MappaView
 
 routers = routers.DefaultRouter()
-routers.register('LuoghiAtrazioni', LuoghiAttrazioneView,'LuoghiAtrazioni' )
-routers.register('Mappa', MappaView,'Mappa' )
+routers.register('LuoghiAtrazioni', LuoghiAttrazioneView,'LuoghiAtrazioni')
+routers.register('Mappa', MappaView, 'Mappa')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
