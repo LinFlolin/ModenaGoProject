@@ -11,7 +11,6 @@ export function Home () {
         <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path='/home' element={<GetData/>} />
           <Route path='/map' element={<Mappa/>} />
           <Route path='/info' element={<Info/>} />
           <Route path='/luoghi' element={<LuoghiFigo/>} />
