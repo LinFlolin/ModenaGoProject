@@ -1,8 +1,8 @@
 
 from rest_framework import viewsets
 from rest_framework.response import Response
-from .serializers import LuoghiAttrazioneSerialiazer
-from .models import LuoghiAttrazione
+from .serializers import LuoghiAttrazioneSerialiazer, MapSerializer
+from .models import LuoghiAttrazione, Mappa
 
 class LuoghiAttrazioneView(viewsets.ModelViewSet):
     serializer_class= LuoghiAttrazioneSerialiazer
@@ -28,3 +28,7 @@ class LuoghiAttrazioneView(viewsets.ModelViewSet):
 #        serializer.is_valid(raise_exception=True)
 #        self.perform_update(serializer)
 #        return Response(serializer.data)
+    
+class MappaView(viewsets.ModelViewSet):
+    serializer_class= MapSerializer
+    queryset = Mappa.objects.all() 
