@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
     'Api',
 
   
@@ -135,6 +135,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #serve per rect a riuscire a comicare con back senza problemi 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:5173'
+CORS_ORIGIN_WHITELIST = [  
+    'http://localhost:5173',
+    "https://maps.googleapis.com",    
 ]
+
+
+

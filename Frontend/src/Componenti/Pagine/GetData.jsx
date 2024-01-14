@@ -6,14 +6,14 @@ export class GetData extends Component{
     constructor(props){
         super(props)
         this.state = {
-            posts : []
+            postsL : []
         }
     }
     componentDidMount(){
-        axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/')
+        axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/','')
         .then(response=> {
             console.log(response)
-            this.setState({posts : response.data})
+            this.setState({postsL : response.data})
         })
         .catch(error=>{
             console.log(error)
@@ -22,19 +22,15 @@ export class GetData extends Component{
     
     }
     render (){
-        const { posts } = this.state
+        const { postsL } = this.state
         return(
             <div>
                 {
                  <ul>
-                    {posts.map(item =>(
-                        <div className="container ">
-                            <li key={item.id}>
-                             {item.Titolo}
-                            </li>
-
-                        </div>
-                        
+                    {postsL.map(item =>(
+                        <div className="container " key={item.id}>
+                            {item.Titolo}
+                        </div>             
                     ))}
                  </ul>
                     
