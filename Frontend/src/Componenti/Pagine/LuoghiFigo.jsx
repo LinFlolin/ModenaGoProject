@@ -1,6 +1,6 @@
 import React from 'react'
 import { Axios } from 'axios'
-import './LuoghiFigo.css'
+
 export const LuoghiFigo = () => {
   return (
     <div class="container">
