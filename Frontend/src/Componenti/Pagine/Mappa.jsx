@@ -14,9 +14,12 @@ export function Mappa() {
     lng: 10.9200867
   };
   return(
-    <APIProvider apiKey=''>
+    <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
     <div style={{height: "100vh"}}>
-      <Map zoom={10} center={position}></Map>
+      <Map zoom={15} center={position} mapId={'8b3c296d5e49a998'}></Map>
+      <AdvancedMarker position={position}>
+              <Pin background={'gray'}/>
+      </AdvancedMarker>
     </div>
     </APIProvider>
 
