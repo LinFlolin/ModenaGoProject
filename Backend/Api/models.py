@@ -7,3 +7,10 @@ class LuoghiAttrazione (models.Model):
     def __str__(self):
         return self.Titolo
     
+
+class Mappa(models.Model):
+    Luogo = models.CharField(max_length=50)
+    Latitudine = models.CharField(max_length=50)
+    Longitudine = models.CharField(max_length=50)
+    def __str__(self):
+        return self.Luogo

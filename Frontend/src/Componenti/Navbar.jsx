@@ -1,11 +1,11 @@
-import {Link,NavLink, createRoutesFromElements} from 'react-router-dom'
+import {Link,NavLink} from 'react-router-dom'
 import React,{useState} from 'react';
 import './Navbar.css'
 export const Navbar = ()=>{
     const[menuOpen,setMenuOpen]= useState(false)
     return(
         <nav>
-            <Link to="/home" className='title'>Website</Link>
+            <Link to="/" className='title'>ModenaGo</Link>
             <div className='menu' onClick={()=> {setMenuOpen(!menuOpen);}}
             >
                 <span></span>
@@ -14,6 +14,9 @@ export const Navbar = ()=>{
 
             </div>
             <ul className={menuOpen ? "open":""}>
+                <li>
+                    <NavLink to="/map">Mappa</NavLink>
+                </li>
                 <li>
                     <NavLink to="/info">Info</NavLink>
                 </li>
