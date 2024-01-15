@@ -51,7 +51,7 @@ export class Mappa extends Component {
               </AdvancedMarker>
               {open && (
                 <InfoWindow position={this.position} onCloseClick={() => this.setState({ open: false })}>
-                  <p>
+                  
                   <ul>
                     {postsL.map(item =>(
                         <div className="container " key={item.id}>
@@ -59,7 +59,7 @@ export class Mappa extends Component {
                         </div>             
                     ))}
                  </ul>
-                  </p>
+                  
                 </InfoWindow>
               )}
             </Map>
