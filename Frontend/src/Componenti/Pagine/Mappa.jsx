@@ -7,6 +7,7 @@ import {
   InfoWindow
 } from '@vis.gl/react-google-maps';
 import axios from 'axios';
+import './Mappa.css'
 
 export class Mappa extends Component {
     constructor(props){
