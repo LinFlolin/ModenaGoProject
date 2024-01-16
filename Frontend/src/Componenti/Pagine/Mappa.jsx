@@ -44,7 +44,7 @@ export class Mappa extends Component {
 
     return (
       
-        <div style={{ height: "100vh" }}>
+        <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
             <Map zoom={15} center={this.position} mapId={'8b3c296d5e49a998'}>
               <AdvancedMarker position={this.position} onClick={() => this.setState({ open: true })}>
