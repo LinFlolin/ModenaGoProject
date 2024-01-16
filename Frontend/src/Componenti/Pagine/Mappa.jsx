@@ -12,22 +12,29 @@ export class Mappa extends Component {
     constructor(props){
       super(props)
       this.state = {
-          postsL : []
+          postsL : [],
       }
   }
-  componentDidMount(){
-    axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/','')
-    .then(response=> {
-        console.log(response)
-        this.setState({postsL : response.data})
-    })
-    .catch(error=>{
-        console.log(error)
-        this.setState({erroeMsg : 'error retreiving data'})
-    })
-
-  }
-
+  componentDidMount() {
+    // Recupera il token dalla localStorage (o da dove hai salvato il token)
+    const token = localStorage.getItem('1ffa3bcc89c1bf95dfb85765ebcd332af3053e66');
+  
+    // Configura l'header con il token
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
+  
+    axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/', { headers })
+      .then(response => {
+        console.log(response);
+        this.setState({ postsL: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+        this.setState({ errorMsg: 'error retrieving data' });
+      });
+  };
+  
   state = {
     open: false
   };
