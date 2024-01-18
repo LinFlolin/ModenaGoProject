@@ -94,9 +94,15 @@ WSGI_APPLICATION = 'BackendProjectApi.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
+<<<<<<< HEAD
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+=======
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / "db.sqlite3",
+>>>>>>> 54d6ed35265e65cbaf55d813147ba119c9f6d0d1
     }
 }
 
