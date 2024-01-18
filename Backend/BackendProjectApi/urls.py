@@ -12,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(routers.urls)), # forse servono gli apici per router.urls ma non ne sono sicuro
     path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 ]
 
-# urlpatterns = router.urls
+# urlpatterns =  router.urls
