@@ -15,17 +15,21 @@ export const Navbar = ()=>{
             </div>
             <ul className={menuOpen ? "open":""}>
                 <li>
-                    <NavLink to="/map">Mappa</NavLink>
+                    <NavLink to="/info">Info</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/info">Info</NavLink>
+                    <NavLink to="/map">Mappa</NavLink>
+                </li>                
+                <li>
+                    <NavLink to="/luoghi">Luoghi</NavLink>
                 </li>
                 <li>
                     <NavLink to="/sfide">Sfide</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/luoghi">Luoghi</NavLink>
+                    <NavLink to="/login">Login</NavLink>
                 </li>
+                
             </ul>
         </nav>
     );
