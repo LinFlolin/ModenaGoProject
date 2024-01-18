@@ -1,10 +1,10 @@
 import './App.css'
-import{Home} from './Componenti/Home'
-import {LogIn} from './Componenti/LogIn'
+import{Routing} from './Componenti/Routing'
+
 function App() {
   return (
     <div className='APP'>
-      <Home/>
+       <Routing/>       
     </div>
   ) 
 
