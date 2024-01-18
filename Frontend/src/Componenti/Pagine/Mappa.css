@@ -8,3 +8,17 @@
     margin: 0.5%;
     border: 1px solid #003049;
 }
+
+.BottoniPercorsi {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1%;
+    margin: auto;
+    gap: 10px;
+}
+
+button {
+    padding: 10px;
+
+}

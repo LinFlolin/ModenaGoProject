@@ -3,7 +3,6 @@ import{BrowserRouter}from 'react-router-dom'
 import { Navbar } from './Navbar'
 import{Route,Routes} from 'react-router-dom'
 import {GetData,Info,LuoghiFigo,Sfida,Mappa} from './Pagine'
-
 export function Home () {
 
   return (
