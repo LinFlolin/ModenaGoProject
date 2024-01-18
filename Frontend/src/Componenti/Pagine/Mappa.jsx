@@ -50,7 +50,12 @@ export class Mappa extends Component {
     const { postsL } = this.state;
 
     return (
-      
+      <div className='MostraPercorsi'>
+        <div className='BottoniPercorsi'>
+        <button>Percorso 1</button>
+        <button>Percorso 1</button>
+        <button>Percorso 1</button>
+        </div>
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
             <Map zoom={15} center={this.position} mapId={'8b3c296d5e49a998'}>
@@ -73,7 +78,7 @@ export class Mappa extends Component {
             </Map>
           </APIProvider>
         </div>
-      
+      </div>
     );
   }
 }
