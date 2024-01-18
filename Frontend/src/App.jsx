@@ -1,6 +1,6 @@
 import './App.css'
 import{Home} from './Componenti/Home'
-// import {LogIn} from './Componenti/LogIn'
+import {LogIn} from './Componenti/LogIn'
 function App() {
   return (
     <div className='APP'>
