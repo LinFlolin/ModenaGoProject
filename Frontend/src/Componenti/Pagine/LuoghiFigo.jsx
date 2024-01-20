@@ -1,11 +1,17 @@
 import React from 'react'
 import { Axios } from 'axios'
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+
 export const LuoghiFigo = () => {
   return (
-    <div className="container">
-      <h1>My First Bootstrap Page</h1>
-      <p>This is some text.</p>
-    </div> 
+    <div>
+      
+
+    </div>
+    
   )
 }
