@@ -30,7 +30,7 @@ export class Info extends Component{
                 {postsL.map(item =>(
                     <li className="container " key={item.id}>
                         Titolo:
-                        <be/>
+                        <br/>
                         {item.Titolo}
                         <br/>
                         Descrizione:

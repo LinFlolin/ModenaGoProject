@@ -3,7 +3,7 @@ import{BrowserRouter}from 'react-router-dom'
 import { Navbar } from './Navbar'
 import{Route,Routes} from 'react-router-dom'
 import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from './Pagine'
-import {LogInUtente}from './Authentication/LogInUtente'
+import {LoginPage}from './Authentication/LoginPage'
 export function Routing () {
 
   return (
@@ -16,7 +16,7 @@ export function Routing () {
             <Route path='/info' element={<Info/>} />
             <Route path='/luoghi' element={<LuoghiFigo/>} />
             <Route path='/sfide' element={<Sfida/>} />
-            <Route path='/login' element={<LogInUtente/>}/>
+            <Route path='/login' element={<LoginPage/>}/>
           </Routes>
       </BrowserRouter>
     </div>
