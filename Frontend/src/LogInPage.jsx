@@ -2,9 +2,6 @@ import React from 'react'
 
 export const LoginPage = () => {
   return (
-   <div>
-    From di log in Hmtl
-   </div>
-    
+    <div>LoginPage</div>
   )
 }
