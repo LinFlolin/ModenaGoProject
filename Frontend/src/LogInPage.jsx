@@ -1,7 +1,12 @@
 import React from 'react'
+import { useNavigate} from 'react-router-dom';
 
 export const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
+
+  // const Navigare = useNavigate ();
+  // Navigare('/map')
+  
+  // return (
+  //  <button type='button' onClick={Navigare}/>   
+  // )
 }

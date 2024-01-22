@@ -7,7 +7,7 @@ export function Routing () {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter> 
         <Navbar/>
         <Routes>
           <Route path='/home' element={<HomePage/>}/>
