@@ -5,8 +5,6 @@ import{LoginPage}from './Componenti/LogInPage'
 function App() {
   return (
     <div className='APP'>
-      
-      
     </div>
   ) 
 }
