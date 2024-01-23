@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import axios from 'axios'
+import './Info.css'
 
 export class Info extends Component{
 
@@ -26,20 +27,16 @@ export class Info extends Component{
       return(
         <div>
           {
-            <ul>
+            <div className='contenitoregrosso'>
                 {postsL.map(item =>(
-                    <li className="container " key={item.id}>
-                        Titolo:
-                        <br/>
-                        {item.Titolo}
-                        <br/>
-                        Descrizione:
-                        <br/>
-                        {item.Descrizione}
-                        <br/>                         
-                    </li>             
+                    <div className="container" key={item.id}>
+                        <h1>{item.Titolo}</h1>         
+                        <p>{item.Descrizione}</p>
+                        <h2>Sfida:</h2>
+                        <p>{item.Sfida}</p>                     
+                    </div>             
                 ))}
-            </ul>
+            </div>
           }
         </div>
       )
