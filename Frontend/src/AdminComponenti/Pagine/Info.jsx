@@ -1,6 +1,5 @@
 import { Component } from 'react'
 import axios from 'axios'
-import './Info.css'
 
 export class Info extends Component{
 
@@ -30,7 +29,8 @@ export class Info extends Component{
             <div className='contenitoregrosso'>
                 {postsL.map(item =>(
                     <div className="container" key={item.id}>
-                        <h1>{item.Titolo}</h1>         
+                        <h1>{item.Titolo}</h1>
+                        <img src="" alt="" >{item.Immagine}</img>        
                         <p>{item.Descrizione}</p>
                         <h2>Sfida:</h2>
                         <p>{item.Sfida}</p>                     

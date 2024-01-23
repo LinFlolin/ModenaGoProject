@@ -4,6 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 class LuoghiAttrazione (models.Model):
     Titolo = models.TextField(max_length = 100)
+    Immagine = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, blank=True, null=True)
     Descrizione = models.TextField(max_length = 500)
     Sfida = models.TextField(max_length = 300)
     def __str__(self):
