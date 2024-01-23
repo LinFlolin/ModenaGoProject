@@ -7,9 +7,9 @@ import {
   InfoWindow
 } from '@vis.gl/react-google-maps';
 import axios from 'axios';
-import './Mappa.css'
 
-export class Mappa extends Component {
+
+export class MapMobile extends Component {
     constructor(props){
       super(props)
       this.state = {
@@ -17,14 +17,8 @@ export class Mappa extends Component {
       }
   }
   componentDidMount() {
-    // Recupera il token dalla localStorage (o da dove hai salvato il token)
+    
     const token = localStorage.getItem('1ffa3bcc89c1bf95dfb85765ebcd332af3053e66');
-  
-    // Configura l'header con il token
-    // const headers = {
-    //   Authorization: `Bearer ${token}`
-    // };
-  
     axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/')
       .then(response => {
         console.log(response);
@@ -72,7 +66,7 @@ export class Mappa extends Component {
             </Map>
           </APIProvider>
         </div>
-      // </div>
+     
     );
   }
 }

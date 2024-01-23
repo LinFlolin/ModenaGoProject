@@ -1,12 +1,15 @@
 import './App.css'
-import{Routing} from './Componenti/Routing'
+import React, { useState, useEffect } from 'react';
+import {AdminApp} from './AdminComponenti/AdminApp'
 
-function App() {
+const App = () => {
   return (
-    <div className='APP'>
-       <Routing/>       
+    <div>
+      {/* <AppMobile/> */}   
+      <AdminApp/>
     </div>
-  ) 
+  )
 }
 
 export default App
+
