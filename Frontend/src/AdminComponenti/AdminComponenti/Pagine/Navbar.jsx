@@ -1,11 +1,12 @@
 import {Link,NavLink,} from 'react-router-dom'
 import React,{useState} from 'react';
-import '../MoCss/MoNav.css'
+import '../AdminCss/Navbar.css'
 
-export const MoNav = () => {
+export const Navbar = ()=>{
     const[menuOpen,setMenuOpen]= useState(false)
     return(
         <nav>
+            <Link to="/home" className='title'>ModenaGo</Link>
             <div className='menu' onClick={()=> {setMenuOpen(!menuOpen);}}
             >
                 <span></span>
@@ -15,15 +16,22 @@ export const MoNav = () => {
             </div>
             <ul className={menuOpen ? "open":""}>
                 <li>
-                    <NavLink to="/home">Home</NavLink>
-                </li>                
-                <li>
-                    <NavLink to="/map">Map</NavLink>
+                    <NavLink to="/info">Info</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/Info">Info</NavLink>
+                    <NavLink to="/map">Mappa</NavLink>
                 </li>                
+                <li>
+                    <NavLink to="/luoghi">Luoghi</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/sfide">Sfide</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/login">Login</NavLink>
+                </li>
+                
             </ul>
         </nav>
-    )
-}
+    );
+};
