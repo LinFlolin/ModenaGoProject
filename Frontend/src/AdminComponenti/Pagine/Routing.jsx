@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from './Navbar'
 import{Route,Routes,BrowserRouter} from 'react-router-dom'
-import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from './Pagine'
+import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from '.'
 // import {LoginPage}from './Authentication/LoginPage'
 export function Routing () {
 
