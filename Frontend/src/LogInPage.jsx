@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
@@ -47,3 +48,5 @@ export const LoginPage = () => {
   )
 }
 */
+=======
+>>>>>>> d3635782dee795ce8633a486052539346df995dd

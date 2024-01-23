@@ -1,11 +1,10 @@
 import {Link,NavLink,} from 'react-router-dom'
 import React,{useState} from 'react';
-import './Navbar.css'
-export const Navbar = ()=>{
+
+export const MoNav = () => {
     const[menuOpen,setMenuOpen]= useState(false)
     return(
         <nav>
-            <Link to="/home" className='title'>ModenaGo</Link>
             <div className='menu' onClick={()=> {setMenuOpen(!menuOpen);}}
             >
                 <span></span>
@@ -15,22 +14,15 @@ export const Navbar = ()=>{
             </div>
             <ul className={menuOpen ? "open":""}>
                 <li>
-                    <NavLink to="/info">Info</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/map">Mappa</NavLink>
+                    <NavLink to="/home">Home</NavLink>
                 </li>                
                 <li>
-                    <NavLink to="/luoghi">Luoghi</NavLink>
+                    <NavLink to="/map">Map</NavLink>
                 </li>
                 <li>
-                    <NavLink to="/sfide">Sfide</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/login">Login</NavLink>
-                </li>
-                
+                    <NavLink to="/Info">Info</NavLink>
+                </li>                
             </ul>
         </nav>
-    );
-};
+    )
+}
