@@ -1,7 +1,10 @@
 import { Component } from 'react'
 import axios from 'axios'
+<<<<<<< HEAD
 //import './Info.css'
 
+=======
+>>>>>>> a5dc6d58033e7963306a633560c51865fed35bd0
 export class Info extends Component{
 
     constructor(props){
