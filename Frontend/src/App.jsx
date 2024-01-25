@@ -6,8 +6,8 @@ import {AppMobile} from './/MobileComponenti/AppMobile'
 const App = () => {
   return (
     <div>
-      <AppMobile></AppMobile>
-      {/* <AdminApp/> */}
+      {/* <AppMobile></AppMobile> */}
+      <AdminApp/>
     </div>
   )
 }
