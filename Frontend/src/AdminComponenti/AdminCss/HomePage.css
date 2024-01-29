@@ -4,10 +4,15 @@
     text-align: center;
     width: 96%;
     height: 15vh;
-    background-color: hsl(49, 71%, 66%);
-    color: #003049;   
+    color: #003049;  
+ 
 
 }
+   
+.p{
+    display: fl;
+} 
+
 
 .footer {
     padding: 1% 2% 1%;
