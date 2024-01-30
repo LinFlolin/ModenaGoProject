@@ -8,6 +8,9 @@ const App = () => {
     <div>
       <AppMobile></AppMobile>
       {/* <AdminApp/> */}
+      <AdminApp>
+
+      </AdminApp>
     </div>
   )
 }
