@@ -84,7 +84,7 @@ export class Mappa extends Component {
                 </InfoWindow>
 
               )}
-              
+            <Direction/>
             </Map>
           </APIProvider>
         </div>
@@ -92,37 +92,35 @@ export class Mappa extends Component {
     );
   }
 }
-// function direction() {
-      
-//   const map = useMap();
-//   const routerLibrary = useMapsLibrary("routes"); 
-//   const [directionService,setDirectionService] = useState <google.maps.DirectionsService>();
-//   const[directionRenderer ,setDirectionRenderer]= useState<google.maps.DirectionsRenderer>();
-//   const [route, setroute ] = useState <google.maps.DirectionsRoute[]>([]);
-//   const [routeindex,setRoute] = useState <google.maps.
-  
-//   useEffect(() => {
-//     if (!routerLibrary || !map) return;
-//     setDirectionService(new routerLibrary.DirectionsService());
-//     setDirectionRenderer(new routerLibrary.DirectionsRenderer({map}));
-//   }, [routerLibrary,map]);
+function Direction() {
+  const map = useMap();
+  const routerLibrary = useMapsLibrary("routes");
+  const [directionService, setDirectionService] = useState(null);
+  const [directionRenderer, setDirectionRenderer] = useState(null);
+  const [route, setRoute] = useState([]);
 
-//   useEffect(() => {
-//     if(!directionService || !directionRenderer) return ;
-//     directionService.route({
-//       origin : "L'Archivio, Corso Duomo, 13, 41121 Modena MO",
-//       destination :"Cinema Astra, Via Francesco Rismondo, 21, 41121 Modena MO",
-//       travelMode: google.maps.TravelMode.DRIVING,
-//       provideRouteAlternatives : true,
-//     }).then(response => {
-//       directionRenderer.setDirections(response);
-//       setroute(response.routes);
-//     });
-    
-//   }, [directionService,directionRenderer])
+  useEffect(() => {
+    if (!routerLibrary || !map) return;
+    setDirectionService(new routerLibrary.DirectionsService());
+    setDirectionRenderer(new routerLibrary.DirectionsRenderer({ map }));
+  }, [routerLibrary, map]);
 
-//   console.log
-//   return null
-// }
+  useEffect(() => {
+    if (!directionService || !directionRenderer) return;
+    directionService.route({
+      origin: "L'Archivio, Corso Duomo, 13, 41121 Modena MO",
+      destination: "Cinema Astra, Via Francesco Rismondo, 21, 41121 Modena MO",
+      travelMode: google.maps.TravelMode.DRIVING,
+      provideRouteAlternatives: true,
+    }).then(response => {
+      directionRenderer.setDirections(response);
+      setRoute(response.routes);
+    });
+  }, [directionService, directionRenderer]);
+
+  console.log("Rendered");
+  return null;
+}
+
 
 
