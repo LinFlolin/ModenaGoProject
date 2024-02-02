@@ -8,8 +8,6 @@ class LuoghiAttrazione(models.Model):
     Descrizione = models.TextField(max_length=500)
     Sfida = models.TextField(max_length=300)
 
-    def __str__(self):
-        return self.Titolo
 
 
 class Mappa(models.Model):
@@ -17,7 +15,5 @@ class Mappa(models.Model):
     Latitudine = models.CharField(max_length=50)
     Longitudine = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.Luogo
 
 
