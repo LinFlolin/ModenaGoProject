@@ -2,7 +2,7 @@ import React from 'react'
 import { Navbar } from './Navbar'
 import{Route,Routes,BrowserRouter} from 'react-router-dom'
 import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from '.'
-// import {LoginPage}from './Authentication/LoginPage'
+import LoginApp from '../../LoginComponent/LoginApp'
 export function Routing () {
 
   return (
@@ -15,7 +15,7 @@ export function Routing () {
             <Route path='/info' element={<Info/>} />
             <Route path='/luoghi' element={<LuoghiFigo/>} />
             <Route path='/sfide' element={<Sfida/>} />
-            {/* <Route path='/login' element={<LoginPage/>}/> */}
+            <Route path='/login' element={<LoginApp/>}/>
           </Routes>
       </BrowserRouter>
     </div>
