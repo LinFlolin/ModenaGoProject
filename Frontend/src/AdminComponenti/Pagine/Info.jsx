@@ -1,5 +1,7 @@
 import { Component } from 'react'
 import axios from 'axios'
+//import './Info.css'
+
 export class Info extends Component{
 
     constructor(props){

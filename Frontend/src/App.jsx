@@ -5,12 +5,12 @@ import {AppMobile} from './/MobileComponenti/AppMobile'
 
 const App = () => {
   return (
-    <div className='body'>
+    <div>
       {/* <AppMobile></AppMobile> */}
+      {/* <AdminApp/> */}
       <AdminApp/>
     </div>
   )
 }
 
 export default App
-
