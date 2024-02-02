@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_UNIQUE_EMAIL = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -33,7 +37,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://maps.googleapis.com",    
 ]
 
-CORS_ALLOW_CRESENTIALS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -55,6 +59,13 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'Api',
 ]
+
+#AUTHENTICATION_CLASSES = (
+#    'rest_framework.authentication.SessionAuthentication',
+#    'rest_framework.authentication.BasicAuthentication',
+#    'rest_framework.authentication.TokenAuthentication',
+#)
+
 CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
