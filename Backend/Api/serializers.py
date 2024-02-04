@@ -9,4 +9,4 @@ class LuoghiAttrazioneSerialiazer (serializers.ModelSerializer) :
 class MapSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mappa
-        fields = ('id', 'Luogo', 'Latitudine', 'Longitudine')
+        fields = ('id', 'Luogo', 'Latitudine', 'Longitudine', 'Immagine')
