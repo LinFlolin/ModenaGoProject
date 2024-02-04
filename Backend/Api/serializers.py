@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import LuoghiAttrazione, Mappa
-from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth import get_user_model
 
 UserModel = get_user_model()
 
