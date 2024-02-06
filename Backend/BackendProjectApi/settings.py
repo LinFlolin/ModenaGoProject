@@ -47,10 +47,6 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-<<<<<<< HEAD
-=======
-    'Api',
->>>>>>> 425d02688f733bacd50466e3c1d2646f58bc5fda
 ]
 
 #AUTHENTICATION_CLASSES = (
@@ -70,10 +66,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-<<<<<<< HEAD
-=======
-
->>>>>>> 425d02688f733bacd50466e3c1d2646f58bc5fda
 ]
 
 ROOT_URLCONF = 'BackendProjectApi.urls'
