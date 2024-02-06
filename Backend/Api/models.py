@@ -1,6 +1,4 @@
 from django.db import models
-from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 
 class LuoghiAttrazione (models.Model):
@@ -17,6 +15,7 @@ class Mappa(models.Model):
     Luogo = models.CharField(max_length=50)
     Latitudine = models.CharField(max_length=50)
     Longitudine = models.CharField(max_length=50)
+    Immagine = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
         return self.Luogo

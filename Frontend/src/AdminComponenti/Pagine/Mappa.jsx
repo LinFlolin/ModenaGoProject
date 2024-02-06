@@ -68,7 +68,7 @@ export class Mappa extends Component {
               mapId={'8b3c296d5e49a998'}              
             >
               <AdvancedMarker position={this.position} onClick={() => this.setState({ open: true })}>
-                <Pin background={'gray'} />
+                <Pin background={'red'} />
               </AdvancedMarker>
               {open && (
                 <InfoWindow position={this.position} onCloseClick={() => this.setState({ open: false })}>
@@ -97,7 +97,10 @@ function Direction() {
   const routerLibrary = useMapsLibrary("routes");
   const [directionService, setDirectionService] = useState(null);
   const [directionRenderer, setDirectionRenderer] = useState(null);
-  const [route, setRoute] = useState([]);
+  const [routes, setRoute] = useState([]);
+  const [routeIndex, setRouteIndex ] = useState(0);
+  const selected = routes[routeIndex];
+  const leg = selected?.legs[0];
 
   useEffect(() => {
     if (!routerLibrary || !map) return;
@@ -108,8 +111,8 @@ function Direction() {
   useEffect(() => {
     if (!directionService || !directionRenderer) return;
     directionService.route({
-      origin: "L'Archivio, Corso Duomo, 13, 41121 Modena MO",
-      destination: "Cinema Astra, Via Francesco Rismondo, 21, 41121 Modena MO",
+      origin: "Osteria Francescana",
+      destination: "Museo Enzo Ferrari",
       travelMode: google.maps.TravelMode.DRIVING,
       provideRouteAlternatives: true,
     }).then(response => {
@@ -117,9 +120,16 @@ function Direction() {
       setRoute(response.routes);
     });
   }, [directionService, directionRenderer]);
+  console.log(routes)
 
-  console.log("Rendered");
-  return null;
+  if(!leg)return null;
+  return (
+    <div className='directions'>
+      <h2>{selected.summary}</h2>
+      <p></p>
+    </div>    
+
+  )
 }
 
 

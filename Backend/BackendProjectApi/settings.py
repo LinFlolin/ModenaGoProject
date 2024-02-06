@@ -1,9 +1,13 @@
 import os
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+#ACCOUNT_AUTHENTICATION_METHOD = 'email'
+#ACCOUNT_EMAIL_REQUIRED = True
+#ACCOUNT_UNIQUE_EMAIL = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -22,7 +26,7 @@ CORS_ORIGIN_WHITELIST = [
     "https://maps.googleapis.com",
 ]
 
-CORS_ALLOW_CRESENTIALS = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -37,13 +41,24 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'Api',
     'dj_rest_auth',
     'dj_rest_auth.registration',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+<<<<<<< HEAD
+=======
     'Api',
+>>>>>>> 425d02688f733bacd50466e3c1d2646f58bc5fda
 ]
+
+#AUTHENTICATION_CLASSES = (
+#    'rest_framework.authentication.SessionAuthentication',
+#    'rest_framework.authentication.BasicAuthentication',
+#    'rest_framework.authentication.TokenAuthentication',
+#)
+
 CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -55,7 +70,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+<<<<<<< HEAD
+=======
 
+>>>>>>> 425d02688f733bacd50466e3c1d2646f58bc5fda
 ]
 
 ROOT_URLCONF = 'BackendProjectApi.urls'
@@ -88,7 +106,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
