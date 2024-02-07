@@ -2,20 +2,10 @@ import os
 from pathlib import Path
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#ACCOUNT_AUTHENTICATION_METHOD = 'email'
-#ACCOUNT_EMAIL_REQUIRED = True
-#ACCOUNT_UNIQUE_EMAIL = True
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-ucvq^4%ks0((!llnt9*oaw)(wu=e)m$a)-wab^c_z3_026l476'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -47,7 +37,9 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    
 ]
+
 #AUTHENTICATION_CLASSES = (
 #    'rest_framework.authentication.SessionAuthentication',
 #    'rest_framework.authentication.BasicAuthentication',
@@ -66,6 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
+
 ROOT_URLCONF = 'BackendProjectApi.urls'
 
 TEMPLATES = [

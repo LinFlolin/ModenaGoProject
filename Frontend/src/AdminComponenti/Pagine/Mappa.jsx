@@ -11,7 +11,7 @@ import {
 } from '@vis.gl/react-google-maps';
 import axios from 'axios';
 import '../AdminCss/Mappa.css'
-
+import { useGeolocation } from "@uidotdev/usehooks";
 
 export class Mappa extends Component {
     constructor(props){
@@ -38,6 +38,7 @@ export class Mappa extends Component {
         console.log(error);
         this.setState({ errorMsg: 'error retrieving data' });
       });
+      
   };
   
   state = {
@@ -55,11 +56,7 @@ export class Mappa extends Component {
 
     return (
       <div className='MostraPercorsi'>
-        {/* <div className='BottoniPercorsi'>
-        <button>Percorso 1</button>
-        <button>Percorso 1</button>
-        <button>Percorso 1</button>
-        </div> */}
+      
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
             <Map 
@@ -99,8 +96,45 @@ function Direction() {
   const [directionRenderer, setDirectionRenderer] = useState(null);
   const [routes, setRoute] = useState([]);
   const [routeIndex, setRouteIndex ] = useState(0);
+  const [location, setLocation] = useState(null);
   const selected = routes[routeIndex];
   const leg = selected?.legs[0];
+  const origine = useGeolocation();
+  const loc = useState()[null];
+
+
+  axios.get( "http://127.0.0.1:8000/api/Mappa/")
+  .then( response =>{
+    console.log(response);
+    this.setState({loc : response.data });
+  })
+  .catch(error => {
+    console.log(error);
+    this.setState({ errorMsg: 'error retrieving data' });
+  });
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      // If Geolocation API is supported
+      navigator.geolocation.getCurrentPosition(success, error);
+    } else {
+      console.log("Geolocation not supported");
+    }
+  
+    function success(position) {
+      // Callback function for successful geolocation retrieval
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      setLocation({ latitude, longitude });
+    }
+  
+    function error() {
+      // Callback function for error in geolocation retrieval
+      console.log("Unable to retrieve your location");
+    }
+  }, []);
+  
 
   useEffect(() => {
     if (!routerLibrary || !map) return;
@@ -108,10 +142,12 @@ function Direction() {
     setDirectionRenderer(new routerLibrary.DirectionsRenderer({ map }));
   }, [routerLibrary, map]);
 
+  const loca = "44.6389004,10.9228512 "
+
   useEffect(() => {
     if (!directionService || !directionRenderer) return;
     directionService.route({
-      origin: "Osteria Francescana",
+      origin: loca,
       destination: "Museo Enzo Ferrari",
       travelMode: google.maps.TravelMode.DRIVING,
       provideRouteAlternatives: true,
