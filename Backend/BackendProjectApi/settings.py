@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+<<<<<<< HEAD
     
+=======
+>>>>>>> f5d535e241c49e002754f5347da8f3f7fce19a09
 ]
 
 #AUTHENTICATION_CLASSES = (
