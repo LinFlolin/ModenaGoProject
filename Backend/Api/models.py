@@ -15,10 +15,6 @@ class Mappa(models.Model):
     Luogo = models.CharField(max_length=50)
     Latitudine = models.CharField(max_length=50)
     Longitudine = models.CharField(max_length=50)
-<<<<<<< HEAD
-    Immagine = models.ImageField(null=True, blank=True, upload_to="images/")
-=======
->>>>>>> f5d535e241c49e002754f5347da8f3f7fce19a09
 
     def __str__(self):
         return self.Luogo
