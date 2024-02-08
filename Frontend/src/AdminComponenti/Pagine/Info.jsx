@@ -33,7 +33,8 @@ export class Info extends Component{
                         <h1>{item.Titolo}</h1>         
                         <p>{item.Descrizione}</p>
                         <h2>Sfida:</h2>
-                        <p>{item.Sfida}</p>                     
+                        <p>{item.Sfida}</p>  
+                        <img src={item.immagine}/>                   
                     </div>             
                 ))}
             </div>
