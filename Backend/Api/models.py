@@ -12,9 +12,9 @@ class LuoghiAttrazione (models.Model):
 
 
 class Mappa(models.Model):
-    Luogo = models.CharField(max_length=50)
-    Latitudine = models.CharField(max_length=50)
-    Longitudine = models.CharField(max_length=50)
+    Luogo = models.CharField(max_length=255)
+    Latitudine = models.CharField(max_length=255)
+    Longitudine = models.CharField(max_length=255)
 
     def __str__(self):
         return self.Luogo
