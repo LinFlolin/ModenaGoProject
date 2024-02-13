@@ -102,17 +102,6 @@ function Direction() {
   const origine = useGeolocation();
   const loc = useState()[null];
 
-
-  axios.get( "http://127.0.0.1:8000/api/Mappa/")
-  .then( response =>{
-    console.log(response);
-    this.setState({loc : response.data });
-  })
-  .catch(error => {
-    console.log(error);
-    this.setState({ errorMsg: 'error retrieving data' });
-  });
-
   useEffect(() => {
     if (navigator.geolocation) {
       // If Geolocation API is supported

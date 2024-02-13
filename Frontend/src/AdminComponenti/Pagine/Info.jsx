@@ -8,8 +8,8 @@ export class Info extends Component{
       super(props)
       this.state = {
           postsL : []
-      }
-  }
+        }
+    }
   componentDidMount(){
       axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/','')
       .then(response=> {
@@ -19,7 +19,7 @@ export class Info extends Component{
       .catch(error=>{
           console.log(error)
           this.setState({erroeMsg : 'error retreiving data'})
-      })
+    })
 
   }
   render (){
