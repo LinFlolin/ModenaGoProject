@@ -18,3 +18,9 @@ class Mappa(models.Model):
 
     def __str__(self):
         return self.Luogo
+
+class Percorso(models.Model):
+    Titolo = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.Titolo
