@@ -1,84 +1,88 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component} from 'react';
 import {
   APIProvider,
   Map,
-  AdvancedMarker,
-  Pin,
+  Marker,
   InfoWindow,
-  useMapsLibrary,
-  useMap,
 } from '@vis.gl/react-google-maps';
-import axios from 'axios';
-import '../AdminCss/Mappa.css'
-import { useGeolocation } from "@uidotdev/usehooks";
+import { Directions } from './mappa/Directions';
+ 
+const makers = () => [
+  {
+    id: 1,
+    luogo: "Musei del Duomo di Modena",
+    lat:44.64638766237961 ,
+    lng:10.925510478461833
+ },
+  {
+    id: 2,
+    luogo: "Piazza Roma",
+    lat: 44.648068400146364,
+    lng: 10.928909618291854
+  }
+];
+
 
 export class Mappa extends Component {
-    constructor(props){
-      super(props)
-      this.state = {
-          postsL : [],
-      }
-  }
-  componentDidMount() {
-    // Recupera il token dalla localStorage (o da dove hai salvato il token)
-    const token = localStorage.getItem('1ffa3bcc89c1bf95dfb85765ebcd332af3053e66');
-  
-    // Configura l'header con il token
-    const headers = {
-      Authorization: `Bearer ${token}`
-    };
-  
-    axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/', { headers })
-      .then(response => {
-        console.log(response);
-        this.setState({ postsL: response.data });
-      })
-      .catch(error => {
-        console.log(error);
-        this.setState({ errorMsg: 'error retrieving data' });
-      });
-      
-  };
+   makers = () => [
+    {
+      id: 1,
+      luogo: "Musei del Duomo di Modena",
+      lat:44.64638766237961 ,
+      lng:10.925510478461833
+   },
+    {
+      id: 2,
+      luogo: "Piazza Roma",
+      lat: 44.648068400146364,
+      lng: 10.928909618291854
+    }
+  ];
   
   state = {
-    open: false
+    open: false,
+    selectedMarker: null,
   };
-
+  
   position = {
     lat: 44.646420,
     lng: 10.926023
   };
 
+  handleMarkerClick = (marker) => {
+    this.setState({
+      open: true,
+      selectedMarker: marker,
+    });
+  };
+
+  handleInfoWindowClose = () => {
+    this.setState({
+      open: false,
+      selectedMarker: null,
+    });
+  };
   render() {
-    const { open } = this.state;
-    const { postsL } = this.state;  
+    const { open, selectedMarker } = this.state;
+    const markers = this.makers(); // Call the function to get the markers array
 
     return (
       <div className='MostraPercorsi'>
-      
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
-            <Map 
-              zoom={15} 
-              center={this.position} 
-              mapId={'8b3c296d5e49a998'}              
-            >
-              <AdvancedMarker position={this.position} onClick={() => this.setState({ open: true })}>
-                <Pin background={'red'} />
-              </AdvancedMarker>
-              {open && (
-                <InfoWindow position={this.position} onCloseClick={() => this.setState({ open: false })}>
-                  
-                  <ul>
-                    {postsL.map(item =>(
-                        <div className="container " key={item.id}>
-                            {item.Titolo}
-                        </div>             
-                    ))}
-                 </ul>                  
-                </InfoWindow>
+            <Map zoom={15.5} center={this.position} mapId={'8b3c296d5e49a998'}>
+              {markers.map(marker => (
+                <Marker key={marker.id} position={{ lat: marker.lat, lng: marker.lng }}   onClick={() =>  this.handleMarkerClick(marker)}  />
+              ))}
+              {open && ( markers.map(marker=>(
+                 <InfoWindow key={marker.id}
+                 position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
+                 onCloseClick={this.handleInfoWindowClose}>                
+               </InfoWindow>
+              )) 
+
               )}
-            <Directions/>
+              <Directions/>
             </Map>
           </APIProvider>
         </div>
@@ -86,3 +90,4 @@ export class Mappa extends Component {
     );
   }
 }
+

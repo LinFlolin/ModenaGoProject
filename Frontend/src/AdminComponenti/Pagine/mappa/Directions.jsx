@@ -47,17 +47,7 @@ const map = useMap();
     };
     
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    
-
-    // directionService.route({
-    //   origin: loca ,
-    //   destination: "Museo Enzo Ferrari",
-    //   travelMode: google.maps.TravelMode.DRIVING,
-    //   provideRouteAlternatives: true,
-    // }).then(response => {
-    //   directionRenderer.setDirections(response);
-    //   setRoute(response.routes);
-    // });
+  
   }, [directionService, directionRenderer]);
   console.log(routes)
 
