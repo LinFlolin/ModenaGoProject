@@ -7,7 +7,6 @@ import {
   InfoWindow,
   useMapsLibrary,
   useMap,
-  
 } from '@vis.gl/react-google-maps';
 import axios from 'axios';
 import '../AdminCss/Mappa.css'
@@ -76,12 +75,10 @@ export class Mappa extends Component {
                             {item.Titolo}
                         </div>             
                     ))}
-                 </ul>
-                  
+                 </ul>                  
                 </InfoWindow>
-
               )}
-            <Direction/>
+            <Directions/>
             </Map>
           </APIProvider>
         </div>
@@ -89,73 +86,3 @@ export class Mappa extends Component {
     );
   }
 }
-function Direction() {
-  const map = useMap();
-  const routerLibrary = useMapsLibrary("routes");
-  const [directionService, setDirectionService] = useState(null);
-  const [directionRenderer, setDirectionRenderer] = useState(null);
-  const [routes, setRoute] = useState([]);
-  const [routeIndex, setRouteIndex ] = useState(0);
-  const [location, setLocation] = useState(null);
-  const selected = routes[routeIndex];
-  const leg = selected?.legs[0];
-  const origine = useGeolocation();
-  const loc = useState()[null];
-
-  useEffect(() => {
-    if (navigator.geolocation) {
-      // If Geolocation API is supported
-      navigator.geolocation.getCurrentPosition(success, error);
-    } else {
-      console.log("Geolocation not supported");
-    }
-  
-    function success(position) {
-      // Callback function for successful geolocation retrieval
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      setLocation({ latitude, longitude });
-    }
-  
-    function error() {
-      // Callback function for error in geolocation retrieval
-      console.log("Unable to retrieve your location");
-    }
-  }, []);
-  
-
-  useEffect(() => {
-    if (!routerLibrary || !map) return;
-    setDirectionService(new routerLibrary.DirectionsService());
-    setDirectionRenderer(new routerLibrary.DirectionsRenderer({ map }));
-  }, [routerLibrary, map]);
-
-  const loca = "44.6389004,10.9228512 "
-
-  useEffect(() => {
-    if (!directionService || !directionRenderer) return;
-    directionService.route({
-      origin: loca,
-      destination: "Museo Enzo Ferrari",
-      travelMode: google.maps.TravelMode.DRIVING,
-      provideRouteAlternatives: true,
-    }).then(response => {
-      directionRenderer.setDirections(response);
-      setRoute(response.routes);
-    });
-  }, [directionService, directionRenderer]);
-  console.log(routes)
-
-  if(!leg)return null;
-  return (
-    <div className='directions'>
-      <h2>{selected.summary}</h2>
-      <p></p>
-    </div>    
-
-  )
-}
-
-
-
