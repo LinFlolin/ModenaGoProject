@@ -4,8 +4,8 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import viewsets
 from rest_framework import permissions, status
-from .serializers import MarkerSerialiazer, PercorsoSerializer
-from .models import Marker, Percorso
+from .serializers import MarkerSerialiazer, PercorsoSerializer, DirectionSerializer
+from .models import Marker, Percorso, Direction
 from .validations import custom_validation, validate_email, validate_password
 
 
@@ -17,3 +17,7 @@ class MarkerView(viewsets.ModelViewSet):
 class PercorsoView(viewsets.ModelViewSet):
     serializer_class = PercorsoSerializer
     queryset = Percorso.objects.all()
+    
+class DirectionView(viewsets.ModelViewSet):
+    serializer_class = DirectionSerializer
+    queryset = Direction.objects.all()
