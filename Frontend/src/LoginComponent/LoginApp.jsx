@@ -1,8 +1,16 @@
 import './LoginApp.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const LoginApp = () => {
+
+  let navigate = useNavigate();
+  const routeChange = () =>{
+    let registrationPath = `RegistrationApp`;
+    navigate(registrationPath);
+  }
+
   const [data, setData] = useState({
     email: "",
     username: "",
@@ -19,7 +27,6 @@ const LoginApp = () => {
 
     const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post("http://localhost:8000/dj-rest-auth/login/", {
         email: data.email,
@@ -37,9 +44,6 @@ const LoginApp = () => {
     }
   };
 
-  const handleRegistrationClick = () => {
-    history.push('/RegistrationApp'); // Naviga alla pagina di registrazione quando il pulsante viene premuto
-  };
 
   return (
     <div>
@@ -75,10 +79,9 @@ const LoginApp = () => {
         <button type="submit">Login</button>
         <div className="text-container">
             <p id="registration-text">Non sei registrato?</p>
-            <button id="registration-button" onClick={handleRegistrationClick}>Registrati</button>
+            <button id="registration-button" onClick={routeChange}>Registrati</button>
         </div>
       </form>
-
     </div>
   );
 };
