@@ -51,3 +51,19 @@ button:hover {
 .container {
   margin-top: 50px; /* margine superiore aggiuntivo per centrare il form */
 }
+
+/* Stili per la registrazione */
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.3rem;
+}
+
+#registration-button {
+    width: auto;
+    margin-right: 9.8rem;
+}
+
+#registration-text {
+    margin-top: 0.4rem;
+}

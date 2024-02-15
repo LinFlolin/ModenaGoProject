@@ -1,10 +1,6 @@
 import './LoginApp.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-//import Container from 'react-bootstrap/Container';
-//import Navbar from 'react-bootstrap/Navbar';
-//import Button from 'react-bootstrap/Button';
-//import Form from 'react-bootstrap/Form';
 
 const LoginApp = () => {
   const [data, setData] = useState({
@@ -41,6 +37,10 @@ const LoginApp = () => {
     }
   };
 
+  const handleRegistrationClick = () => {
+    history.push('/RegistrationApp'); // Naviga alla pagina di registrazione quando il pulsante viene premuto
+  };
+
   return (
     <div>
       <h1>Login Account</h1>
@@ -73,7 +73,12 @@ const LoginApp = () => {
           />
         </label>
         <button type="submit">Login</button>
+        <div className="text-container">
+            <p id="registration-text">Non sei registrato?</p>
+            <button id="registration-button" onClick={handleRegistrationClick}>Registrati</button>
+        </div>
       </form>
+
     </div>
   );
 };
