@@ -32,10 +32,8 @@ const LoginApp = () => {
       });
       if (response.status === 200) {
         console.log("Login success!");
-        // Azioni di successo, come la navigazione a una nuova pagina
       } else {
         console.log("Login failed:", response.data.error);
-        // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
       }
     } catch (error) {
       console.error('Error:', error.response);
