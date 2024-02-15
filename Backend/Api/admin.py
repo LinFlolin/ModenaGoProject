@@ -1,16 +1,13 @@
 from django.contrib import admin
-from .models import LuoghiAttrazione, Mappa, Percorso
+from .models import Marker, Percorso
 
-class LuoghiAttrazioneAdmin (admin.ModelAdmin):
-    list_display =('titolo','descrizione','sfida','Immagine')
-
-class MappaAdmin(admin.ModelAdmin):
-    list_display =('luogo','latitudine','longitudine')
+class MarkerAdmin (admin.ModelAdmin):
+    list_display = ('Nome', 'Indirizzo', 'Descrizione', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
 
 class Percorso(admin.ModelAdmin):
     list_display=('Titolo')
 
 # Register your models here.
-    admin.site.register(LuoghiAttrazione)
-    admin.site.register(Mappa)
+    admin.site.register(Marker)
+    admin.site.register(Percorso)
 
