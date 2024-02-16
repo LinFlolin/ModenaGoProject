@@ -1,6 +1,7 @@
 import React from 'react'
 import './ComponentsHPCss/CarouselHomePage.css'
 import Carousel from "react-multi-carousel";
+
 import "react-multi-carousel/lib/styles.css";
 {/*Costante che stabilisce i criteri per la responsiveness,
 così si ha il look giusto a prescindere dal dispositivo*/}
