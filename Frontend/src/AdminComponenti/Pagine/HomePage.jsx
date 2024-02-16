@@ -1,8 +1,8 @@
 import React from 'react'
 import '../AdminCss/HomePage.css'
+import { CarouselHomePage } from './ComponentsHomepage/CarouselHomePage'
 export const HomePage = () => {
 
-  
   return (
     <div>
       <div className='firstpart'>
@@ -11,10 +11,10 @@ export const HomePage = () => {
         <p>Stiamo lavorando per voi...</p>
       </div>
       <div className='sezionecards'>
-       {/*Posto per il component sezionecards*/}
+      <CarouselHomePage></CarouselHomePage>
       </div>
       <div className='sezionecarousel'>
-        <img src="#" alt="" />
+       
       </div>
       <footer className='footer'>
         <ul className='homeul'>
