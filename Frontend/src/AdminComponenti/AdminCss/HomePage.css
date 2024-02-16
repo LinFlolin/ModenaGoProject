@@ -1,0 +1,55 @@
+.firstpart {
+    padding: 1.3%;
+    margin: 0;
+    text-align: center;
+    width: 98%;
+    height: 15vh;
+    color: #003049;  
+    background-color: #eae2b7;
+}
+
+.sezionecards {
+    padding: 1% 2% 1%;
+    text-align: center;
+    background-color: #fcbf49;
+}
+
+.sezionecarousel {
+    background-color: #eae2b7;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+.card-holder {
+    width: 20rem;
+    height: 5vh;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+.footer {
+    padding: 1% 2% 1%;
+    margin: 0;
+    text-align: center;
+    background-color: #003049;
+    color: hsl(49, 71%, 66%);
+
+}
+.homeul {
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3;
+}
+
+.homeli {
+    padding: 4%;
+}

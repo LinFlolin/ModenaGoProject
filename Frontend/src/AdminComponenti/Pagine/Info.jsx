@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import axios from 'axios'
-import './Info.css'
+import '../AdminCss/Info.css'
 
 export class Info extends Component{
 
