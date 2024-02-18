@@ -1,5 +1,7 @@
+import './RegistrationApp.css'
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const RegistrationApp = () => {
 
@@ -9,6 +11,13 @@ const RegistrationApp = () => {
     password1: '',
     password2: '',
   });
+
+  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+
+  const handleLoginClick = () => {
+    // Reindirizzamento alla pagina di login quando viene cliccato il pulsante
+    navigate('/login');
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,6 +36,11 @@ const RegistrationApp = () => {
       // Gestisci gli errori, ad esempio mostrando un messaggio di errore all'utente
     }
   };
+
+  const routeChange = () => {
+    navigate('/login'); // Naviga alla pagina di registrazione
+  };
+
 
   return (
     <div>
@@ -73,6 +87,10 @@ const RegistrationApp = () => {
           />
         </label>
         <button type="submit">Registrati</button>
+        <div className="text-container">
+            <p id="login-text">Sei già registrato?</p>
+            <button id="login-button" onClick={routeChange}>Login</button>
+        </div>
       </form>
     </div>
   );
