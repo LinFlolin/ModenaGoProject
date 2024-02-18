@@ -5,17 +5,18 @@ import { useNavigate } from "react-router-dom";
 
 const LoginApp = () => {
 
-  let navigate = useNavigate();
-  const routeChange = () =>{
-    let registrationPath = `RegistrationApp`;
-    navigate(registrationPath);
-  }
-
   const [data, setData] = useState({
     email: "",
     username: "",
     password: ""
   });
+
+  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+
+  const handleRegistrationClick = () => {
+    // Reindirizzamento alla pagina di registrazione quando viene cliccato il pulsante
+    navigate('/registration');
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -44,6 +45,9 @@ const LoginApp = () => {
     }
   };
 
+  const routeChange = () => {
+    navigate('/Registration'); // Naviga alla pagina di registrazione
+  };
 
   return (
     <div>
