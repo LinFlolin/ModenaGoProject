@@ -3,6 +3,7 @@ import { Navbar } from './Navbar'
 import{Route,Routes,BrowserRouter} from 'react-router-dom'
 import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from '.'
 import LoginApp from '../../LoginComponent/LoginApp'
+import RegistrationApp from '../../LoginComponent/RegistrationApp'
 export function Routing () {
 
   return (
@@ -16,6 +17,7 @@ export function Routing () {
             <Route path='/luoghi' element={<LuoghiFigo/>} />
             <Route path='/sfide' element={<Sfida/>} />
             <Route path='/login' element={<LoginApp/>}/>
+            <Route path='/registration' element={<RegistrationApp/>}/>
           </Routes>
       </BrowserRouter>
     </div>
