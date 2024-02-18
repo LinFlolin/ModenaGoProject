@@ -1,74 +1,78 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const RegistrationApp = ({ handleBackToLoginClick }) => {
-  const [data, setData] = useState({
-    email: "",
-    username: "",
-    password: ""
+const RegistrationApp = () => {
+
+    const [userData, setUserData] = useState({
+    username: '',
+    email: '',
+    password1: '',
+    password2: '',
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserData({ ...userData, [name]: value });
   };
 
-  const handleRegistrationSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/dj-rest-auth/registration/", {
-        email: data.email,
-        username: data.username,
-        password1: data.password  // Assicurati di inviare correttamente i dati per la registrazione
-      });
-      if (response.status === 201) {
-        console.log("Registration success!");
-        // Puoi aggiungere una logica qui per gestire la registrazione riuscita, come navigare a una pagina di conferma registrazione
-      } else {
-        console.log("Registration failed:", response.data.error);
-      }
+      // Effettua la chiamata API per la registrazione
+      const response = await axios.post('http://localhost:8000/api/dj-rest-auth/registration/', userData);
+      console.log('Registrazione avvenuta con successo', response.data);
+      // Effettua il reindirizzamento o mostra un messaggio di successo
     } catch (error) {
-      console.error('Error:', error.response);
+      console.error('Errore durante la registrazione', error);
+      // Gestisci gli errori, ad esempio mostrando un messaggio di errore all'utente
     }
   };
 
   return (
     <div>
-      <h1>Registration Account</h1>
-      <form onSubmit={handleRegistrationSubmit}>
-        <label htmlFor="email">
-          Email
-          <input
-            type="email"
-            name="email"
-            value={data.email}
-            onChange={handleChange}
-          />
-        </label>
+      <h1>Registrati</h1>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="username">
           Username
           <input
             type="text"
             name="username"
-            value={data.username}
+            value={userData.username}
             onChange={handleChange}
+            required
           />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="email">
+          Email
+          <input
+            type="email"
+            name="email"
+            value={userData.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label htmlFor="password1">
           Password
           <input
             type="password"
-            name="password"
-            value={data.password}
+            name="password1"
+            value={userData.password1}
             onChange={handleChange}
+            required
           />
         </label>
-        <button type="submit">Register</button>
-        <button onClick={handleBackToLoginClick}>Back to Login</button>
+        <label htmlFor="password2">
+          Confirm Password
+          <input
+            type="password"
+            name="password2"
+            value={userData.password2}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <button type="submit">Registrati</button>
       </form>
     </div>
   );
