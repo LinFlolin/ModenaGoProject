@@ -1,4 +1,7 @@
-.body{
-    background-color: hsl(49, 71%, 66%);
+/*ho aggiutnot lo stesso font a tutti i cristi */
 
+body{
+    background-color: hsl(49, 71%, 66%);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
