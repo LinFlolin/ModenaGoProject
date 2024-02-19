@@ -4,12 +4,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework import routers
-from Api.views import LuoghiAttrazioneView, MappaView
+from Api.views import MarkerView, PercorsoView, DirectionView
 from dj_rest_auth.views import LoginView
 
 routers = routers.DefaultRouter()
-routers.register('LuoghiAtrazioni', LuoghiAttrazioneView,basename='LuoghiAtrazioni')
-routers.register('Mappa', MappaView, basename='Mappa')
+routers.register('Marker', MarkerView, basename='Marker')
+routers.register('Percorso', PercorsoView, basename='Percorso')
+routers.register('Direction', DirectionView, basename='Direction')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
