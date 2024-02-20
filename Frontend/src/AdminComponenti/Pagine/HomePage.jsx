@@ -11,7 +11,7 @@ export const HomePage = () => {
         <p>Stiamo lavorando per voi...</p>
       </div>
       <div className='sezionecards'>
-      <CarouselHomePage></CarouselHomePage>
+        
       </div>
       <div className='sezionecarousel'>
        
