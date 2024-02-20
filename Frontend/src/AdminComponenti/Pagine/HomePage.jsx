@@ -1,6 +1,6 @@
 import React from 'react'
 import '../AdminCss/HomePage.css'
-import { CarouselHomePage } from './ComponentsHomepage/CarouselHomePage'
+
 export const HomePage = () => {
 
   return (
