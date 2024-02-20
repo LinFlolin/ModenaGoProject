@@ -1,23 +1,21 @@
 from django.db import models
-from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 
 
-class LuoghiAttrazione(models.Model):
-    Titolo = models.TextField(max_length=100)
+class Marker (models.Model):
+    Nome = models.CharField(max_length=255)
+    Indirizzo = models.CharField(max_length=255)
     Descrizione = models.TextField(max_length=500)
+    Latitudine = models.CharField(max_length=255)
+    Longitudine = models.CharField(max_length=255)
     Sfida = models.TextField(max_length=300)
+    Immagine = models.ImageField(null=True, blank=True, upload_to="images/")
 
     def __str__(self):
-        return self.Titolo
+        return self.Nome
 
+class Percorso(models.Model):
+    Titolo = models.CharField(max_length=255)
 
-class Mappa(models.Model):
-    Luogo = models.CharField(max_length=50)
-    Latitudine = models.CharField(max_length=50)
-    Longitudine = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.Luogo
-
-
+class Direction(models.Model):
+    UserLat = models.CharField(max_length=255)
+    UserLong = models.CharField(max_length=255)

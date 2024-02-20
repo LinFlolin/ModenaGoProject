@@ -50,10 +50,10 @@ const LoginApp = () => {
   };
 
   return (
-    <div>
-      <h1>Login Account</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
+    <div className='section'>
+      <h1 id='logh1'>Login Account</h1>
+      <form onSubmit={handleSubmit} className='logform'>
+        <label htmlFor="email" id='loglabel'>
           Email
           <input
             type="email"
@@ -62,7 +62,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="username">
+        <label htmlFor="username" id='loglabel'>
           Username
           <input
             type="text"
@@ -71,7 +71,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="password" id='loglabel'>
           Password
           <input
             type="password"
