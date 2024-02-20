@@ -4,7 +4,6 @@ export const AdminApp = () => {
   return (
     <div>
         <Routing/>
-
     </div>
   )
 }

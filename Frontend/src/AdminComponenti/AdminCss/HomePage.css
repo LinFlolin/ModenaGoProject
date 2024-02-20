@@ -1,0 +1,38 @@
+.firstpart {
+    padding: 1% 2% 1%;
+    margin: 0;
+    text-align: center;
+    width: 96%;
+    height: 15vh;
+    color: #003049;  
+ 
+
+}
+   
+.p{
+    display: fl;
+} 
+
+
+.footer {
+    padding: 1% 2% 1%;
+    margin: 0;
+    text-align: center;
+    background-color: #003049;
+    color: hsl(49, 71%, 66%);
+
+}
+#homeul {
+    padding: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 3;
+}
+
+#homeli {
+    padding: 4%;
+}

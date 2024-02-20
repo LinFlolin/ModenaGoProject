@@ -21,11 +21,11 @@ export class Mappa extends Component {
     const token = localStorage.getItem('1ffa3bcc89c1bf95dfb85765ebcd332af3053e66');
   
     // Configura l'header con il token
-    // const headers = {
-    //   Authorization: `Bearer ${token}`
-    // };
+    const headers = {
+      Authorization: `Bearer ${token}`
+    };
   
-    axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/')
+    axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/', { headers })
       .then(response => {
         console.log(response);
         this.setState({ postsL: response.data });
@@ -37,7 +37,7 @@ export class Mappa extends Component {
   };
   
   state = {
-    open: false    
+    open: false
   };
 
   position = {
@@ -50,6 +50,12 @@ export class Mappa extends Component {
     const { postsL } = this.state;
 
     return (
+      <div className='MostraPercorsi'>
+        <div className='BottoniPercorsi'>
+        <button>Percorso 1</button>
+        <button>Percorso 1</button>
+        <button>Percorso 1</button>
+        </div>
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
             <Map zoom={15} center={this.position} mapId={'8b3c296d5e49a998'}>
@@ -72,7 +78,7 @@ export class Mappa extends Component {
             </Map>
           </APIProvider>
         </div>
-      // </div>
+      </div>
     );
   }
 }
