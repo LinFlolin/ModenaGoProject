@@ -5,40 +5,27 @@ import {
   Marker,
   InfoWindow,
 } from '@vis.gl/react-google-maps';
-import { Directions } from './mappa/Directions';
- 
-const makers = () => [
-  {
-    id: 1,
-    luogo: "Musei del Duomo di Modena",
-    lat:44.64638766237961 ,
-    lng:10.925510478461833
- },
-  {
-    id: 2,
-    luogo: "Piazza Roma",
-    lat: 44.648068400146364,
-    lng: 10.928909618291854
-  }
-];
-
+import {Percorso, Directions} from './mappa/index'
+import axios from 'axios'
 
 export class Mappa extends Component {
-   makers = () => [
-    {
-      id: 1,
-      luogo: "Musei del Duomo di Modena",
-      lat:44.64638766237961 ,
-      lng:10.925510478461833
-   },
-    {
-      id: 2,
-      luogo: "Piazza Roma",
-      lat: 44.648068400146364,
-      lng: 10.928909618291854
+  constructor(props){
+    super(props)
+    this.state = {
+        postsL : []
     }
-  ];
-  
+}
+componentDidMount(){
+    axios.get("http://127.0.0.1:8000/api/Mappa/")
+    .then(response=> {
+        console.log(response)
+        this.setState({postsL : response.data})
+    })
+    .catch(error=>{
+        console.log(error)
+        this.setState({erroeMsg : 'error retreiving data'})
+    })
+  }
   state = {
     open: false,
     selectedMarker: null,
@@ -62,25 +49,26 @@ export class Mappa extends Component {
       selectedMarker: null,
     });
   };
-  render() {
-    const { open, selectedMarker } = this.state;
-    const markers = this.makers(); // Call the function to get the markers array
 
+  render() {
+    const { open, selectedMarker ,postsL} = this.state;   
     return (
-      <div className='MostraPercorsi'>
+      <div className='MappaBody'>
+        <Percorso></Percorso>
+
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
             <Map zoom={15.5} center={this.position} mapId={'8b3c296d5e49a998'}>
-              {markers.map(marker => (
-                <Marker key={marker.id} position={{ lat: marker.lat, lng: marker.lng }}   onClick={() =>  this.handleMarkerClick(marker)}  />
+              {postsL.map(post => (
+                <Marker key={post.id} position={{ lat: post.Latitudine, lng: post.Longitudine }}   onClick={() =>  this.handleMarkerClick(position)}  />
               ))}
-              {open && ( markers.map(marker=>(
-                 <InfoWindow key={marker.id}
-                 position={{ lat: selectedMarker.lat, lng: selectedMarker.lng }}
-                 onCloseClick={this.handleInfoWindowClose}>                
+              {open && ( postsL.map(marker=>(
+                 <InfoWindow
+                 key={marker.id}
+                 position={{ lat: parseFloat(selectedMarker.Latitudine), lng: parseFloat(selectedMarker.Longitudine) }}
+                 onCloseClick={this.handleInfoWindowClose}>
                </InfoWindow>
               )) 
-
               )}
               <Directions/>
             </Map>

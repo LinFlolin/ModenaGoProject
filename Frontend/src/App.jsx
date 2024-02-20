@@ -5,7 +5,7 @@ import {AdminApp} from './AdminComponenti/AdminApp'
 
 const App = () => {
   return (
-    <div>
+    <div className='body'>
       <AdminApp/>
     </div>
   )

@@ -10,8 +10,8 @@ export function Routing () {
       <BrowserRouter> 
         <Navbar/>
         <Routes>
-          <Route path='/home' element={<HomePage/>}/>
-            <Route path='/map' element={<Mappa/>} />
+          <Route path='/' element={<HomePage/>}/>
+            <Route path='/map' element={<Mappa />} />
             <Route path='/info' element={<Info/>} />
             <Route path='/luoghi' element={<LuoghiFigo/>} />
             <Route path='/sfide' element={<Sfida/>} />
