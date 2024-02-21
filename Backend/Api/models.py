@@ -4,7 +4,7 @@ from django.db import models
 class Marker (models.Model):
     Nome = models.CharField(max_length=255)
     Indirizzo = models.CharField(max_length=255)
-    Descrizione = models.TextField(max_length=500)
+    Descrizione = models.TextField(max_length=3000)
     Latitudine = models.CharField(max_length=255)
     Longitudine = models.CharField(max_length=255)
     Sfida = models.TextField(max_length=300)
