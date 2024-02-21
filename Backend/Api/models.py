@@ -5,6 +5,7 @@ class Marker (models.Model):
     Nome = models.CharField(max_length=255)
     Indirizzo = models.CharField(max_length=255)
     Descrizione = models.TextField(max_length=3000)
+    Desbrev = models.TextField(max_length=500, default="")
     Latitudine = models.CharField(max_length=255)
     Longitudine = models.CharField(max_length=255)
     Sfida = models.TextField(max_length=300)
