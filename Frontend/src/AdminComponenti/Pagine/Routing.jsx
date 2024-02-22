@@ -9,7 +9,7 @@ export function Routing () {
   return (
     <div>
       <BrowserRouter> 
-        <Navbar/>
+       
         <Routes>
           <Route path='/' element={<HomePage/>}/>
             <Route path='/map' element={<Mappa />} />
