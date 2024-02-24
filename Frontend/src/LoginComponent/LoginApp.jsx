@@ -1,14 +1,22 @@
 import './LoginApp.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 const LoginApp = () => {
+
   const [data, setData] = useState({
     email: "",
     username: "",
     password: ""
   });
+
+  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+
+  const handleRegistrationClick = () => {
+    // Reindirizzamento alla pagina di registrazione quando viene cliccato il pulsante
+    navigate('/registration');
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -20,7 +28,6 @@ const LoginApp = () => {
 
     const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post("http://localhost:8000/dj-rest-auth/login/", {
         email: data.email,
@@ -29,15 +36,17 @@ const LoginApp = () => {
       });
       if (response.status === 200) {
         console.log("Login success!");
-        // Azioni di successo, come la navigazione a una nuova pagina
       } else {
         console.log("Login failed:", response.data.error);
-        // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
       }
     } catch (error) {
       console.error('Error:', error.response);
       // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
     }
+  };
+
+  const routeChange = () => {
+    navigate('/Registration'); // Naviga alla pagina di registrazione
   };
 
   return (
@@ -71,7 +80,11 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
-        <button type="submit" id='logbutton'>Login</button>
+        <button type="submit">Login</button>
+        <div className="text-container">
+            <p id="registration-text">Non sei registrato?</p>
+            <button id="registration-button" onClick={routeChange}>Registrati</button>
+        </div>
       </form>
     </div>
   );
