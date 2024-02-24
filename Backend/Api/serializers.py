@@ -1,47 +1,22 @@
 from rest_framework import serializers
-from .models import LuoghiAttrazione, Mappa
-from django.contrib.auth import get_user_model, authenticate
+from .models import Marker, Percorso, Direction
+from django.contrib.auth import get_user_model
 
 UserModel = get_user_model()
 
 
-class LuoghiAttrazioneSerialiazer(serializers.ModelSerializer):
+class MarkerSerialiazer(serializers.ModelSerializer):
     class Meta:
-        model = LuoghiAttrazione
-        fields = ('id', 'Titolo', 'Descrizione', 'Sfida')
+        model = Marker
+        fields = ('id', 'Nome', 'Indirizzo', 'Descrizione', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
 
 
-class MapSerializer(serializers.ModelSerializer):
+class PercorsoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Mappa
-        fields = ('id', 'Luogo', 'Latitudine', 'Longitudine')
-
-
-class UserRegisterSerializer(serializers.ModelSerializer):
+        model = Percorso
+        fields = ('Titolo',)
+        
+class DirectionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = UserModel
-        fields = '__all__'
-
-    def create(self, clean_data):
-        user_obj = UserModel.objects.create_user(email=clean_data['email'], password=clean_data['password'])
-        user_obj.username = clean_data['username']
-        user_obj.save()
-        return user_obj
-
-
-class UserLoginSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    password = serializers.CharField()
-
-    ##
-    def check_user(self, clean_data):
-        user = authenticate(username=clean_data['email'], password=clean_data['password'])
-        if not user:
-            raise ValidationError('user not found')
-        return user
-
-
-class UserSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserModel
-        fields = ('email', 'username')
+        model = Direction
+        fields = ('UserLat', 'UserLong')

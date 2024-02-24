@@ -59,11 +59,11 @@ button:hover {
     margin-top: 2.3rem;
 }
 
-#registration-button {
+#login-button {
     width: auto;
-    margin-right: 9.8rem;
+    margin-right: 11.8rem;
 }
 
-#registration-text {
+#login-text {
     margin-top: 0.4rem;
 }

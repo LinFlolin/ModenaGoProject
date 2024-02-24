@@ -1,18 +1,14 @@
 import './App.css'
-
-import {AppMobile} from './MobileComponenti/AppMobile'
+import React, { useState, useEffect } from 'react';
 import {AdminApp} from './AdminComponenti/AdminApp'
-import React from 'react'
-
+// import {AppMobile} from './/MobileComponenti/AppMobile'
 
 const App = () => {
   return (
-    <div>
-      {/* <AppMobile/> */}   
+    <div className='body'>
       <AdminApp/>
     </div>
   )
 }
 
 export default App
-

@@ -1,14 +1,22 @@
 import './LoginApp.css'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from "react-router-dom";
 
 const LoginApp = () => {
+
   const [data, setData] = useState({
     email: "",
     username: "",
     password: ""
   });
+
+  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+
+  const handleRegistrationClick = () => {
+    // Reindirizzamento alla pagina di registrazione quando viene cliccato il pulsante
+    navigate('/registration');
+  };
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -20,7 +28,6 @@ const LoginApp = () => {
 
     const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post("http://localhost:8000/dj-rest-auth/login/", {
         email: data.email,
@@ -29,10 +36,8 @@ const LoginApp = () => {
       });
       if (response.status === 200) {
         console.log("Login success!");
-        // Azioni di successo, come la navigazione a una nuova pagina
       } else {
         console.log("Login failed:", response.data.error);
-        // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
       }
     } catch (error) {
       console.error('Error:', error.response);
@@ -40,11 +45,15 @@ const LoginApp = () => {
     }
   };
 
+  const routeChange = () => {
+    navigate('/Registration'); // Naviga alla pagina di registrazione
+  };
+
   return (
-    <div>
-      <h1>Login Account</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
+    <div className='section'>
+      <h1 id='logh1'>Login Account</h1>
+      <form onSubmit={handleSubmit} className='logform'>
+        <label htmlFor="email" id='loglabel'>
           Email
           <input
             type="email"
@@ -53,7 +62,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="username">
+        <label htmlFor="username" id='loglabel'>
           Username
           <input
             type="text"
@@ -62,7 +71,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
-        <label htmlFor="password">
+        <label htmlFor="password" id='loglabel'>
           Password
           <input
             type="password"
@@ -72,6 +81,10 @@ const LoginApp = () => {
           />
         </label>
         <button type="submit">Login</button>
+        <div className="text-container">
+            <p id="registration-text">Non sei registrato?</p>
+            <button id="registration-button" onClick={routeChange}>Registrati</button>
+        </div>
       </form>
     </div>
   );

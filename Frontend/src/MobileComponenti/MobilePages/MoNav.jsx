@@ -1,5 +1,6 @@
 import {Link,NavLink,} from 'react-router-dom'
 import React,{useState} from 'react';
+import '../MoCss/MoNav.css'
 
 export const MoNav = () => {
     const[menuOpen,setMenuOpen]= useState(false)
