@@ -7,6 +7,7 @@ import {
 } from '@vis.gl/react-google-maps';
 import {Percorso, Directions} from './mappa/index'
 import axios from 'axios'
+import '../AdminCss/Mappa.css'
 
 export class Mappa extends Component {
   constructor(props){
@@ -49,19 +50,21 @@ componentDidMount(){
       selectedMarker: null,
     });
   };
-
+  
   render() {
-    const { open, selectedMarker ,postsL} = this.state;   
+    const { open, selectedMarker ,postsL} = this.state; 
+    
     return (
       <div className='MappaBody'>
         <Percorso></Percorso>
 
         <div className="MappaLuoghi" style={{ height: "100vh" }}>
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
-            <Map zoom={15.5} center={this.position} mapId={'8b3c296d5e49a998'}>
-              {postsL.map(post => (
+            <Map zoom={15.5} center={this.position} disableDefaultUI={true} mapId={'8b3c296d5e49a998'}>
+              {/* {postsL.map(post => (
                 <Marker key={post.id} position={{ lat: post.Latitudine, lng: post.Longitudine }}   onClick={() =>  this.handleMarkerClick(position)}  />
-              ))}
+              ))} */}
+              
               {open && ( postsL.map(marker=>(
                  <InfoWindow
                  key={marker.id}
