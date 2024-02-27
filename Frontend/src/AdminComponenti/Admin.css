@@ -1,4 +1,11 @@
-*{
-    padding: 0;
-    margin: 0;
+.adcontainer{
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:320px) {
+    .adcontainer{
+        background-color:blueviolet;
+    }
 }
