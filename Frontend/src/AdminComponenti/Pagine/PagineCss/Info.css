@@ -1,0 +1,32 @@
+.primocontenitore {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    margin: 1%;
+    justify-content:baseline;
+}
+/*Styling che riguarda la parte dei titoli dei luoghi */
+.primaparte{
+    padding: 2%;
+    margin: 1%;
+    border-right: 1px solid #003049;
+}
+
+.elencoluoghi {
+}
+
+.elementoluoghi {
+    border: 1px solid #003049;
+    padding: 1%;
+    margin: 1%;
+    width: 14rem;
+}
+
+/*Stylign che riguarda il dettaglio dei luoghi. 
+Dovrebbe diventare possibile interagire e toccare i titoli sopra
+per cambiarli. Logica da fare simile alla mappatura di prima*/
+
+.secondaparte{
+    padding: 2%;
+    margin: 1%;
+}

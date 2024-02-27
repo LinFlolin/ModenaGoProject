@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import axios from 'axios'
-import '../AdminCss/Info.css'
+import '../Pagine/PagineCss/Info.css'
 
 export class Info extends Component{
 
@@ -26,19 +26,17 @@ export class Info extends Component{
       const { postsL } = this.state
       return(
         <div>
-          {
-            <div className='contenitoregrosso'>
-                {postsL.map(item =>(
-                    <div className="container" key={item.id}>
-                        <h1>{item.Titolo}</h1>         
-                        <p>{item.Descrizione}</p>
-                        <h2>Sfida:</h2>
-                        <p>{item.Sfida}</p>  
-                        <img src={item.immagine}/>                   
-                    </div>             
-                ))}
+            <div className='primocontenitore'>
+               <div className="primaparte">
+               <ul className='elencoluoghi'>
+                  <li className='elementoluoghi'>Elemento 1</li>
+               </ul>                   
+              </div>
+               <div className='secondaparte'>
+              <img src="" alt="Immagine prova" />
+              <p>descrizione</p>
+              </div>
             </div>
-          }
         </div>
       )
   }
