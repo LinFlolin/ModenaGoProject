@@ -44,3 +44,13 @@ per cambiarli. Logica da fare simile alla mappatura di prima*/
     padding: 2%;
     margin: 1%;
 }
+
+
+
+/* Media query per dispositivi mobili, qui ci sarà da pensare a tutto lo stile mobile per bene  */
+@media (max-width: 768px) {
+    .elementoluoghi:active {
+      padding: 5px;
+      margin-bottom: 5px;
+    }
+  }
