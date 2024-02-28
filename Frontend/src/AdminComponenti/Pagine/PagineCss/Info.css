@@ -3,7 +3,7 @@
     flex-direction: row;
     padding: 1%;
     margin: 1%;
-    justify-content:baseline;
+    justify-content: baseline;
 }
 /*Styling che riguarda la parte dei titoli dei luoghi */
 .primaparte{
@@ -47,8 +47,20 @@ per cambiarli. Logica da fare simile alla mappatura di prima*/
 
 
 
-/* Media query per dispositivi mobili, qui ci sarà da pensare a tutto lo stile mobile per bene  */
-@media (max-width: 768px) {
+/* Media query per dispositivi mobili, qui ci sarà da pensare
+ a tutto lo stile mobile per bene 
+ l'idea sarebbe quella di rendere nascondibile la lista degli elementi
+ così che si vedano solo le immagini e la descrizione */
+@media (max-width: 364px) {
+
+    .elementoluoghi {
+        border: 1px solid #003049;
+        padding: 1%;
+        margin: 1%;
+        width: 6rem;
+        
+    }
+
     .elementoluoghi:active {
       padding: 5px;
       margin-bottom: 5px;
