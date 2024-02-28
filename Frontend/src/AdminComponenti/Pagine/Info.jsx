@@ -1,8 +1,10 @@
 import { Component } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
 
 export class Info extends Component{
+
 
     constructor(props){
       super(props)
@@ -24,6 +26,7 @@ export class Info extends Component{
   }
   render (){
       const { postsL } = this.state
+  
       return(
         <div>
             <div className='primocontenitore'>

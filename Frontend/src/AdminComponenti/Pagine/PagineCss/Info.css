@@ -13,6 +13,8 @@
 }
 
 .elencoluoghi {
+    padding: 0;
+    list-style-type: none;
 }
 
 .elementoluoghi {
@@ -20,6 +22,18 @@
     padding: 1%;
     margin: 1%;
     width: 14rem;
+    
+}
+
+.elementoluoghi:hover {
+    background-color: #003049;
+    color: #fcbf49;
+}
+
+.elementoluoghi:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 /*Stylign che riguarda il dettaglio dei luoghi. 
