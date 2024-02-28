@@ -33,6 +33,8 @@ export class Info extends Component{
                <div className="primaparte">
                <ul className='elencoluoghi'>
                   <li className='elementoluoghi'>Elemento 1</li>
+                  <li className='elementoluoghi'>Elemento 1</li>
+                  <li className='elementoluoghi'>Elemento 1</li>
                </ul>                   
               </div>
                <div className='secondaparte'>
