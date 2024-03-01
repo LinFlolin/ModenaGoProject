@@ -19,8 +19,9 @@
     grid-area:  1 / 1 / 6 / 3; 
     padding: 3%;
     overflow: scroll;
-    width: 12rem;
+    width: 15rem;
     height: 25rem;
+    
     }
 
 .listaluoghiul {
