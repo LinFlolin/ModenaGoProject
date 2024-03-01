@@ -24,7 +24,8 @@
 }
 
 .listaluoghiul {
-    padding: 3% 2%;
+    padding: 3% 2% 1% 2%;
+    
 }
     
 li.luoghidettaglio {
@@ -32,7 +33,8 @@ li.luoghidettaglio {
     border: 1px solid #003049;
     color: #003049;
     text-align: center;
-    padding: 1rem;
+    padding: 1rem 1%;
+    margin-bottom: 5%;
     width: 14rem;
     height: 3.5rem;
 }
