@@ -9,13 +9,13 @@ export class Info extends Component{
     constructor(props){
       super(props)
       this.state = {
-          postsL : []
+          post : []
         }
     }
   componentDidMount(){
-      axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/','')
+      axios.get('http://127.0.0.1:8000/api/Markers/','')
       .then(response=> {
-          console.log(response)
+          console.log(respose)
           this.setState({postsL : response.data})
       })
       .catch(error=>{
@@ -25,29 +25,21 @@ export class Info extends Component{
 
   }
   render (){
-      const { postsL } = this.state
+      const { post } = this.state
   
       return(
         <div>
+          {
+            post.map(item => (
             <div className="parent">
-               <div className="listaluoghi">
+               <div className="listaluoghi" key={item.id}>
                   <ul className='listaluoghiul'>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
-                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>{item.Titolo}</li>
                   </ul> 
                 </div>
                 <div className="lineadiseparazione"> </div>
                <div className="primapartedestra">
-                  <h1>Ghirlandina</h1>
+                  <h1>{item.Titolo}</h1>
                   <img src="" alt="Immagine prova" />
                   <p>descrizione</p>
                </div>
@@ -56,9 +48,12 @@ export class Info extends Component{
                   <p>indirizzo</p>
                   <h3>Contatti</h3>
                   <p>Telefono e Email</p>
-               </div>
+                  </div>
+            </div>
+               ))
+            }
              </div>
-        </div>
+        
       )
   }
 }
