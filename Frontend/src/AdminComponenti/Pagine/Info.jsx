@@ -29,19 +29,33 @@ export class Info extends Component{
   
       return(
         <div>
-            <div className='primocontenitore'>
-               <div className="primaparte">
-               <ul className='elencoluoghi'>
-                  <li className='elementoluoghi'>Elemento 1</li>
-                  <li className='elementoluoghi'>Elemento 1</li>
-                  <li className='elementoluoghi'>Elemento 1</li>
-               </ul>                   
-              </div>
-               <div className='secondaparte'>
-              <img src="" alt="Immagine prova" />
-              <p>descrizione</p>
-              </div>
-            </div>
+            <div className="parent">
+               <div className="lineadiseparazione"> </div>
+               <div className="listaluoghi">
+                  <ul>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  </ul> 
+                </div>
+               <div className="primapartedestra">
+                  <h1>Ghirlandina</h1>
+                  <img src="" alt="Immagine prova" />
+                  <p>descrizione</p>
+               </div>
+               <div className="secondapartedestra">
+                  <h2>Indirizzo</h2>
+                  <p>indirizzo</p>
+                  <h3>Contatti</h3>
+                  <p>Telefono e Email</p>
+               </div>
+             </div>
         </div>
       )
   }
