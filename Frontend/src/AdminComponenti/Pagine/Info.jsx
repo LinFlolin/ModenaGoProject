@@ -30,7 +30,6 @@ export class Info extends Component{
       return(
         <div>
             <div className="parent">
-               <div className="lineadiseparazione"> </div>
                <div className="listaluoghi">
                   <ul>
                   <li className='luoghidettaglio'>prova</li>
@@ -42,8 +41,11 @@ export class Info extends Component{
                   <li className='luoghidettaglio'>prova</li>
                   <li className='luoghidettaglio'>prova</li>
                   <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
+                  <li className='luoghidettaglio'>prova</li>
                   </ul> 
                 </div>
+                <div className="lineadiseparazione"> </div>
                <div className="primapartedestra">
                   <h1>Ghirlandina</h1>
                   <img src="" alt="Immagine prova" />
