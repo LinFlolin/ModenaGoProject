@@ -31,7 +31,7 @@ export class Info extends Component{
         <div>
             <div className="parent">
                <div className="listaluoghi">
-                  <ul>
+                  <ul className='listaluoghiul'>
                   <li className='luoghidettaglio'>prova</li>
                   <li className='luoghidettaglio'>prova</li>
                   <li className='luoghidettaglio'>prova</li>
