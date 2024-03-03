@@ -3,15 +3,23 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './RegistrationApp.css';
 
-const ApiRouting = () => {
+const MarkerCreate = () => {
 
     const [markerData, setMarkerData] = useState({
         nome: '',
         indirizzo: '',
         descrizione: '',
+        desbrev: '',
+        contatti: '',
+        orari: '',
+        costi: '',
         latitudine: '',
         longitudine: '',
         sfida: '',
+        immagine: '',
+    })
+    
+    const [markerFile, setMarkerFile] = useState({
         immagine: '',
     });
 
@@ -29,20 +37,26 @@ const ApiRouting = () => {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
-        setMarkerData(prevState => ({ ...prevState, immagine: file }));
+        setMarkerFile({ ...markerFile, immagine: file });
     };
 
     const handleSubmit = async (event) => {
-
         event.preventDefault();
         try {
-            // Effettua la chiamata per la schermata delle API dei marker
-            const response = await axios.post('http://localhost:8000/api/Marker/');
-            console.log("Errore durante l'aggiunta delle API", result.response.data);
-            // Effettua il reindirizzamento o mostra un messaggio di successo
+            const formData = new FormData();
+            Object.keys(markerData).forEach(key => {
+                formData.append(key, markerData[key]);
+            });
+
+            const response = await axios.post('http://localhost:8000/api/Marker/', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            });
+            console.log("Dati inviati con successo", response.data);
+            navigate('/api/Marker');
         } catch (error) {
             console.error("Errore durante l'aggiunta delle API", error.response.data);
-            // Gestisci gli errori, ad esempio mostrando un messaggio di errore all'utente
         }
     };
 
@@ -55,7 +69,7 @@ const ApiRouting = () => {
         <div>
             <h1>Aggiungi un nuovo marker</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="nomemarker">
+                <label htmlFor="nome">
                     Nome
                     <input
                         type="text"
@@ -75,7 +89,7 @@ const ApiRouting = () => {
                         required
                     />
                 </label>
-                <label htmlFor="nomedescrizione">
+                <label htmlFor="descrizione">
                     Descrizione
                     <input
                         type="text"
@@ -85,7 +99,47 @@ const ApiRouting = () => {
                         required
                     />
                 </label>
-                <label htmlFor="numerolatitudine">
+                <label htmlFor="desbrev">
+                    Descrizione breve
+                    <input
+                        type="text"
+                        name="desbrev"
+                        value={markerData.desbrev}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label htmlFor="contatti">
+                    Contatti
+                    <input
+                        type="text"
+                        name="contatti"
+                        value={markerData.contatti}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label htmlFor="orari">
+                    Orari
+                    <input
+                        type="text"
+                        name="orari"
+                        value={markerData.orari}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label htmlFor="costi">
+                    Costi
+                    <input
+                        type="text"
+                        name="costi"
+                        value={markerData.costi}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label htmlFor="latitudine">
                     Latitudine
                     <input
                         type="text"
@@ -95,7 +149,7 @@ const ApiRouting = () => {
                         required
                     />
                 </label>
-                <label htmlFor="numerolongitudine">
+                <label htmlFor="longitudine">
                     Longitudine
                     <input
                         type="text"
@@ -105,7 +159,7 @@ const ApiRouting = () => {
                         required
                     />
                 </label>
-                <label htmlFor="provesfida">
+                <label htmlFor="sfida">
                     Sfida
                     <input
                         type="text"
@@ -114,7 +168,7 @@ const ApiRouting = () => {
                         onChange={handleChange}
                         required
                     />
-                </label><label htmlFor="img">
+                </label><label htmlFor="immagine">
                     Immagine
                     <input
                         type="file"
@@ -129,4 +183,4 @@ const ApiRouting = () => {
     );
 };
 
-export default ApiRouting;
+export default MarkerCreate;

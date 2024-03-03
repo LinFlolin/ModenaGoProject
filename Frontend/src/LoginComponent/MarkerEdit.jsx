@@ -1,14 +1,43 @@
+
+
+
+
+
+
+
+
+
+
+
+
+// NON FUNZIONA ANCORA
+
+
+
+
+
+
+
+
+
+
+
+
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './RegistrationApp.css';
 
-const ApiRouting = () => {
+const MarkerEdit = () => {
 
     const [markerData, setMarkerData] = useState({
         nome: '',
         indirizzo: '',
         descrizione: '',
+        desbrev: '',
+        contatti: '',
+        orari: '',
+        costi: '',
         latitudine: '',
         longitudine: '',
         sfida: '',
@@ -19,7 +48,7 @@ const ApiRouting = () => {
 
     const handleMarkerClick = () => {
         // Reindirizzamento alla pagina delle api quando viene cliccato il pulsante
-        navigate('/api/Marker/$id');
+        navigate('/api/Marker/:id');
     };
 
     const handleChange = (event) => {
@@ -37,7 +66,7 @@ const ApiRouting = () => {
         event.preventDefault();
         try {
             // Effettua la chiamata per la schermata delle API dei marker
-            const response = await axios.put('http://localhost:8000/api/Marker/$id');
+            const response = await axios.put('http://localhost:8000/api/Marker/:id');
             console.log("Errore durante l'aggiunta delle API", result.response.data);
             // Effettua il reindirizzamento o mostra un messaggio di successo
         } catch (error) {
@@ -129,4 +158,4 @@ const ApiRouting = () => {
     );
 };
 
-export default ApiRouting;
+export default MarkerEdit;
