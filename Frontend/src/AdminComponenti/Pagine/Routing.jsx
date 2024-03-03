@@ -4,6 +4,7 @@ import{Route,Routes,BrowserRouter} from 'react-router-dom'
 import {HomePage,Info,LuoghiFigo,Sfida,Mappa} from './index'
 import LoginApp from '../../LoginComponent/LoginApp'
 import RegistrationApp from '../../LoginComponent/RegistrationApp'
+import MarkerCreate from '../../LoginComponent/MarkerCreate'
 export function Routing () {
 
   return (
@@ -18,7 +19,7 @@ export function Routing () {
             <Route path='/sfide' element={<Sfida/>} />
             <Route path='/login' element={<LoginApp/>}/>
             <Route path='/registration' element={<RegistrationApp/>}/>
-
+            <Route path='/api/Marker' element={<MarkerCreate/>}/>
           </Routes>
       </BrowserRouter>
     </div>
