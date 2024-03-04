@@ -1,17 +1,7 @@
-.herosec{
-    display: flex;
-    flex-wrap:nowrap;
-    flex-direction: column;
-    padding: 50px;
-    background-image: url('https://media.istockphoto.com/id/499129966/it/foto/modena-italia.jpg?s=612x612&w=is&k=20&c=Z5dhrHuCOUzGUGM2TN-OoRxN8k6MvLxz0DnN8_AdJLg=');
-    background-size: 1400px 250px;
-    h1{
-        color:rgb(0, 0, 0);
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: 1000;
-        font-variant:small-caps;
-        padding: 0;
-        
-    }
-   
-}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }

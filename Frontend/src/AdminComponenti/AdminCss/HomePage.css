@@ -4,13 +4,14 @@
     padding: 12px;
     gap: 20px;
     align-items: center;
-    margin: 12px;
+    
 
 }
 section{
-    background-color:aquamarine ;
+
+    background-color:#dee0ec70;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 h3{
     text-align: center;
@@ -32,13 +33,14 @@ p{
 
 .box{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+   flex-wrap: wrap;
+   justify-content: space-between;
     gap: 15px;
     padding: 12px;
     padding-bottom: 5 px;
     margin: 10px;
-    background-color: chartreuse;
+    flex-basis: 15em;
+    justify-content: space-between
 
 }
 .luogcart{

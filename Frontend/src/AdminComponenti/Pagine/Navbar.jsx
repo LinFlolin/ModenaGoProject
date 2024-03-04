@@ -3,7 +3,7 @@ import React,{useState} from 'react';
 import '../AdminCss/Navbar.css'  
 
 export const Navbar = ()=>{
-    const[menuOpen,setMenuOpen]= useState(false)
+    const[menuOpen,setMenuOpen]= useState(true)
     return(
         <nav>
             <Link to="/" className='title'>ModenaGo</Link>

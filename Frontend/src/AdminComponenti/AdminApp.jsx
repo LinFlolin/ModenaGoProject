@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from './Pagine/Navbar'
 import{Route,Routes,BrowserRouter} from 'react-router-dom'
-import {HomePage,Info,LuoghiFigo,Sfida,Mappa,Hero} from './Pagine/index'
+import {HomePage,Info,LuoghiFigo,Sfida,Mappa,Hero,Footer} from './Pagine/index'
 import LoginApp from '../LoginComponent/LoginApp'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
 import './Admin.css'
@@ -20,6 +20,7 @@ export const AdminApp = () => {
             <Route path='/login' element={<LoginApp/>}/>
             <Route path='/registration' element={<RegistrationApp/>}/>
           </Routes>
+          <Footer/>
       </BrowserRouter>
     </div>
   )
