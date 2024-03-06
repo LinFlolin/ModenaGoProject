@@ -65,7 +65,7 @@ export class Provamappa extends Component {
   render() {
     const { open, selectedMarker } = this.state;
     const markers = this.makers(); // Call the function to get the markers array
-
+    
     return (
       <div className='MostraPercorsi'>
         <div className="MappaLuoghi" style={{ height: "100vh" }}>

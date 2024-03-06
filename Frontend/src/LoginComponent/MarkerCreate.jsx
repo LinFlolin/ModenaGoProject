@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './RegistrationApp.css';
 
-const MarkerCreate = () => {
+export const MarkerCreate = () => {
 
     const [markerData, setMarkerData] = useState({
         nome: '',
@@ -182,5 +182,3 @@ const MarkerCreate = () => {
         </div>
     );
 };
-
-export default MarkerCreate;
