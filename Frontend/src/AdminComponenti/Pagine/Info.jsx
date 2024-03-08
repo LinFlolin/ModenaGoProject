@@ -28,32 +28,32 @@ export class Info extends Component{
       const { post } = this.state
   
       return(
-        <div>
-          {
-            post.map(item => (
-            <div className="parent">
-               <div className="listaluoghi" key={item.id}>
-                  <ul className='listaluoghiul'>
-                  <li className='luoghidettaglio'>{item.Titolo}</li>
-                  </ul> 
-                </div>
-                <div className="lineadiseparazione"> </div>
-               <div className="primapartedestra">
-                  <h1>{item.Titolo}</h1>
-                  <img src="" alt="Immagine prova" />
-                  <p>descrizione</p>
-               </div>
-               <div className="secondapartedestra">
-                  <h2>Indirizzo</h2>
-                  <p>indirizzo</p>
-                  <h3>Contatti</h3>
-                  <p>Telefono e Email</p>
-                  </div>
-            </div>
-               ))
-            }
-             </div>
-        
+        <div className="parent">
+          <div className="listaluoghi">
+            <ul className='dettaglioluoghi'>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>  
+            </ul>  
+          </div>
+          <div className="contenitoreimmagine">
+            <h1>Titolo luogo</h1>
+            <img src="#" alt="ziopera" />
+          </div>
+          <div className="descrizioneluoghi">
+            <h2>Descrizione</h2>
+            <p>Descne descescriozone</p>
+          </div>
+          
+          <div className="div4">
+            <h3>Contatti</h3>  
+          </div>
+          <div className="div5">
+          <h4>Contatt 5</h4>   
+           </div>
+</div> 
       )
   }
 }

@@ -1,53 +1,77 @@
 .parent {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
-    padding: 1% 2%;
-
-    }
-
-.lineadiseparazione {
-       grid-area:  1 / 3 / 6 / 4;
-       border-right: 1px solid#003049;       
-}
-    
-      
-.listaluoghi { 
-    grid-area:  1 / 1 / 6 / 3; 
-    padding: 3%;
-    overflow: scroll;
-    width: 15rem;
-    height: 32rem;
-    margin: 0;
-}
-
-.listaluoghiul {
-    padding: 3% 2% 1% 2%;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    border-right: 1px #003049 solid;
     
 }
+ 
     
-li.luoghidettaglio {
+/*Questo codice ha a che fare con
+la ui della lista dei luoghi as a whole*/
+div.listaluoghi { 
+    grid-area:  1 / 1 / 6 / 3;
+    border-right: 1px #003049 solid;
+    width: 16rem;
+    margin: 3% 2%;
+    padding: 2%;
+}
+
+.dettaglioluoghi li {
     list-style-type: none;
     border: 1px solid #003049;
-    color: #003049;
+    padding: 1%;
+    margin: 3% 2% 1%;
     text-align: center;
-    padding: 1rem 1%;
-    margin-bottom: 5%;
-    width: 14rem;
-    height: 3.5rem;
 }
 
-li.luoghidettaglio:hover {
-    background-color: #002f49f8;
-    color: #fcbf49;
+.dettaglioluoghi li:hover {
+    background-color: #003049;
+    color: burlywood;
+    box-shadow: 3px 3px red;
 }
 
-.primapartedestra { grid-area: 1 / 4 / 6 / 7; }
+.descrizioneluoghi { 
+    grid-area: 3 / 3 / 6 / 9;  
+    background-color: crimson;
+    width: 100%;
+    padding: 2%;
+}
 
-.secondapartedestra { grid-area: 1 / 7 / 6 / 10; }
+.descrizioneluoghi h3 {
+    text-align: center;
+}
+
+.descrizioneluoghi p{
+     margin: 0 auto;
+     border: 2px solid #003049;
+     width: 80%;
+     height: 15rem;
+     overflow: scroll;
+     padding: 1%;
+     color: #003049;
+     font-weight: lighter;
+     font-size: 1rem;
+     
+}
+
+.contenitoreimmagine { 
+    grid-area: 1 / 3 / 3 / 7;
+    background-color: cadetblue;
+    width: 100%;
+    height: 16rem;
+}
     
+.div4 { 
+    grid-area: 1 / 7 / 3 / 9; 
+    background-color: bisque;
+}
+    
+
+
+
 
 /*Stylign che riguarda il dettaglio dei luoghi. 
 Dovrebbe diventare possibile interagire e toccare i titoli sopra
