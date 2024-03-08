@@ -6,21 +6,20 @@ import './RegistrationApp.css';
 const MarkerCreate = () => {
 
     const [markerData, setMarkerData] = useState({
-        nome: '',
-        indirizzo: '',
-        descrizione: '',
-        desbrev: '',
-        contatti: '',
-        orari: '',
-        costi: '',
-        latitudine: '',
-        longitudine: '',
-        sfida: '',
-        immagine: '',
+        Nome: '',
+        Indirizzo: '',
+        Descrizione: '',
+        Desbrev: '',
+        Contatti: '',
+        Orari: '',
+        Costi: '',
+        Latitudine: '',
+        Longitudine: '',
+        Sfida: '',
     })
     
     const [markerFile, setMarkerFile] = useState({
-        immagine: '',
+        Immagine: '',
     });
 
     const navigate = useNavigate(); // Otteniamo la funzione di navigazione
@@ -43,20 +42,22 @@ const MarkerCreate = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const formData = new FormData();
-            Object.keys(markerData).forEach(key => {
-                formData.append(key, markerData[key]);
-            });
+            // Convert percorsoData to JSON string
+            const markerDataJson = JSON.stringify(markerData, markerFile);
 
-            const response = await axios.post('http://localhost:8000/api/Marker/', formData, {
+            console.log('JSON to be sent:', markerDataJson); //MANNAGGIA A CHI SO IO
+
+            // Make the API call with the JSON string
+            const response = await axios.post('http://127.0.0.1:8000/api/Marker/', markerDataJson, {
                 headers: {
-                    'Content-Type': 'multipart/form-data',
+                    'Content-Type': 'application/json', // Specify the content type as JSON
                 },
             });
-            console.log("Dati inviati con successo", response.data);
-            navigate('/api/Marker');
+
+            console.log('Aggiunta avvenuta con successo', response.data);
+            // Handle successful registration, e.g., redirect or show success message
         } catch (error) {
-            console.error("Errore durante l'aggiunta delle API", error.response.data);
+            console.error("Errore durante l'aggiunta delle API", error);
         }
     };
 
@@ -69,110 +70,110 @@ const MarkerCreate = () => {
         <div>
             <h1>Aggiungi un nuovo marker</h1>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="nome">
+                <label htmlFor="Nome">
                     Nome
                     <input
                         type="text"
-                        name="nome"
-                        value={markerData.nome}
+                        name="Nome"
+                        value={markerData.Nome}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="indirizzo">
+                <label htmlFor="Indirizzo">
                     Indirizzo
                     <input
                         type="text"
-                        name="indirizzo"
-                        value={markerData.indirizzo}
+                        name="Indirizzo"
+                        value={markerData.Indirizzo}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="descrizione">
+                <label htmlFor="Descrizione">
                     Descrizione
                     <input
                         type="text"
-                        name="descrizione"
-                        value={markerData.descrizione}
+                        name="Descrizione"
+                        value={markerData.Descrizione}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="desbrev">
+                <label htmlFor="Desbrev">
                     Descrizione breve
                     <input
                         type="text"
-                        name="desbrev"
-                        value={markerData.desbrev}
+                        name="Desbrev"
+                        value={markerData.Desbrev}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="contatti">
+                <label htmlFor="Contatti">
                     Contatti
                     <input
                         type="text"
-                        name="contatti"
-                        value={markerData.contatti}
+                        name="Contatti"
+                        value={markerData.Contatti}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="orari">
+                <label htmlFor="Orari">
                     Orari
                     <input
                         type="text"
-                        name="orari"
-                        value={markerData.orari}
+                        name="Orari"
+                        value={markerData.Orari}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="costi">
+                <label htmlFor="Costi">
                     Costi
                     <input
                         type="text"
-                        name="costi"
-                        value={markerData.costi}
+                        name="Costi"
+                        value={markerData.Costi}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="latitudine">
+                <label htmlFor="Latitudine">
                     Latitudine
                     <input
                         type="text"
-                        name="latitudine"
-                        value={markerData.latitudine}
+                        name="Latitudine"
+                        value={markerData.Latitudine}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="longitudine">
+                <label htmlFor="Longitudine">
                     Longitudine
                     <input
                         type="text"
-                        name="longitudine"
-                        value={markerData.longitudine}
+                        name="Longitudine"
+                        value={markerData.Longitudine}
                         onChange={handleChange}
                         required
                     />
                 </label>
-                <label htmlFor="sfida">
+                <label htmlFor="Sfida">
                     Sfida
                     <input
                         type="text"
-                        name="sfida"
-                        value={markerData.sfida}
+                        name="Sfida"
+                        value={markerData.Sfida}
                         onChange={handleChange}
                         required
                     />
-                </label><label htmlFor="immagine">
+                </label><label htmlFor="Immagine">
                     Immagine
                     <input
                         type="file"
-                        name="immagine"
+                        name="Immagine"
                         onChange={handleFileChange}
                         required
                     />
