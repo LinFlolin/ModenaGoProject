@@ -1,14 +1,7 @@
-
-/* 
-.Mappabody{
+.mapsec{
+    background-color: aqua;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 20 px auto;
+    gap: 20px;
 }
-
-.MappaLuoghi{
-    border: solid;
-    width: 760px;
-    padding: auto;
-    align-self: center;
-} */

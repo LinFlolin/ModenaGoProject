@@ -11,7 +11,7 @@ export class Info extends Component{
         }
     }
   componentDidMount(){
-      axios.get('http://127.0.0.1:8000/api/LuoghiAtrazioni/','')
+      axios.get("http://127.0.0.1:8000/api/Marker/",'')
       .then(response=> {
           console.log(response)
           this.setState({postsL : response.data})
@@ -30,11 +30,11 @@ export class Info extends Component{
             <div className='contenitoregrosso'>
                 {postsL.map(item =>(
                     <div className="container" key={item.id}>
-                        <h1>{item.Titolo}</h1>         
+                        <h1>{item.Nome}</h1>         
                         <p>{item.Descrizione}</p>
                         <h2>Sfida:</h2>
                         <p>{item.Sfida}</p>  
-                        <img src={item.immagine}/>                   
+                        <img src={item.Immagine}/>                   
                     </div>             
                 ))}
             </div>
