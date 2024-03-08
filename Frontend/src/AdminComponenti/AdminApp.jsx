@@ -4,12 +4,10 @@ import{Route,Routes,BrowserRouter} from 'react-router-dom'
 import {HomePage,Info,LuoghiFigo,Sfida,Mappa,Hero,Footer} from './Pagine/index'
 import LoginApp from '../LoginComponent/LoginApp'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
-import {MarkerCreate} from  '../LoginComponent/MarkerCreate'
-import MarkerEdit from '../LoginComponent/MarkerEdit'
 import './Admin.css'
 import { DirectionCreate } from '../LoginComponent/DirectionCreate'
 import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
-import MarkerCreate from '../LoginComponent/MarkerCreate'
+import { MarkerCreate } from '../LoginComponent/MarkerCreate'
 export const AdminApp = () => {
   return (
     <div className='adcontainer'>

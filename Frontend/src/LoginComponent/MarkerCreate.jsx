@@ -22,12 +22,6 @@ export const MarkerCreate = () => {
         Immagine: '',
     });
 
-    const navigate = useNavigate(); // Otteniamo la funzione di navigazione
-
-    const handleMarkerClick = () => {
-        // Reindirizzamento alla pagina delle api quando viene cliccato il pulsante
-        navigate('/api/Marker');
-    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -59,10 +53,6 @@ export const MarkerCreate = () => {
         } catch (error) {
             console.error("Errore durante l'aggiunta delle API", error);
         }
-    };
-
-    const routeChange = () => {
-        navigate('/api/Marker'); // Naviga alla pagina dei marker
     };
 
 

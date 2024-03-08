@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 import './RegistrationApp.css';
 
 export const PercorsoCreate = () => {
@@ -9,13 +8,6 @@ export const PercorsoCreate = () => {
         Titolo: '',
     })
 
-
-    const navigate = useNavigate(); // Otteniamo la funzione di navigazione
-
-    const handleMarkerClick = () => {
-        // Reindirizzamento alla pagina delle api quando viene cliccato il pulsante
-        navigate('/api/Percorso');
-    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -43,11 +35,6 @@ export const PercorsoCreate = () => {
             console.error("Errore durante l'aggiunta delle API", error);
         }
     };
-
-    const routeChange = () => {
-        navigate('/api/Percorso'); // Naviga alla pagina dei percorsi
-    };
-
 
     return (
         <div>

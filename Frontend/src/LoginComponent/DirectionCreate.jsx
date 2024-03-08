@@ -11,13 +11,6 @@ export const DirectionCreate = () => {
     })
 
 
-    const navigate = useNavigate(); // Otteniamo la funzione di navigazione
-
-    const handleMarkerClick = () => {
-        // Reindirizzamento alla pagina delle api quando viene cliccato il pulsante
-        navigate('/api/Direction');
-    };
-
     const handleChange = (event) => {
         const { name, value } = event.target;
         setDirectionData({ ...directionData, [name]: value });
@@ -43,10 +36,6 @@ export const DirectionCreate = () => {
         } catch (error) {
             console.error("Errore durante l'aggiunta delle API", error);
         }
-    };
-
-    const routeChange = () => {
-        navigate('/api/Direction'); // Naviga alla pagina delle direction
     };
 
 
