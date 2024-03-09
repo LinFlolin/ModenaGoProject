@@ -7,7 +7,7 @@ export const RoutingMobile = () => {
     <div>        
       <BrowserRouter> 
             <Routes>
-                <Route path='/home' element={<HomeMobile/>}/>
+                <Route path='/' element={<HomeMobile/>}/>
                 <Route path='/map' element={<MapMobile/>} />
                 <Route path='/info' element={<InfoMobile/>} />
             </Routes>

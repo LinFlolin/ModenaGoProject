@@ -1,12 +1,22 @@
 from rest_framework import serializers
-from .models import LuoghiAttrazione, Mappa
+from .models import Marker, Percorso, Direction
+from django.contrib.auth import get_user_model
 
-class LuoghiAttrazioneSerialiazer (serializers.ModelSerializer) :
-    class Meta :
-        model = LuoghiAttrazione 
-        fields=('id','Titolo','Descrizione','Sfida')
+UserModel = get_user_model()
 
-class MapSerializer(serializers.ModelSerializer):
+
+class MarkerSerialiazer(serializers.ModelSerializer):
     class Meta:
-        model = Mappa
-        fields = ('id', 'Luogo', 'Latitudine', 'Longitudine')
+        model = Marker
+        fields = ('id', 'Nome', 'Indirizzo', 'Descrizione', 'Desbrev', 'Contatti', 'Orari', 'Costi', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
+
+
+class PercorsoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Percorso
+        fields = ('Titolo',)
+        
+class DirectionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Direction
+        fields = ('UserLat', 'UserLong')

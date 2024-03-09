@@ -10,14 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@react-google-maps/api": "^2.19.2",
+    "@fawmi/vue-google-maps": "^0.9.79",
+    "@react-google-maps/api": "^2.19.3",
+    "@uidotdev/usehooks": "^2.4.1",
     "@vis.gl/react-google-maps": "^0.4.3",
     "axios": "^1.6.5",
+    "bootstrap": "^5.3.2",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.0",
+    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.22.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
@@ -27,6 +30,6 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.12"
+    "vite": "^5.1.4"
   }
 }

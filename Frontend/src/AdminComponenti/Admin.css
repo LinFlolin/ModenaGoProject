@@ -1,0 +1,10 @@
+.adcontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width:320px) {
+    .adcontainer{
+        background-color:blueviolet;
+    }
+}
