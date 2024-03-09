@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
-const RegistrationApp = () => {
+export const RegistrationApp = () => {
 
     const [userData, setUserData] = useState({
     username: '',
@@ -14,10 +14,6 @@ const RegistrationApp = () => {
 
   const navigate = useNavigate(); // Otteniamo la funzione di navigazione
 
-  const handleLoginClick = () => {
-    // Reindirizzamento alla pagina di login quando viene cliccato il pulsante
-    navigate('/login');
-  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,15 +23,24 @@ const RegistrationApp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Effettua la chiamata API per la registrazione
-      const response = await axios.post('http://localhost:8000/api/dj-rest-auth/registration/', userData);
-      console.log('Registrazione avvenuta con successo', response.data);
-      // Effettua il reindirizzamento o mostra un messaggio di successo
+        // Convert percorsoData to JSON string
+        const userDataJson = JSON.stringify(userData);
+
+        console.log('JSON to be sent:', userDataJson); //MANNAGGIA A CHI SO IO
+
+        // Make the API call with the JSON string
+        const response = await axios.post('http://127.0.0.1:8000/api/dj-rest-auth/registration/', userDataJson, {
+            headers: {
+                'Content-Type': 'application/json', // Specify the content type as JSON
+            },
+        });
+
+        console.log('Registrazione avvenuta con successo', response.data);
+        // Handle successful registration, e.g., redirect or show success message
     } catch (error) {
-      console.error('Errore durante la registrazione', error);
-      // Gestisci gli errori, ad esempio mostrando un messaggio di errore all'utente
+        console.error("Errore durante la registrazione", error);
     }
-  };
+};
 
   const routeChange = () => {
     navigate('/login'); // Naviga alla pagina di registrazione

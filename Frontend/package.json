@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
     "@react-google-maps/api": "^2.19.3",
     "@uidotdev/usehooks": "^2.4.1",
     "@vis.gl/react-google-maps": "^0.4.3",
