@@ -3,6 +3,7 @@ import {
   APIProvider,
   Map,
   AdvancedMarker ,
+  InfoWindow,
 } from '@vis.gl/react-google-maps';
 import {Percorso, Directions,Maker} from './mappa/index'
 import axios from 'axios'
@@ -35,9 +36,24 @@ export class Mappa extends Component {
     lat: 44.646420,
     lng: 10.926023
   };
+
+  hadleMarkerClick = (marker) =>{
+    this.setState({
+      open: true,
+      selectedMarker: marker,
+    });
+
+  }
+  
+  handleInfoWindowClose = () => {
+    this.setState({
+      open: false,
+      selectedMarker: null,
+    });
+  };
   
   render() {
-    const { post } = this.state
+    const { post,selectedMarker,open } = this.state
     return (
       <div className='mapsec'>
         <div className='persec'>
@@ -50,17 +66,24 @@ export class Mappa extends Component {
         <div className="map"  style={{height:'100vh', padding:'20px'}}>
         
           <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
-            <Map zoom={15.5} center={this.position} disableDefaultUI={true} mapId={'8b3c296d5e49a998'}>
+            <Map zoom={15.5} center={this.position} disableDefaultUI={true} mapId={'8b3c296d5e49a998'} zoomControl={false} mapTypeControl='false'
+            >
             {
               post.map(item => (
-                <AdvancedMarker key={item.id} position={new google.maps.LatLng(item.Latitudine, item.Longitudine )}>
+                <AdvancedMarker key={item.id} position={ new google.maps.LatLng(item.Latitudine, item.Longitudine )} onClick={() => this.hadleMarkerClick(item)} >
                     {console.log(item.Latitudine)}
+                   
                 </AdvancedMarker>
               ))
-            }
-            <AdvancedMarker  position={{lat:44.646420 , lng:10.926023}}>
-
-            </AdvancedMarker >
+              }
+                { open && (post.map(item => (
+                    <InfoWindow key={item.id}                     position={new google.maps.LatLng(selectedMarker.lat,selectedMarker.lng )}
+                    onCloseClick={this.handleInfoWindowClose}
+                    >
+                      <h1>{item.Nome}</h1>
+                    </InfoWindow>
+                  )))}
+             
                <Directions/>
             </Map>
           </APIProvider>

@@ -41,7 +41,7 @@ export class HomePage extends Component{
                   post.map(item=>(
                     <section className='luogcart' key={item.id}>
                       <div className='imgbox'>
-                        {/* <img src={item.Immagine}/> */}
+                        <img src={item.Immagine}/>
                       </div>
                       <h6>{item.Nome}</h6>
                       <p>someTing</p>

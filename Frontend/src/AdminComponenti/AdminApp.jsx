@@ -21,8 +21,8 @@ export const AdminApp = () => {
             <Route path='/sfide' element={<Sfida/>} />
             <Route path='/login' element={<LoginApp/>}/>
             <Route path='/registration' element={<RegistrationApp/>}/>
-            <Route path='/api/Marker' element={<MarkerCreate />} />
-           <Route path='/api/Marker/:id' element={<MarkerEdit />} />
+            <Route path='/add' element={<MarkerCreate />} />
+           <Route path='/update/:id' element={<MarkerEdit />} />
           </Routes>
           <Footer/>
       </BrowserRouter>

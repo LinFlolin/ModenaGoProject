@@ -1,6 +1,7 @@
 .App{
     background-color: #FFC93C;
     min-height: 100vh;
+    min-width: 100vh;
 }
 * {
     padding: 0;
