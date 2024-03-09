@@ -44,23 +44,6 @@ export class Info extends Component{
             <li>modena</li>
             <li>modena</li>
             <li>modena</li>
-            <li>modena</li>
-            <li>modena</li> 
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li> 
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
             <li>modena</li> 
             </ul>  
           </div>
