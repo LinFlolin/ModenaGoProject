@@ -2,7 +2,8 @@ import { Component } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
-
+import CIcon from '@coreui/icons-react';
+import { cilSearch } from '@coreui/icons';
 export class Info extends Component{
 
 
@@ -30,29 +31,57 @@ export class Info extends Component{
       return(
         <div className="parent">
           <div className="listaluoghi">
+            {/*barra input che dovrebbe aiutare a far cercare un
+             luogo specifico. Vorrei che l'input comparisse come compare
+             in Genshindle*/}
+            <div className='searchbarluoghi'>
+            <input type="search" id="luoghi-search" name="q" />
+            <button className='iconaricerca'>
+              <CIcon icon={cilSearch} size="lg" className='iconacore' /></button>
+            </div>
+            
             <ul className='dettaglioluoghi'>
             <li>modena</li>
             <li>modena</li>
             <li>modena</li>
             <li>modena</li>
-            <li>modena</li>  
+            <li>modena</li> 
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li> 
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li>
+            <li>modena</li> 
             </ul>  
           </div>
           <div className="contenitoreimmagine">
+            <div>
             <h1>Titolo luogo</h1>
-            <img src="#" alt="ziopera" />
+            <img src="src/assets/modenacalcio.png" alt="1ziopera" />
+            </div>
           </div>
           <div className="descrizioneluoghi">
-            <h2>Descrizione</h2>
-            <p>Descne descescriozone</p>
+            <div>
+              <h2>Descrizione</h2>
+              <p>Descne descescriozone</p>
+            </div>
           </div>
           
           <div className="div4">
-            <h3>Contatti</h3>  
+            <h3>Contatti</h3>
+            <p>sfide?</p>
           </div>
-          <div className="div5">
-          <h4>Contatt 5</h4>   
-           </div>
+          
 </div> 
       )
   }
