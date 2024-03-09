@@ -18,6 +18,7 @@ urlpatterns = [
     path('api/', include(routers.urls)),
     path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
     path('api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
+    path('api/dj-rest-auth/login/', LoginView.as_view(), name='rest_login'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # urlpatterns =  router.urls

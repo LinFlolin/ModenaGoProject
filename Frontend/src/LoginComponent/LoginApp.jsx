@@ -29,7 +29,7 @@ const LoginApp = () => {
     const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/dj-rest-auth/login/", {
+      const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
         email: data.email,
         username: data.username,
         password: data.password
