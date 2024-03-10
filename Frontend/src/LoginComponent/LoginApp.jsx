@@ -43,8 +43,14 @@ const LoginApp = () => {
       }
     } catch (error) {
       console.error('Error:', error.response);
+      let errorMessage = "Errore durante il login. ";
+      if (error.response && error.response.status === 400) {
+        errorMessage += "Email o password non valide. Riprova.";
+      } else {
+        errorMessage += "Si è verificato un errore. Riprova più tardi.";
+      }
       // Imposta il messaggio di errore
-      setError("Password non corretta. Riprova.");
+      setError(errorMessage);
     }
   };
 
