@@ -11,6 +11,8 @@ const LoginApp = () => {
     password: ""
   });
 
+  const [error, setError] = useState(""); // Stato per gestire il messaggio di errore
+
   const navigate = useNavigate(); // Otteniamo la funzione di navigazione
 
   const handleRegistrationClick = () => {
@@ -26,7 +28,7 @@ const LoginApp = () => {
     });
   };
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
@@ -41,7 +43,8 @@ const LoginApp = () => {
       }
     } catch (error) {
       console.error('Error:', error.response);
-      // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
+      // Imposta il messaggio di errore
+      setError("Password non corretta. Riprova.");
     }
   };
 
@@ -81,6 +84,7 @@ const LoginApp = () => {
           />
         </label>
         <button type="submit">Login</button>
+        {error && <p style={{color: 'red'}}>{error}</p>} {/* Mostra il messaggio di errore se presente */}
         <div className="text-container">
             <p id="registration-text">Non sei registrato?</p>
             <button id="registration-button" onClick={routeChange}>Registrati</button>
@@ -90,4 +94,4 @@ const LoginApp = () => {
   );
 };
 
-export default LoginApp
+export default LoginApp;
