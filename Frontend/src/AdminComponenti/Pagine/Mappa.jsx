@@ -22,10 +22,9 @@ export const Mappa = () => {
             mapId={'8b3c296d5e49a998'}
             zoomControl={false}
             mapTypeControl={false} >
-
-            
             <Maker/>
           </Map>
+          <Directions/>
         </APIProvider>
       </div>
     </div>

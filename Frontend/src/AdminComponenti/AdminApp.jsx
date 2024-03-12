@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from './Pagine/Navbar'
 import{Route,Routes,BrowserRouter} from 'react-router-dom'
-import {HomePage,Info,LuoghiFigo,Sfida,Mappa,Hero,Footer} from './Pagine/index'
+import {Info,Mappa,Hero,Footer,HomePage} from './Pagine/index'
 import LoginApp from '../LoginComponent/LoginApp'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
 import './Admin.css'
