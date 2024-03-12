@@ -22,12 +22,6 @@ export const Navbar = ()=>{
                     <NavLink to="/map">Mappa</NavLink>
                 </li>                
                 <li>
-                    <NavLink to="/luoghi">Luoghi</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/sfide">Sfide</NavLink>
-                </li>
-                <li>
                     <NavLink to="/login">Login</NavLink>
                 </li>
                 
