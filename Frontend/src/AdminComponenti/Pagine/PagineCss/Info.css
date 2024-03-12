@@ -7,8 +7,8 @@
     border-right: 1px #003049 solid;
     
 }
-/*PEr il momento input è senza classi.
-Per qualche arcana ragione viene applicato solo quando ci si clicca sopra*/
+
+
 div.searchbarluoghi {
     display: flex;
     flex-direction: row;
@@ -19,6 +19,8 @@ div.searchbarluoghi {
 }
 
 .iconaricerca {
+    cursor: pointer;
+    background-color: transparent;
     padding: 2% 1% 4% 1%;
     margin: 2% 0 2% 0;
     color: #003049;
@@ -26,22 +28,28 @@ div.searchbarluoghi {
     height: 1.5rem;
 }
 
+.iconaricerca:hover {
+    background-color: transparent;
+}
 
 .iconacore {
-    padding: 1% 2% 2% 2%;
+    width: 30px;
+    height: 30px;
+    padding: 1% 2% 4% 2%;
+    margin: 0 0 5px 0;
     align-items: center;
 }
+
 .searchbarluoghi input {
     align-items: center;
-    padding: 2% 1% 5% 2%;
+    padding: 3% 1% 5% 2%;
+    margin: 1%;
+    background-color: hsl(49, 71%, 66%);
+    border: 2px solid #003049;
+    color: #003049;
+    
 }
 
-
-input {
-    background-color: #eae27b;
-    border: 2px solid #003049;
-    border-radius: 30%;
-} 
 /*Questo codice ha a che fare con
 la ui della lista dei luoghi as a whole*/
 div.listaluoghi { 
@@ -74,7 +82,7 @@ div.listaluoghi {
 .dettaglioluoghi li:hover {
     background-color: #003049;
     color: burlywood;
-    box-shadow: 3px 3px red;
+    box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
 .descrizioneluoghi { 
@@ -121,11 +129,14 @@ div.listaluoghi {
 }
     
 .div4 { 
-    grid-area: 1 / 7 / 3 / 9; 
+    grid-area: 1 / 7 / 2 / 9; 
     background-color: bisque;
 }
     
-
+.div5 { 
+    grid-area: 2 / 7 / 3 / 9; 
+    background-color: coral;
+} 
 
 
 

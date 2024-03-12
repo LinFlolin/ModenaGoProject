@@ -33,9 +33,9 @@ export class Info extends Component{
           <div className="listaluoghi">
             {/*barra input che dovrebbe aiutare a far cercare un
              luogo specifico. Vorrei che l'input comparisse come compare
-             in Genshindle*/}
+             in Genshindle, che suppongo usi una elastic search*/}
             <div className='searchbarluoghi'>
-            <input type="search" id="luoghi-search" name="q" />
+            <input type="search" id="luoghi-search" name="q" placeholder='Cosa scoprirai di Modena oggi?'/>
             <button className='iconaricerca'>
               <CIcon icon={cilSearch} size="lg" className='iconacore' /></button>
             </div>
@@ -64,6 +64,10 @@ export class Info extends Component{
             <h3>Contatti</h3>
             <p>sfide?</p>
           </div>
+
+          <div className="div5">
+            <h4>Orari di apertura</h4>
+            <p>?</p> </div> 
           
 </div> 
       )
