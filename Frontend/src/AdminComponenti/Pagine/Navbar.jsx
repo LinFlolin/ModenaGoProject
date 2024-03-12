@@ -1,9 +1,9 @@
 import {Link,NavLink,} from 'react-router-dom'
 import React,{useState} from 'react';
-import '../AdminCss/Navbar.css'
+import '../AdminCss/Navbar.css'  
 
 export const Navbar = ()=>{
-    const[menuOpen,setMenuOpen]= useState(false)
+    const[menuOpen,setMenuOpen]= useState(true)
     return(
         <nav>
             <Link to="/" className='title'>ModenaGo</Link>
@@ -14,19 +14,13 @@ export const Navbar = ()=>{
                 <span></span>
 
             </div>
-            <ul className={menuOpen ? "open":""}>
+            <ul className={!menuOpen ? "open":""}>
                 <li>
                     <NavLink to="/info">Info</NavLink>
                 </li>
                 <li>
                     <NavLink to="/map">Mappa</NavLink>
                 </li>                
-                <li>
-                    <NavLink to="/luoghi">Luoghi</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/sfide">Sfide</NavLink>
-                </li>
                 <li>
                     <NavLink to="/login">Login</NavLink>
                 </li>

@@ -1,0 +1,13 @@
+.mapsec{
+    display: flex;
+    flex-direction: column;
+    margin: 20 px auto;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .mapsec{
+        display: flex;
+        flex-direction: column;
+    }
+  }

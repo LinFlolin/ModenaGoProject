@@ -1,7 +1,9 @@
-/*ho aggiutnot lo stesso font a tutti i cristi */
-
-body{
-    background-color: hsl(49, 71%, 66%);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
+.App{
+    background-color: #FFC93C;
+    min-height: 100vh;
+    min-width: 100vh;
+}
+* {
+    padding: 0;
+    margin: 0;
 }

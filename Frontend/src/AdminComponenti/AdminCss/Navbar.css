@@ -9,9 +9,10 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;  
-    background-color: #003049;
+    background-color: #052659;
     position: sticky;
     top: 0;
+    z-index:  1000;
 }
 nav .title{
     color: #eae2b7;
@@ -65,7 +66,7 @@ nav .menu span {
     border-radius: 0.2rem;
 }
 
-@media(max-width:360px)  {
+@media(max-width:768px)  {
     nav .menu{
         display: flex;
     }
