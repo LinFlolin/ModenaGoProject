@@ -87,7 +87,6 @@ div.listaluoghi {
 
 .descrizioneluoghi { 
     grid-area: 3 / 3 / 6 / 9;  
-    background-color: crimson;
     width: 100%;
     padding: 2%;
 }
@@ -117,7 +116,6 @@ div.listaluoghi {
 
 .contenitoreimmagine { 
     grid-area: 1 / 3 / 3 / 7;
-    background-color: cadetblue;
     width: 100%;
     height: 26rem;
 }
@@ -128,17 +126,30 @@ div.listaluoghi {
     align-items: center;
 }
     
-.div4 { 
+.contattiluoghi { 
     grid-area: 1 / 7 / 2 / 9; 
-    background-color: bisque;
+}
+
+.contattiluoghi div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 2% 2% 1% 2%;
+    background-color: rgba(212, 115, 31, 0.681);
 }
     
-.div5 { 
-    grid-area: 2 / 7 / 3 / 9; 
-    background-color: coral;
+.oraridiapertura { 
+    grid-area: 2 / 7 / 3 / 9;
 } 
 
-
+.oraridiapertura div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    padding: 2% 2% 1% 2%;
+}
 
 /*Stylign che riguarda il dettaglio dei luoghi. 
 Dovrebbe diventare possibile interagire e toccare i titoli sopra

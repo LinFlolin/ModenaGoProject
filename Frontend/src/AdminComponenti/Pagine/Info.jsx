@@ -60,14 +60,19 @@ export class Info extends Component{
             </div>
           </div>
           
-          <div className="div4">
+          <div className="contattiluoghi">
+            <div>
             <h3>Contatti</h3>
-            <p>sfide?</p>
+            <p>placeholder per i contatti</p>
+            </div>
           </div>
 
-          <div className="div5">
-            <h4>Orari di apertura</h4>
-            <p>?</p> </div> 
+          <div className="oraridiapertura">
+            <div>
+               <h4>Orari di apertura</h4>
+               <p>?</p>
+            </div>
+          </div> 
           
 </div> 
       )
