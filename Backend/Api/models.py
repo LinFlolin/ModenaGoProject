@@ -19,7 +19,10 @@ class Marker (models.Model):
 
 class Percorso(models.Model):
     Titolo = models.CharField(max_length=255)
+    def __str__(self):
+        return self.Titolo
 
 class Direction(models.Model):
     UserLat = models.CharField(max_length=255)
     UserLong = models.CharField(max_length=255)
+     
