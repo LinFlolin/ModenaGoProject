@@ -26,4 +26,4 @@ class DirectionView(viewsets.ModelViewSet):
 
 class MarkerViewSet(viewsets.ModelViewSet):
     queryset = Marker.objects.all()
-    serializer_class = MarkerSerializer
+    serializer_class = MarkerSerialiazer
