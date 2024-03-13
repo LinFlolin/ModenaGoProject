@@ -17,9 +17,8 @@ export const Mappa = () => {
       <div className="map" style={{ height: '100vh', padding: '20px' }}>
         <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
           <Map
-            zoom={15.5}
+            zoom={16}
             center={position}
-            mapId={'8b3c296d5e49a998'}
             zoomControl={false}
             mapTypeControl={false} >
             <Maker/>

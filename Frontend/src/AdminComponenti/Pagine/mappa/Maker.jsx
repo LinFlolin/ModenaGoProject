@@ -31,13 +31,13 @@ export const Maker = () => {
   return (
     <div className='markersec'> 
         {post.map(item => (
-    <AdvancedMarker
+    <Marker
       key={item.id}
       position={new google.maps.LatLng(item.Latitudine, item.Longitudine)}
       onClick={() => handleMarkerClick(item)}
     >
       {console.log(item.Latitudine)}
-    </AdvancedMarker>
+    </Marker>
     ))}
     {open &&
         post
@@ -51,6 +51,8 @@ export const Maker = () => {
               <div>
                 <h6>{item.Nome}</h6>
                 <p>{item.Description}</p>
+                <button type='button' className=' bg-gradient2 text-white'>info</button>
+
               </div>
             </InfoWindow>
         ))}

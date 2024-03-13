@@ -9,9 +9,12 @@ export default {
   theme: {
     extend: {
       colors:{
-        'primary' : '#FFC93C',
-        'secondaria' : '#e8f6ef63'
-
+        'primaria' : '#FFC93C',
+        'secondaria' :'#e8f6ef63',
+        'gradient1':'#279EFF',
+        'gradient2':'#457b9d',
+        'gradient3':'#a8dadc',
+     
       }
     },
     fontSize: {

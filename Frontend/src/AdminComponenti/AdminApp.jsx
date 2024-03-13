@@ -4,16 +4,15 @@ import{Route,Routes,BrowserRouter} from 'react-router-dom'
 import {Info,Mappa,Hero,Footer,HomePage} from './Pagine/index'
 import LoginApp from '../LoginComponent/LoginApp'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
-import './Admin.css'
 import { DirectionCreate } from '../LoginComponent/DirectionCreate'
 import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
 import { MarkerCreate } from '../LoginComponent/MarkerCreate'
 export const AdminApp = () => {
   return (
-    <div className='adcontainer'>
+    <div>
       <BrowserRouter> 
        <Navbar/> 
-       <Hero />  
+       <Hero  />  
         <Routes>
           <Route path='/' element={<HomePage/>}/>
             <Route path='/map' element={<Mappa />} />
@@ -24,7 +23,7 @@ export const AdminApp = () => {
             <Route path='/Percorso' element={<PercorsoCreate/>}/>
             <Route path='/Marker' element={<MarkerCreate/>}/>
           </Routes>
-          <Footer/>
+          {/* <Footer/> */}
       </BrowserRouter>
     </div>
   )
