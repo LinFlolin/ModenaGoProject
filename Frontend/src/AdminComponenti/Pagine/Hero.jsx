@@ -16,6 +16,7 @@ export const Hero = () => {
       <p className=' text-pretty text-yellow-50 text-lg hover:uppercase 
          sm:bg-slate-100 sm:text-gray-900
         md:text-5xl
+        
         '>
         
         Modena Go
