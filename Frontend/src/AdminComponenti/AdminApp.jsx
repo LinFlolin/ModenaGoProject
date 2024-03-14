@@ -8,7 +8,7 @@ import './Admin.css'
 import { DirectionCreate } from '../LoginComponent/DirectionCreate'
 import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
 import { MarkerCreate } from '../LoginComponent/MarkerCreate'
-//import { UpdateMarker } from '../LoginComponent/UpdateMarker'
+import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 export const AdminApp = () => {
   return (
     <div className='adcontainer'>
@@ -26,6 +26,7 @@ export const AdminApp = () => {
             <Route path='/Direction' element={<DirectionCreate/>}/>
             <Route path='/Percorso' element={<PercorsoCreate/>}/>
             <Route path='/Marker' element={<MarkerCreate/>}/>
+            <Route path="/Marker/:markerId" element={<UpdateMarker />} />
           </Routes>
           <Footer/>
       </BrowserRouter>
