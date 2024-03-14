@@ -1,14 +1,23 @@
-import { Component } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
-import CIcon from '@coreui/icons-react';
-import { cilSearch } from '@coreui/icons';
 import { SearchBar } from './SearchBar';
-export class Info extends Component{
 
 
-    constructor(props){
+export const Info = () => {
+
+  const [input, setInput] = useState("");
+
+    const fetchData = (value) => (
+        pass 
+        /*QUI METTERE RIFERIMENTO ALL'API DEL BACKEND
+        STESS LAOVRO CHE VA FATTO NELLA LISTA
+    TODO */
+    );
+
+
+    /*Ho commentato questa roba senza cancellarla perché non so se potrebbe servire a qualcosa */
+    /*constructor(props){
       super(props)
       this.state = {
           post : []
@@ -25,11 +34,8 @@ export class Info extends Component{
           this.setState({erroeMsg : 'error retreiving data'})
     })
 
-  }
-  render (){
-      const { post } = this.state
-  
-      return(
+  }*/
+    return(
         <div className="parent">
           <div className="listaluoghi">
             {/*barra input che dovrebbe aiutare a far cercare un
@@ -73,6 +79,6 @@ export class Info extends Component{
           
 </div> 
       )
-  }
+  
 }
 
