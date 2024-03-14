@@ -97,6 +97,7 @@ export const UpdateMarker = () => {
             <div>
                 {allMarkers.map(marker => (
                     <div key={marker.id}>
+                        <p>Id : {marker.id}</p>
                         <p>Nome: {marker.Nome}</p>
                         <p>Indirizzo: {marker.Indirizzo}</p>
                         <p>Descrizione: {marker.Descrizione}</p>
