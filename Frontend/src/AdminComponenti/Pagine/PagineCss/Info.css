@@ -151,30 +151,50 @@ div.listaluoghi {
     padding: 2% 2% 1% 2%;
 }
 
-/*Stylign che riguarda il dettaglio dei luoghi. 
-Dovrebbe diventare possibile interagire e toccare i titoli sopra
-per cambiarli. Logica da fare simile alla mappatura di prima*/
-
-
-
-
 
 /* Media query per dispositivi mobili, qui ci sarà da pensare
  a tutto lo stile mobile per bene 
  l'idea sarebbe quella di rendere nascondibile la lista degli elementi
  così che si vedano solo le immagini e la descrizione */
-@media (max-width: 364px) {
+@media (max-width: 780px) {
+    .parent {
+        display: flex;
+        flex-direction: column;
+    }
 
-    .elementoluoghi {
-        border: 1px solid #003049;
-        padding: 1%;
-        margin: 1%;
-        width: 6rem;
+    .listaluoghi {
+
+    }
+
+    .searchbarluoghi {
+
+    }
+
+    .iconacore {
+
+    }
+
+    .iconaricerca {
         
     }
 
-    .elementoluoghi:active {
-      padding: 5px;
-      margin-bottom: 5px;
+    .dettaglioluoghi {
+
+    }
+
+    .contenitoreimmagine {
+
+    }
+
+    .descrizioneluoghi {
+
+    }
+
+    .contattiluoghi {
+
+    }
+
+    .oraridiapertura {
+
     }
   }
