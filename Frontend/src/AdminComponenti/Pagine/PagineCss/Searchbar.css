@@ -28,6 +28,7 @@ div.searchbarluoghi {
     padding: 1% 2% 4% 2%;
     margin: 0 0 5px 0;
     align-items: center;
+    color: #003049;
 }
 
 .searchbarluoghi input {
@@ -38,4 +39,8 @@ div.searchbarluoghi {
     border: 2px solid #003049;
     color: #003049;
     
+}
+
+input:focus {
+    outline: none;
 }
