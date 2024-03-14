@@ -4,6 +4,7 @@ import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
 import CIcon from '@coreui/icons-react';
 import { cilSearch } from '@coreui/icons';
+import { SearchBar } from './SearchBar';
 export class Info extends Component{
 
 
@@ -34,11 +35,7 @@ export class Info extends Component{
             {/*barra input che dovrebbe aiutare a far cercare un
              luogo specifico. Vorrei che l'input comparisse come compare
              in Genshindle, che suppongo usi una elastic search*/}
-            <div className='searchbarluoghi'>
-            <input type="search" id="luoghi-search" name="q" placeholder='Cosa scoprirai di Modena oggi?'/>
-            <button className='iconaricerca'>
-              <CIcon icon={cilSearch} size="lg" className='iconacore' /></button>
-            </div>
+            <div className='searchbarluoghi'><SearchBar></SearchBar></div>
             
             <ul className='dettaglioluoghi'>
             <li>modena</li>

@@ -8,48 +8,6 @@
     
 }
 
-
-div.searchbarluoghi {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 4rem;
-    padding: 2%;
-    margin: 1%;
-}
-
-.iconaricerca {
-    cursor: pointer;
-    background-color: transparent;
-    padding: 2% 1% 4% 1%;
-    margin: 2% 0 2% 0;
-    color: #003049;
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.iconaricerca:hover {
-    background-color: transparent;
-}
-
-.iconacore {
-    width: 30px;
-    height: 30px;
-    padding: 1% 2% 4% 2%;
-    margin: 0 0 5px 0;
-    align-items: center;
-}
-
-.searchbarluoghi input {
-    align-items: center;
-    padding: 3% 1% 5% 2%;
-    margin: 1%;
-    background-color: hsl(49, 71%, 66%);
-    border: 2px solid #003049;
-    color: #003049;
-    
-}
-
 /*Questo codice ha a che fare con
 la ui della lista dei luoghi as a whole*/
 div.listaluoghi { 
