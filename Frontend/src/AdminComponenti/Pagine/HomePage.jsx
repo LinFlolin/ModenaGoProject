@@ -1,7 +1,6 @@
-import {React, useState,useEffect} from 'react'
-import '../AdminCss/HomePage.css'
+import {React,Component} from 'react'
 import axios from 'axios'
-import { Component } from 'react'
+import'../AdminCss/HomePage.css'
 export class HomePage extends Component{
   constructor(props){
     super(props)
@@ -9,6 +8,7 @@ export class HomePage extends Component{
         post : []
     }
  }
+
  componentDidMount(){
   axios.get('http://127.0.0.1:8000/api/Marker/')
   .then(response=> {
@@ -25,32 +25,39 @@ export class HomePage extends Component{
     const { post } = this.state
     return (
   
-      <div className='homesec'>
-            <section className='aboutus '>
-              <h3>About us </h3>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, enim cupiditate! Earum consequuntur similique quos dicta veniam assumenda, dolor omnis perferendis reprehenderit, quod rerum necessitatibus. Nobis magnam ab accusamus nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos enim quod voluptate est quidem magni, odit cupiditate esse saepe iure ullam perferendis officia, a facilis, labore animi ea mollitia omnis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, laborum illum ratione tempore ipsam repudiandae sit facilis neque corrupti architecto natus quae dolorum voluptas omnis mollitia officiis, delectus nulla ad.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, enim cupiditate! Earum consequuntur similique quos dicta veniam assumenda, dolor omnis perferendis reprehenderit, quod rerum necessitatibus. Nobis magnam ab accusamus nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos enim quod voluptate est quidem magni, odit cupiditate esse saepe iure ullam perferendis officia, a facilis, labore animi ea mollitia omnis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, laborum illum ratione tempore ipsam repudiandae sit facilis neque corrupti architecto natus quae dolorum voluptas omnis mollitia officiis, delectus nulla ad.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, enim cupiditate! Earum consequuntur similique quos dicta veniam assumenda, dolor omnis perferendis reprehenderit, quod rerum necessitatibus. Nobis magnam ab accusamus nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos enim quod voluptate est quidem magni, odit cupiditate esse saepe iure ullam perferendis officia, a facilis, labore animi ea mollitia omnis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, laborum illum ratione tempore ipsam repudiandae sit facilis neque corrupti architecto natus quae dolorum voluptas omnis mollitia officiis, delectus nulla ad.
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam, enim cupiditate! Earum consequuntur similique quos dicta veniam assumenda, dolor omnis perferendis reprehenderit, quod rerum necessitatibus. Nobis magnam ab accusamus nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos enim quod voluptate est quidem magni, odit cupiditate esse saepe iure ullam perferendis officia, a facilis, labore animi ea mollitia omnis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, laborum illum ratione tempore ipsam repudiandae sit facilis neque corrupti architecto natus quae dolorum voluptas omnis mollitia officiis, delectus nulla ad.s
+      <div className=' '>
+        
+            <section className='flex flex-col m-10 p-3 gap-2 items-center  '>
+              <h3 className='text-2xl font-semibold'>
+                Obbiettivo del Sito
+               </h3>
+              <p className='text-pretty '>
+              Il progetto prevede la realizzazione di un’applicazione web per la valorizzazione del patrimonio culturale e artistico del territorio del comune di Modena. L’applicazione web mira a valorizzare il patrimonio culturale e artistico offrendo all’utente la possibilità di seguire dei percorsi costituiti da punti di interesse all’interno del territorio del comune di Modena.
               </p>
             </section>
-            <section className='luogsec'>
-              <h3>Luoghi</h3>
-              <div className='box'>
+            <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md'>
+              <h1 className='text-2xl font-semibold'>
+                Luoghi da visitare 
+              </h1>
+              <div className='flex flex-wrap justify-evenly space-x-3 gap-4 pb-3 m-4'>
                  {
                   post.map(item=>(
-                    <section className='luogcart' key={item.id}>
-                      <div className='imgbox'>
-                        {/* <img src={item.Immagine}/> */}
+                    <section className='m-4 w-52  bg-orange-50 shadow-md shadow-indigo-500/40 transition ease-in-out delay-90 hover:-translate-y-1 hover:scale-110 hover:bg-gradient-to-b from-orange-200 to-orange-100 duration-150 ' 
+                    key={item.id}>
+                      <div className='h-40 hover:'>
+                        <img src={item.Immagine} className=' rounded'/>
                       </div>
-                      <h6>{item.Nome}</h6>
-                      <p>someTing</p>
+                      <div className='box '>
+                        <h6 className=' object-fill '>{item.Nome}</h6>
+                        <p className=''>Detagli del luogo</p>
+                        <button type='button' className=' bg-gradient2 text-white'>info</button>
+                      </div>
+                     
                     </section>
                   ))
                  }
               </div>
-              
-            </section>      
+            </section>             
       </div>
     )
 

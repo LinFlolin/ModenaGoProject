@@ -1,17 +1,18 @@
 .homesec{
+   
     display: flex;
     flex-direction: column;
     padding: 12px;
     gap: 20px;
     align-items: center;
-    
 
 }
 section{
-
     background-color:#e8f6ef63;
     padding: 12px;
     border-radius: 15px;
+    margin: 20px;
+
 }
 h3{
     text-align: center;
@@ -24,27 +25,37 @@ p{
 .aboutus{
     display: flex;
     flex-direction: column ;
+    box-sizing: border-box;
+
 }
 .luogsec{
   display: flex;
   flex-direction: column;
-
 }
+.luogsec .box {
+    justify-content: space-around; /* or justify-content: space-between; depending on your design preference */
+  }
 
 .box{
     display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
+    flex-wrap: wrap;
     gap: 15px;
     padding: 12px;
-    padding-bottom: 5 px;
+    padding-bottom: 5px;
     margin: 10px;
-    flex-basis: 15em;
-    justify-content: space-between
-
 }
 .luogcart{
     margin: 5px;
-    
+    width: 200px;
 }
-
+.imgbox {
+    height: 125px;
+    max-width:200px;
+    display: block;
+}
+.imgbox img {
+    display: block;
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+}

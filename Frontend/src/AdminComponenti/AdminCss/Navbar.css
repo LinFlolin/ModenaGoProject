@@ -3,14 +3,13 @@
     border-radius: 0.5rem;
 }
 nav{
-    height: 100%;
-    width: 100%;
+    width:100%;
     margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;  
-    background-color: #052659;
-    position: sticky;
+    background-color: #082f49;
+    position: fixed;
     top: 0;
     z-index:  1000;
 }
