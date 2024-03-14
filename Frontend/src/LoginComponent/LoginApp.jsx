@@ -11,10 +11,12 @@ const LoginApp = () => {
     password: ""
   });
 
-  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleRegistrationClick = () => {
-    // Reindirizzamento alla pagina di registrazione quando viene cliccato il pulsante
     navigate('/registration');
   };
 
@@ -26,27 +28,45 @@ const LoginApp = () => {
     });
   };
 
-    const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
-        email: data.email,
-        username: data.username,
-        password: data.password
-      });
-      if (response.status === 200) {
-        console.log("Login success!");
-      } else {
-        console.log("Login failed:", response.data.error);
-      }
-    } catch (error) {
-      console.error('Error:', error.response);
-      // Gestione dell'errore lato client, ad esempio visualizzare un messaggio all'utente
-    }
+  const handleSubmit = async (e) => {
+     e.preventDefault();
+     try {
+        const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
+          email: data.email,
+          username: data.username,
+          password: data.password
+        });
+        if (response.status === 200) {
+          console.log("Login success!");
+          setUsernameError("");
+          setPasswordError("");
+        } else {
+          console.log("Login failed:");
+          // Handle other status codes as needed
+        }
+     } catch (error) {
+        if (error.response && error.response.status === 400) {
+          // Assuming the server sends back a JSON object with an 'err' field
+          const errorMessage = error.response.data.err || 'An error occurred.';
+            if (errorMessage.includes("username")) {
+                setUsernameError("Username errato");
+                setPasswordError("");
+            } else if (errorMessage.includes("password")) {
+                setPasswordError("Password errata");
+                setUsernameError("");
+            } else {
+            // Handle other types of errors or set a generic error message
+                setUsernameError("Errore di Username");
+                setPasswordError("Errore di Password");
+            }
+        } else {
+          console.error("An unknown error occurred:", error);
+        }
+     }
   };
 
   const routeChange = () => {
-    navigate('/Registration'); // Naviga alla pagina di registrazione
+    navigate('/Registration');
   };
 
   return (
@@ -65,6 +85,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
+
         <label htmlFor="username" id='loglabel'>
           Username
           <input
@@ -73,8 +94,9 @@ const LoginApp = () => {
             value={data.username}
             onChange={handleChange}
           />
+          {usernameError && <p className="error-message">{usernameError}</p>}
         </label>
-        <label htmlFor="password" >
+        <label htmlFor="password" id='loglabel'>
           Password
           <input
             type="password"
@@ -82,8 +104,10 @@ const LoginApp = () => {
             value={data.password}
             onChange={handleChange}
           />
+          {passwordError && <p className="error-message">{passwordError}</p>}
         </label>
-        <button type='button' className =' bg-primaria hover:bg-gradient-to-r from-primaria to-gradient2  h-10 text-base'>
+
+        <button type='submit' className =' bg-primaria hover:bg-gradient-to-r from-primaria to-gradient2  h-10 text-base'>
           Login
         </button>
         <div className="flex flex-row">
@@ -104,4 +128,4 @@ const LoginApp = () => {
   );
 };
 
-export default LoginApp
+export default LoginApp;

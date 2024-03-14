@@ -17,7 +17,13 @@ class MarkerView(viewsets.ModelViewSet):
 class PercorsoView(viewsets.ModelViewSet):
     serializer_class = PercorsoSerializer
     queryset = Percorso.objects.all()
-    
+
+
 class DirectionView(viewsets.ModelViewSet):
     serializer_class = DirectionSerializer
     queryset = Direction.objects.all()
+
+
+class MarkerViewSet(viewsets.ModelViewSet):
+    queryset = Marker.objects.all()
+    serializer_class = MarkerSerialiazer
