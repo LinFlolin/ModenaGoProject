@@ -11,12 +11,12 @@ const LoginApp = () => {
     password: ""
   });
 
-  const [error, setError] = useState(""); // Stato per gestire il messaggio di errore
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
-  const navigate = useNavigate(); // Otteniamo la funzione di navigazione
+  const navigate = useNavigate();
 
   const handleRegistrationClick = () => {
-    // Reindirizzamento alla pagina di registrazione quando viene cliccato il pulsante
     navigate('/registration');
   };
 
@@ -29,33 +29,44 @@ const LoginApp = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
-        email: data.email,
-        username: data.username,
-        password: data.password
-      });
-      if (response.status === 200) {
-        console.log("Login success!");
-      } else {
-        console.log("Login failed:", response.data.error);
-      }
-    } catch (error) {
-      console.error('Error:', error.response);
-      let errorMessage = "Errore durante il login. ";
-      if (error.response && error.response.status === 400) {
-        errorMessage += "Email o password non valide. Riprova.";
-      } else {
-        errorMessage += "Si è verificato un errore. Riprova più tardi.";
-      }
-      // Imposta il messaggio di errore
-      setError(errorMessage);
-    }
+     e.preventDefault();
+     try {
+        const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", {
+          email: data.email,
+          username: data.username,
+          password: data.password
+        });
+        if (response.status === 200) {
+          console.log("Login success!");
+          setUsernameError("");
+          setPasswordError("");
+        } else {
+          console.log("Login failed:");
+          // Handle other status codes as needed
+        }
+     } catch (error) {
+        if (error.response && error.response.status === 400) {
+          // Assuming the server sends back a JSON object with an 'err' field
+          const errorMessage = error.response.data.err || 'An error occurred.';
+            if (errorMessage.includes("username")) {
+                setUsernameError("Username errato");
+                setPasswordError("");
+            } else if (errorMessage.includes("password")) {
+                setPasswordError("Password errata");
+                setUsernameError("");
+            } else {
+            // Handle other types of errors or set a generic error message
+                setUsernameError("Errore di Username");
+                setPasswordError("Errore di Password");
+            }
+        } else {
+          console.error("An unknown error occurred:", error);
+        }
+     }
   };
 
   const routeChange = () => {
-    navigate('/Registration'); // Naviga alla pagina di registrazione
+    navigate('/Registration');
   };
 
   return (
@@ -71,6 +82,7 @@ const LoginApp = () => {
             onChange={handleChange}
           />
         </label>
+
         <label htmlFor="username" id='loglabel'>
           Username
           <input
@@ -79,7 +91,9 @@ const LoginApp = () => {
             value={data.username}
             onChange={handleChange}
           />
+          {usernameError && <p className="error-message">{usernameError}</p>}
         </label>
+
         <label htmlFor="password" id='loglabel'>
           Password
           <input
@@ -88,12 +102,14 @@ const LoginApp = () => {
             value={data.password}
             onChange={handleChange}
           />
+          {passwordError && <p className="error-message">{passwordError}</p>}
         </label>
+
         <button type="submit">Login</button>
-        {error && <p style={{color: 'red'}}>{error}</p>} {/* Mostra il messaggio di errore se presente */}
+
         <div className="text-container">
-            <p id="registration-text">Non sei registrato?</p>
-            <button id="registration-button" onClick={routeChange}>Registrati</button>
+          <p id="registration-text">Non sei registrato?</p>
+          <button id="registration-button" onClick={routeChange}>Registrati</button>
         </div>
       </form>
     </div>
