@@ -5,8 +5,6 @@ import '../Pagine/PagineCss/Info.css'
 import CIcon from '@coreui/icons-react';
 import { cilSearch } from '@coreui/icons';
 export class Info extends Component{
-
-
     constructor(props){
       super(props)
       this.state = {

@@ -18,7 +18,7 @@ export const AdminApp = () => {
           <Route path='/' element={<HomePage/>}/>
             <Route path='/map' element={<Mappa />} />
             <Route path='/info' element={<Info/>} />
-            <Route path='/login' element={<LoginApp/>}/>
+            <Route path='/login/' element={<LoginApp/>}/>
             <Route path='/registration' element={<RegistrationApp/>}/>
             <Route path='/Direction' element={<DirectionCreate/>}/>
             <Route path='/Percorso' element={<PercorsoCreate/>}/>

@@ -10,9 +10,9 @@ const App = () => {
       min-w-screen
       flex
       flex-col
-      bg-yellow-400'
-      
-    >
+      bg-primaria bg
+
+    '>
 
       <AdminApp/>
 
