@@ -14,17 +14,15 @@ export const Hero = () => {
 
   return (
     <div className=' relative flex flex-col justify-center mb-6
-    shadow-xl shadow-yellow-900
-      bg-no-repeat bg-cover bg-bottom
+     shadow-xl
+      bg-img1 
+      bg-no-repeat bg-cover bg-center
+    
+      h-4/6
+
       2xl:h-96     
       rounded-b-3xl overflow-hidden'>
-
-      <img 
-        className=' w-full h-full object-top object-cover
-         opacity-75 '
-        src='https://pedaliamoinitalia.it/wp-content/uploads/2022/09/New-tours-website-banner.png'/>
-      
-      <div className=' absolute flex flex-col m-3'>
+      <div className=' absolute flex flex-col m-3 bg-slate-500'>
       <Link to={'http://localhost:5173/map'} >
           <h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sequi vero distinctio totam, voluptatum esse error quaerat nisi eos ad nobis possimus laudantium commodi enim ipsam consequatur? Ipsam, aperiam unde.

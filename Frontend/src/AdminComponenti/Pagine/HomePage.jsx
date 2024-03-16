@@ -1,28 +1,8 @@
 import {React,Component} from 'react'
 import axios from 'axios'
 import'../AdminCss/HomePage.css'
-export class HomePage extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-        post : []
-    }
- }
+export const HomePage = ({data})=>{
 
- componentDidMount(){
-  axios.get('http://127.0.0.1:8000/api/Marker/')
-  .then(response=> {
-      console.log(response)
-      this.setState({post : response.data})
-  })
-  .catch(error=>{
-      console.log(error)
-      this.setState({erroeMsg : 'error retreiving data'})
-  })
-
-}
-  render(){
-    const { post } = this.state
     return (  
       <div className=' relatives flex flex-col' >  
         <div className=' flex flex-col gap-6 ' > 
@@ -77,14 +57,16 @@ export class HomePage extends Component{
               Il progetto prevede la realizzazione di un’applicazione web per la valorizzazione del patrimonio culturale e artistico del territorio del comune di Modena. L’applicazione web mira a valorizzare il patrimonio culturale e artistico offrendo all’utente la possibilità di seguire dei percorsi costituiti da punti di interesse all’interno del territorio del comune di Modena.
               </p>
             </section>
-            <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md'>
+            <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md  bg-orange-50'>
               <h1 className='text-2xl font-semibold'>
                 Luoghi da visitare 
               </h1>
               <div className='flex flex-wrap justify-evenly space-x-3 gap-3'>
                  {
-                  post.map(item=>(
-                    <section className='m-4 w-52 bg-orange-50 shadow-md shadow-indigo-500/40 transition ease-in-out delay-90 hover:-translate-y-1 hover:scale-110 hover:bg-gradient-to-b from-orange-200 to-orange-100 duration-150 p-4 rounded  ' 
+                  data.map(item=>(
+                    <section className='m-4 w-52
+                     bg-secon shadow-md shadow-indigo-600
+                      transition ease-in-out delay-90 hover:-translate-y-1 hover:scale-110  duration-150 p-4 rounded  ' 
                     key={item.id}>
                       <div className='h-40 '>
                         <img src={item.Immagine} className=' rounded'/>
@@ -92,7 +74,10 @@ export class HomePage extends Component{
                       <div className='box '>
                         <h6 className=' object-fill '>{item.Nome}</h6>
                         <p className=''>Detagli del luogo</p>
-                        <button type='button' className=' bg-gradient2 text-white'>info</button>
+                        <button type='button' 
+                          className=' bg-primaria hover:bg-gradient-to-b from-slate-900 to-slate-600
+                        
+                        '>info</button>
                       </div>
                      
                     </section>
@@ -103,9 +88,9 @@ export class HomePage extends Component{
       </div>
     )
 
-  }
+  // }
   
   
 
-  }
+ }
   
