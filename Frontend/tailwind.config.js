@@ -26,8 +26,9 @@ export default {
     },
     extend: {  
       colors:{
-        'primaria' : '#eae2b7',
-        'secon' :'#001d3d',     
+        'primaria' : '#001d3d', //blue
+        'secondo' :'#eae2b7', //panna
+        'terzo' :'#eec643' //giallo    
       }
     },
 

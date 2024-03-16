@@ -8,13 +8,14 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;  
-    background-color: #001d3d;
+    background-color:  #eec643;
+    opacity: 0.75;
     position: fixed;
     top: 0;
     z-index:  1000;
 }
 nav .title{
-    color: #eae2b7;
+    color: #001d3d ; 
     margin: 1rem;
     font-size: large;
     font-weight: bold;
@@ -36,7 +37,7 @@ nav ul li a {
     display: block;
     text-decoration: dashed;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #eae2b7;
+    color:#001d3d;
     padding: 0.5rem;
     margin: 0.5rem;
     border: 0.5rem;

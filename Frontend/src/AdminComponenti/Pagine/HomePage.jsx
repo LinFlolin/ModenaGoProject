@@ -35,7 +35,7 @@ export const HomePage = ({data})=>{
               </div>                         
           </section>
 
-          <section className=' flex flex-row h-60 justify-evenly mt-1 bg-red-400 '>
+          <section className=' flex flex-row h-60 justify-evenly mt-1  '>
               <div className='w-9/12 mr-8'>
                 <img className='w-full h-full rounded-r-full '
                   src='https://media.istockphoto.com/id/1362373123/it/foto/veduta-di-modena-in-italia.jpg?s=612x612&w=is&k=20&c=51hYfvNDZhudf1_Bjrc0nae5OCQHn9gnSWF44UUTetg='/>
@@ -57,7 +57,7 @@ export const HomePage = ({data})=>{
               Il progetto prevede la realizzazione di un’applicazione web per la valorizzazione del patrimonio culturale e artistico del territorio del comune di Modena. L’applicazione web mira a valorizzare il patrimonio culturale e artistico offrendo all’utente la possibilità di seguire dei percorsi costituiti da punti di interesse all’interno del territorio del comune di Modena.
               </p>
             </section>
-            <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md  bg-orange-50'>
+            <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md bg-terzo'>
               <h1 className='text-2xl font-semibold'>
                 Luoghi da visitare 
               </h1>
@@ -65,7 +65,7 @@ export const HomePage = ({data})=>{
                  {
                   data.map(item=>(
                     <section className='m-4 w-52
-                     bg-secon shadow-md shadow-indigo-600
+                     bg-secondo shadow-md shadow-indigo-600
                       transition ease-in-out delay-90 hover:-translate-y-1 hover:scale-110  duration-150 p-4 rounded  ' 
                     key={item.id}>
                       <div className='h-40 '>
@@ -76,6 +76,7 @@ export const HomePage = ({data})=>{
                         <p className=''>Detagli del luogo</p>
                         <button type='button' 
                           className=' bg-primaria hover:bg-gradient-to-b from-slate-900 to-slate-600
+                         text-terzo text-lg
                         
                         '>info</button>
                       </div>
