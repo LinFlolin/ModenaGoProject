@@ -1,23 +1,16 @@
-import React from 'react'
+import axios from 'axios'
+import { default as React, useEffect, useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import React,{useState, useEffect } from 'react'
-import { Navbar } from './Pagine/Navbar'
-import{Route,Routes,BrowserRouter} from 'react-router-dom'
-import {Info,Mappa,Hero,Footer,HomePage} from './Pagine/index'
 import LoginApp from '../LoginComponent/LoginApp'
 import { MarkerCreate } from '../LoginComponent/MarkerCreate'
 import { MarkerDelete } from '../LoginComponent/MarkerDelete'
 import { MarkerDetail } from '../LoginComponent/MarkerDetail'
 import { MarkerList } from '../LoginComponent/MarkerList'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
+import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import './Admin.css'
 import { Navbar } from './Pagine/Navbar'
 import { Footer, Hero, HomePage, Info, LuoghiFigo, Mappa, Sfida } from './Pagine/index'
-import { DirectionCreate } from '../LoginComponent/DirectionCreate'
-import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
-import { MarkerCreate } from '../LoginComponent/MarkerCreate'
-import { UpdateMarker } from '../LoginComponent/UpdateMarker'
-import axios from 'axios';
 
 export const AdminApp = () => {
 
@@ -53,25 +46,10 @@ export const AdminApp = () => {
           <Route path='/delete-marker/:id' element={<MarkerDelete />} />
           <Route path='/detail-marker/:id' element={<MarkerDetail />} />
           <Route path='/list-marker' element={<MarkerList />} />
+          <Route path='/Marker' element={<MarkerCreate />} />
+          <Route path="/Marker/:markerId" element={<UpdateMarker />} />
         </Routes>
         <Footer />
-    <div>
-      <BrowserRouter> 
-       <Navbar/> 
-       <Hero  />  
-        <Routes>
-          <Route path='/' element={<HomePage data ={post} />}/>
-            <Route path='/map' element={<Mappa data ={post}/>} />
-            <Route path='/info' element={<Info data ={post}/>} />
-            
-            <Route path='/login/' element={<LoginApp />}/>
-            <Route path='/registration' element={<RegistrationApp/>}/>
-            <Route path='/Direction' element={<DirectionCreate/>}/>
-            <Route path='/Percorso' element={<PercorsoCreate/>}/>
-            <Route path='/Marker' element={<MarkerCreate/>}/>
-            <Route path="/Marker/:markerId" element={<UpdateMarker />} />
-          </Routes>
-          {/* <Footer/> */}
       </BrowserRouter>
     </div>
   )
