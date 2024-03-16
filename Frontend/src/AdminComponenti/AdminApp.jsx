@@ -8,6 +8,7 @@ import { DirectionCreate } from '../LoginComponent/DirectionCreate'
 import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
 import { MarkerCreate } from '../LoginComponent/MarkerCreate'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
+import { MarkerGet } from '../LoginComponent/MarkerGet'
 export const AdminApp = () => {
   return (
     <div>
@@ -24,6 +25,7 @@ export const AdminApp = () => {
             <Route path='/Percorso' element={<PercorsoCreate/>}/>
             <Route path='/Marker' element={<MarkerCreate/>}/>
             <Route path="/Marker/:markerId" element={<UpdateMarker />} />
+            <Route path="/MarkerGet" element={<MarkerGet />} />
           </Routes>
           {/* <Footer/> */}
       </BrowserRouter>
