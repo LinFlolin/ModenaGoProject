@@ -12,7 +12,7 @@ export const Mappa = () => {
   return (
     <div className='mapsec'>
       <div className='persec'>
-        <Percorso />
+        {/* <Percorso /> */}
       </div>
       <div className="map" style={{ height: '100vh', padding: '20px' }}>
         <APIProvider apiKey='AIzaSyBiqWG7fNUrBUtfJ_fjnDK02zcTME6oEeo'>
