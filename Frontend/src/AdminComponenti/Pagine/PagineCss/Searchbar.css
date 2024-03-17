@@ -13,7 +13,7 @@ div.searchbarluoghi {
     background-color: transparent;
     padding: 2% 1% 4% 1%;
     margin: 2% 0 2% 0;
-    color: #003049;
+    color: hsl(49, 71%, 66%);;
     width: 1.5rem;
     height: 1.5rem;
 }
@@ -28,7 +28,7 @@ div.searchbarluoghi {
     padding: 1% 2% 4% 2%;
     margin: 0 0 5px 0;
     align-items: center;
-    color: #003049;
+    color: hsl(49, 71%, 66%);;
 }
 
 .searchbarluoghi input {

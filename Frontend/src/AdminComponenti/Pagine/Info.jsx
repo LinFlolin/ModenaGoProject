@@ -52,7 +52,7 @@ export const Info = () => {
           </div>
           <div className="contenitoreimmagine">
             <div>
-            <h1>Titolo luogo</h1>
+            <h1>Ghirlandina</h1>
             <img src="src/assets/modenacalcio.png" alt="1ziopera" />
             </div>
           </div>

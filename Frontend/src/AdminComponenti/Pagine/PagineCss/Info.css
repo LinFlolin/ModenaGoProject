@@ -4,7 +4,7 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    border-right: 1px #003049 solid;
+    border-right: 1px hsl(49, 71%, 66%) solid;
     
 }
 
@@ -12,7 +12,7 @@
 la ui della lista dei luoghi as a whole*/
 div.listaluoghi { 
     grid-area:  1 / 1 / 6 / 3;
-    border-right: 1px #003049 solid;
+    border-right: 1px hsl(49, 71%, 66%) solid;
     width: 20rem;
     height: 100%;
     margin: 2% 2% 1%;
@@ -25,21 +25,31 @@ div.listaluoghi {
     width: 100%;
     height: 38.5rem;
     padding: 2%;
-    scrollbar-color: #003049;
+    scrollbar-color: hsl(49, 71%, 66%);
     overflow: scroll;
+}
+
+.contenitoreimmagine {
+    color: hsl(49, 71%, 66%);
+}
+
+.contenitoreimmagine h1 {
+    font-weight: bold;
+    font-size: 3rem;
 }
 
 .dettaglioluoghi li {
     list-style-type: none;
-    border: 1px solid #003049;
+    border: 1px solid hsl(49, 71%, 66%);
     padding: 1%;
     margin: 3% 2% 1%;
     text-align: center;
+    color: hsl(49, 71%, 66%);
 }
 
 .dettaglioluoghi li:hover {
-    background-color: #003049;
-    color: burlywood;
+    background-color: hsl(49, 71%, 66%);
+    color: #131E49;
     box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
@@ -47,6 +57,7 @@ div.listaluoghi {
     grid-area: 3 / 3 / 6 / 9;  
     width: 100%;
     padding: 2%;
+    color: hsl(49, 71%, 66%);
 }
 
 .descrizioneluoghi div {
@@ -61,12 +72,12 @@ div.listaluoghi {
 
 .descrizioneluoghi p{
      margin: 0 auto;
-     border: 2px solid #003049;
+     border: 2px solid hsl(49, 71%, 66%);
      width: 80%;
      height: 15rem;
      overflow: scroll;
      padding: 1%;
-     color: #003049;
+     color: hsl(49, 71%, 66%);
      font-weight: lighter;
      font-size: 1rem;
      
@@ -86,6 +97,7 @@ div.listaluoghi {
     
 .contattiluoghi { 
     grid-area: 1 / 7 / 2 / 9; 
+    color: hsl(49, 71%, 66%);
 }
 
 .contattiluoghi div {
@@ -99,6 +111,7 @@ div.listaluoghi {
     
 .oraridiapertura { 
     grid-area: 2 / 7 / 3 / 9;
+    color: hsl(49, 71%, 66%);
 } 
 
 .oraridiapertura div {
@@ -121,38 +134,38 @@ div.listaluoghi {
     }
 
     .listaluoghi {
-
+        padding: 0;
     }
 
     .searchbarluoghi {
-
+        padding: 0;
     }
 
     .iconacore {
-
+        padding: 0;
     }
 
     .iconaricerca {
-        
+        padding: 0;      
     }
 
     .dettaglioluoghi {
-
+        padding: 0;
     }
 
     .contenitoreimmagine {
-
+        padding: 0;
     }
 
     .descrizioneluoghi {
-
+        padding: 0;
     }
 
     .contattiluoghi {
-
+        padding: 0;
     }
 
     .oraridiapertura {
-
+        padding: 0;
     }
   }
