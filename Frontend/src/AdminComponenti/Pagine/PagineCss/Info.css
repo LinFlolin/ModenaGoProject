@@ -29,15 +29,6 @@ div.listaluoghi {
     overflow: scroll;
 }
 
-.contenitoreimmagine {
-    color: hsl(49, 71%, 66%);
-}
-
-.contenitoreimmagine h1 {
-    font-weight: bold;
-    font-size: 3rem;
-}
-
 .dettaglioluoghi li {
     list-style-type: none;
     border: 1px solid hsl(49, 71%, 66%);
@@ -87,12 +78,18 @@ div.listaluoghi {
     grid-area: 1 / 3 / 3 / 7;
     width: 100%;
     height: 26rem;
+    color: hsl(49, 71%, 66%);
 }
 
 .contenitoreimmagine div {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.contenitoreimmagine h1 {
+    font-weight: bold;
+    font-size: 3rem;
 }
     
 .contattiluoghi { 
