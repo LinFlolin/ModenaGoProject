@@ -1,5 +1,10 @@
 from django.db import models
 
+class Percorso(models.Model):
+    Titolo = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.Titolo
 
 class Marker (models.Model):
     Nome = models.CharField(max_length=255)
@@ -14,15 +19,12 @@ class Marker (models.Model):
     Sfida = models.TextField(max_length=300)
     Immagine = models.ImageField(null=True, blank=True, upload_to="images/")
 
+    percorso = models.ForeignKey(Percorso, on_delete=models.CASCADE, related_name='markers',null=True )
+
     def __str__(self):
         return self.Nome
 
-class Percorso(models.Model):
-    Titolo = models.CharField(max_length=255)
-    marker = models.ForeignKey(Marker, on_delete=models.CASCADE, null=True) # Add this line
 
-    def __str__(self):
-        return self.Titolo
 
 class Direction(models.Model):
     UserLat = models.CharField(max_length=255)
