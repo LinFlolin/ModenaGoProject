@@ -41,7 +41,9 @@ export const Info = () => {
             {/*barra input che dovrebbe aiutare a far cercare un
              luogo specifico. Vorrei che l'input comparisse come compare
              in Genshindle, che suppongo usi una elastic search*/}
-            <div className='searchbarluoghi'><SearchBar></SearchBar></div>
+            <div className='searchbarluoghi'>
+              <SearchBar></SearchBar>
+            </div>
             <NavbarInfo></NavbarInfo>
           </div>
           <div className="titolo">

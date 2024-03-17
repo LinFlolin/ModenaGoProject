@@ -17,7 +17,7 @@ la parte più importante e grossa*/
 .descrizioneluoghi { 
     grid-area:  2 / 3 / 6 / 9;   
     width: 100%;
-    padding-top: 2%;
+    padding: 2% 3%;
     color: hsl(49, 71%, 66%);
 }
 
