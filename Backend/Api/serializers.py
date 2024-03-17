@@ -8,7 +8,7 @@ UserModel = get_user_model()
 class MarkerSerialiazer(serializers.ModelSerializer):
     class Meta:
         model = Marker
-        fields = ('id', 'Nome', 'Indirizzo', 'Descrizione', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
+        fields = ('id', 'Nome', 'Indirizzo', 'Descrizione', 'Desbrev', 'Contatti', 'Orari', 'Costi', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
 
 
 class PercorsoSerializer(serializers.ModelSerializer):

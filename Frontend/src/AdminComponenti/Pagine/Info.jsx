@@ -1,40 +1,15 @@
 import { useState } from 'react'
-import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
 import { SearchBar } from './SearchBar';
 import { NavbarInfo } from './NavbarInfo';
 
-export const Info = () => {
+export const Info  = ({data}) => {
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const [input, setInput] = useState("");
+  const handleItemClick = (item) => {
+     setSelectedItem(item);
+  };
 
-    const fetchData = (value) => (
-        pass 
-        /*QUI METTERE RIFERIMENTO ALL'API DEL BACKEND
-        STESS LAOVRO CHE VA FATTO NELLA LISTA
-    TODO */
-    );
-
-
-    /*Ho commentato questa roba senza cancellarla perché non so se potrebbe servire a qualcosa */
-    /*constructor(props){
-      super(props)
-      this.state = {
-          post : []
-        }
-    }
-  componentDidMount(){
-      axios.get('http://127.0.0.1:8000/api/Markers/','')
-      .then(response=> {
-          console.log(respose)
-          this.setState({postsL : response.data})
-      })
-      .catch(error=>{
-          console.log(error)
-          this.setState({erroeMsg : 'error retreiving data'})
-    })
-
-  }*/
     return(
         <div className="parent">
           <div className="sezcol">
@@ -42,9 +17,26 @@ export const Info = () => {
              luogo specifico. Vorrei che l'input comparisse come compare
              in Genshindle, che suppongo usi una elastic search*/}
             <div className='searchbarluoghi'>
-              <SearchBar></SearchBar>
+
             </div>
-            <NavbarInfo></NavbarInfo>
+                
+            <ul className='dettaglioluoghi'>
+            {
+              data.map(item => (
+                <li key={item.id} onClick={() => handleItemClick(item)}>
+                  <Link to={`/link/${item.id}`} className='text-slate-200'>
+                    {item.Nome}
+                  </Link>
+                </li>
+              ))
+            }
+             {selectedItem && (
+              <div>
+                {/* Render the details of the selected item here */}
+                <h2>{selectedItem.Nome}</h2>
+              </div>
+            )}
+          </ul> 
           </div>
           <div className="titolo">
             <div>
@@ -53,7 +45,6 @@ export const Info = () => {
           </div>
           <div className="descrizioneluoghi">
             <div>
-              <img src="" alt="ciao" />
               <h2>Descrizione</h2>
               <p>Descne descescriozone</p>
             </div>
@@ -68,8 +59,9 @@ export const Info = () => {
             </div>
           </div>
           
-</div> 
+      </div> 
       )
-  
+             
 }
+
 

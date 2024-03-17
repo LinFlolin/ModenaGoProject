@@ -1,0 +1,16 @@
+.Container{
+    margin: none;
+    padding: 0%;
+}
+.carousel-inner img {
+    width:  100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+#itemcar{
+    color:  #fdfdfd;
+}
+.carousel {
+    z-index:  999; 
+    height: 15 rem;
+}
+
