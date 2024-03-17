@@ -23,7 +23,7 @@ export const Mappa = () => {
             mapTypeControl={false} >
             <Maker/>
           </Map>
-          <Directions/>
+          {/* <Directions/> */}
         </APIProvider>
       </div>
     </div>
