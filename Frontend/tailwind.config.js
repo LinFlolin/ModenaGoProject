@@ -25,9 +25,12 @@ export default {
       // => @media (max-width: 639px) { ... }
     },
     extend: {  
+      zIndex: {
+        '1000': '1000',
+      },
       colors:{
-        'primaria' : '#001d3d', //blue
-        'secondo' :'#eae2b7', //panna
+        'primaria' : '#eae2b7', //blue
+        'secondo' :'#001d3d ', //panna
         'terzo' :'#eec643' //giallo    
       }
     },
