@@ -8,7 +8,6 @@ import { MarkerDetail } from '../LoginComponent/MarkerDetail'
 import { MarkerList } from '../LoginComponent/MarkerList'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
-import './Admin.css'
 import { Navbar } from './Pagine/Navbar'
 import { Footer, Hero, HomePage, Info, LuoghiFigo, Mappa, Sfida } from './Pagine/index'
 
