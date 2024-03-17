@@ -5,7 +5,7 @@ class MarkerAdmin (admin.ModelAdmin):
     list_display = ('Nome', 'Indirizzo', 'Descrizione', 'Desbrev', 'Contatti', 'Orari', 'Costi', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
 
 class PercorsoAdmin(admin.ModelAdmin):
-    list_display=('Titolo')
+    list_display=('Titolo','marker')
 
 class DirectionAdmin(admin.ModelAdmin):
     list_display = ('UserLat', 'UserLong')

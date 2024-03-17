@@ -19,6 +19,8 @@ class Marker (models.Model):
 
 class Percorso(models.Model):
     Titolo = models.CharField(max_length=255)
+    marker = models.ForeignKey(Marker, on_delete=models.CASCADE, null=True) # Add this line
+
     def __str__(self):
         return self.Titolo
 
