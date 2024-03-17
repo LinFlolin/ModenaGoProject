@@ -1,0 +1,30 @@
+div.navbarinfo { 
+    border-right: 1px hsl(49, 71%, 66%) solid;
+    width: 20rem;
+    height: 100%;
+    margin: 2% 2% 1%;
+    padding: 0 3% 0 0;
+}
+
+.navbarinfo ul {
+    width: 100%;
+    height: 38.5rem;
+    padding: 2%;
+    scrollbar-color: hsl(49, 71%, 66%);
+    overflow: scroll;
+}
+
+.dettaglioluoghi li {
+    list-style-type: none;
+    border: 1px solid hsl(49, 71%, 66%);
+    padding: 1%;
+    margin: 3% 2% 1%;
+    text-align: center;
+    color: hsl(49, 71%, 66%);
+}
+
+.dettaglioluoghi li:hover {
+    background-color: hsl(49, 71%, 66%);
+    color: #131E49;
+    box-shadow: 3px 3px rgb(212, 115, 31);
+}

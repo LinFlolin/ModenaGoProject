@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import '../Pagine/PagineCss/Info.css'
 import { SearchBar } from './SearchBar';
-
+import { NavbarInfo } from './NavbarInfo';
 
 export const Info = () => {
 
@@ -42,13 +42,7 @@ export const Info = () => {
              luogo specifico. Vorrei che l'input comparisse come compare
              in Genshindle, che suppongo usi una elastic search*/}
             <div className='searchbarluoghi'><SearchBar></SearchBar></div>
-            
-            <ul className='dettaglioluoghi'>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li> 
-            </ul>  
+            <NavbarInfo></NavbarInfo>
           </div>
           <div className="titolo">
             <div>
