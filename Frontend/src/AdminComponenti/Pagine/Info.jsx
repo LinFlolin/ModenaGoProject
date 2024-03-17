@@ -66,8 +66,6 @@ export const Info = () => {
             <div>
             <h3>Contatti</h3>
             <p>placeholder per i contatti</p>
-            </div>
-            <div>
                <h4>Orari di apertura</h4>
                <p>?</p>
             </div>

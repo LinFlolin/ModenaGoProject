@@ -42,6 +42,9 @@ div.sezcol {
     box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
+
+/*Qui comincia la sezione descrizione,
+la parte più importante e grossa*/
 .descrizioneluoghi { 
     grid-area:  2 / 3 / 6 / 9;   
     width: 100%;
@@ -72,6 +75,8 @@ div.sezcol {
      
 }
 
+
+/*Questo è il titolo del luogo, in sovraimpressione*/
 .titolo { 
     grid-area: 1 / 3 / 2 / 9;
     width: 100%;
@@ -84,7 +89,6 @@ div.sezcol {
     flex-direction: column;
     align-items: center;
 }
-/*Ho capito che cosa stavo facendo di sbagliato.*/
 .titolo h1 {
     font-weight: bold;
     font-size: 3rem;
@@ -97,7 +101,7 @@ div.sezcol {
 
 .contattiluoghi div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: left;
     background-color: rgba(212, 115, 31, 0.681);
