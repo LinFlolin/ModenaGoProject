@@ -53,6 +53,7 @@ export const Info = () => {
           </div>
           <div className="descrizioneluoghi">
             <div>
+              <img src="" alt="ciao" />
               <h2>Descrizione</h2>
               <p>Descne descescriozone</p>
             </div>

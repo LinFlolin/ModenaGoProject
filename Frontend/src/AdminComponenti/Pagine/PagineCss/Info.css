@@ -10,6 +10,7 @@
 la ui della lista dei luoghi as a whole*/
 div.sezcol { 
     grid-area:   1 / 1 / 7 / 3;
+
 }
 
 /*Qui comincia la sezione descrizione,
@@ -17,7 +18,7 @@ la parte più importante e grossa*/
 .descrizioneluoghi { 
     grid-area:  2 / 3 / 6 / 9;   
     width: 100%;
-    padding: 2% 3%;
+    padding-top: 2%;
     color: hsl(49, 71%, 66%);
 }
 
@@ -49,7 +50,7 @@ la parte più importante e grossa*/
 .titolo { 
     grid-area: 1 / 3 / 2 / 9;
     width: 100%;
-    height: 26rem;
+    height: 6rem;
     color: hsl(49, 71%, 66%);
 }
 
