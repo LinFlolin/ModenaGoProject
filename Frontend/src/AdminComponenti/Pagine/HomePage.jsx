@@ -1,8 +1,16 @@
 import {React,Component} from 'react'
 import axios from 'axios'
 import'../AdminCss/HomePage.css'
-export const HomePage = ({data})=>{
+import { useNavigate } from 'react-router-dom';
 
+
+export const HomePage = ({data})=>{
+  const navigate = useNavigate();
+
+  const goToInfoPage = () => {
+     navigate('/info'); // Replace '/info' with the actual path to your info page
+  };
+  
     return (  
       <div className=' relatives flex flex-col' >  
         <div className=' flex flex-col gap-6 ' > 
@@ -76,9 +84,11 @@ export const HomePage = ({data})=>{
                         <p className=''>Detagli del luogo</p>
                         <button type='button' 
                           className=' bg-primaria hover:bg-gradient-to-b from-slate-900 to-slate-600
-                         text-terzo text-lg
-                        
-                        '>info</button>
+                         text-terzo text-lg'
+                         onClick={goToInfoPage}>
+                         
+                          info
+                        </button>
                       </div>
                      
                     </section>
