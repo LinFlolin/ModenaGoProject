@@ -1,23 +1,52 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import './RegistrationApp.css';
 
-export const MarkerDetail = ({ markers }) => {
+export const MarkerDetail = () => {
     const { id } = useParams();
-    const marker = markers.find(marker => marker.id === id);
+    const [marker, setMarker] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchMarker = async () => {
+            try {
+                setIsLoading(true);
+                const response = await fetch(`http://localhost:8000/api/Marker/${id}`);
+                if (!response.ok) {
+                    throw new Error('Errore nel recupero dei dati');
+                }
+                const data = await response.json();
+                setMarker(data);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchMarker();
+    }, [id]);
+
+    if (isLoading) {
+        return <p>Caricamento...</p>;
+    }
+
+    if (error) {
+        return <p>Errore: {error}</p>;
+    }
 
     return (
         <div>
-            <h2>{marker.Nome}</h2>
-            <p>{marker.Indirizzo}</p>
-            <p>{marker.Descrizione}</p>
-            <p>{marker.Desbrev}</p>
-            <p>{marker.Contatti}</p>
-            <p>{marker.Orari}</p>
-            <p>{marker.Costi}</p>
-            <p>{marker.Latitudine}</p>
-            <p>{marker.Longitudine}</p>
-            <p>{marker.Sfida}</p>
+            <h2>{marker.id} - {marker.Nome}</h2>
+            <p>Indirizzo: {marker.Indirizzo}</p>
+            <p>Descrizione: {marker.Descrizione}</p>
+            <p>Descrizione breve: {marker.Desbrev}</p>
+            <p>Contatti: {marker.Contatti}</p>
+            <p>Orari: {marker.Orari}</p>
+            <p>Costi: {marker.Costi}</p>
+            <p>Latitudine: {marker.Latitudine}</p>
+            <p>Longitudine: {marker.Longitudine}</p>
+            <p>Sfida: {marker.Sfida}</p>
         </div>
     );
 };
