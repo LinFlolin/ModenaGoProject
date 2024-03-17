@@ -8,7 +8,7 @@ export const HomePage = ({data})=>{
   const navigate = useNavigate();
 
   const goToInfoPage = () => {
-     navigate('/info'); // Replace '/info' with the actual path to your info page
+     navigate('/info'); 
   };
   
     return (  
