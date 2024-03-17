@@ -37,7 +37,7 @@ export const Info = () => {
   }*/
     return(
         <div className="parent">
-          <div className="listaluoghi">
+          <div className="sezcol">
             {/*barra input che dovrebbe aiutare a far cercare un
              luogo specifico. Vorrei che l'input comparisse come compare
              in Genshindle, che suppongo usi una elastic search*/}
@@ -50,10 +50,9 @@ export const Info = () => {
             <li>modena</li> 
             </ul>  
           </div>
-          <div className="contenitoreimmagine">
+          <div className="titolo">
             <div>
             <h1>Ghirlandina</h1>
-            <img src="src/assets/modenacalcio.png" alt="1ziopera" />
             </div>
           </div>
           <div className="descrizioneluoghi">
@@ -68,14 +67,11 @@ export const Info = () => {
             <h3>Contatti</h3>
             <p>placeholder per i contatti</p>
             </div>
-          </div>
-
-          <div className="oraridiapertura">
             <div>
                <h4>Orari di apertura</h4>
                <p>?</p>
             </div>
-          </div> 
+          </div>
           
 </div> 
       )
