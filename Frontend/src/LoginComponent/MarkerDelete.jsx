@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import './RegistrationApp.css';
 
 export const MarkerDelete = () => {
@@ -10,14 +10,17 @@ export const MarkerDelete = () => {
         const deleteMarker = async () => {
             try {
                 const response = await axios.delete(`http://localhost:8000/api/Marker/${id}`);
-                if (!response.ok) {
-                    throw new Error('Errore nell\'eliminazione dei dati');
+                if (response.ok) {
+                    console.log('Eliminazione dei dati avvenuta con successo');
                 }
             } catch (error) {
-                // empty
-            } finally {
-                // empty
+                console.error("Errore durante l'eliminazione del marker", error);
             }
+            const navigate = useNavigate();
+            const routeChange = () => {
+                navigate('/list-marker');
+              };
+            routeChange();
         };
 
         deleteMarker();
