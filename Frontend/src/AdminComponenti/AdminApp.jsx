@@ -11,6 +11,7 @@ import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import { Navbar } from './Pagine/Navbar'
 import { Footer, Hero, HomePage, Info, Mappa} from './Pagine/index'
 
+import { MarkerGet } from '../LoginComponent/MarkerGet'
 export const AdminApp = () => {
 
   const [post, setPost] = useState([]);
@@ -25,25 +26,26 @@ export const AdminApp = () => {
       });
   }, []);
 
+
   return (
     <div className='adcontainer'>
       <BrowserRouter>
         <Navbar />
         <Hero />
         <Routes>
-          <Route path='/' element={<HomePage data={post} />} />
+        <Route path='/' element={<HomePage data={post} />} />
           <Route path='/map' element={<Mappa data={post} />} />
           <Route path='/info' element={<Info data={post} />} />
+          
           <Route path='/login' element={<LoginApp />} />
           <Route path='/registration' element={<RegistrationApp />} />
           <Route path='/add-marker' element={<MarkerCreate />} />
           <Route path='/delete-marker/:id' element={<MarkerDelete />} />
           <Route path='/detail-marker/:id' element={<MarkerDetail />} />
-          <Route path='/list-marker' element={<MarkerList />} />
-          <Route path='/Marker' element={<MarkerCreate />} />
-          <Route path="/Marker/:markerId" element={<UpdateMarker />} />
+          <Route path='/list-marker' element={<MarkerList data={post}  />} />
+          <Route path="/Marker/:markerId" element={<UpdateMarker />}/>
         </Routes>
-        <Footer />
+          {/* <Footer/> */}
       </BrowserRouter>
     </div>
   )

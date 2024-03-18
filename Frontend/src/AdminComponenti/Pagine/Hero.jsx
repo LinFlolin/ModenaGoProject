@@ -4,7 +4,7 @@ import {Link } from 'react-router-dom'
 
 export const Hero = () => {
   const location = useLocation()
-  const Route = ['/login','/info','/Registration']
+  const Route = ['/login','/info','/Registration','/list-marker','/detail-marker']
   const hideHero = Route.some(route => location.pathname.includes(route));
 
   if(hideHero) {
