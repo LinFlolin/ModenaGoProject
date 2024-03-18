@@ -1,6 +1,6 @@
-// import './App.css'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {AdminApp} from './AdminComponenti/AdminApp'
+
 const App = () => {
   return (
     <div className='App
@@ -10,9 +10,9 @@ const App = () => {
       min-w-screen
       flex
       flex-col
-      bg-yellow-400'
-      
-    >
+      bg-primaria bg
+
+    '>
 
       <AdminApp/>
 

@@ -15,14 +15,14 @@ export const UpdateMarker = () => {
     const [Longitudine, setLongitudine] = useState('');
     const [Sfida, setSfida] = useState('');
     const [Immagine, setImmagine] = useState(null);
-    const [allMarkers, setAllMarkers] = useState([]);
+    const [marker, setMarker] = useState(null);
 
     useEffect(() => {
         const fetchMarkerData = async () => {
             try {
                 const response = await axios.get(`http://localhost:8000/api/Marker/${markerId}/`);
                 const markerData = response.data;
-                console.log(markerData);
+                setMarker(markerData);
                 setNome(markerData.Nome || '');
                 setIndirizzo(markerData.Indirizzo || '');
                 setDescrizione(markerData.Descrizione || '');
@@ -38,18 +38,7 @@ export const UpdateMarker = () => {
             }
         };
 
-        const fetchAllMarkers = async () => {
-            try {
-                const response = await axios.get('http://localhost:8000/api/Marker/');
-                setAllMarkers(response.data);
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-
         fetchMarkerData();
-        fetchAllMarkers();
     }, [markerId]);
 
     const handleRefresh = () => {
@@ -94,23 +83,40 @@ export const UpdateMarker = () => {
     return (
         <div>
             <h1> Modifica il Marker </h1>
-            <div>
-                {allMarkers.map(marker => (
-                    <div key={marker.id}>
-                        <p>Nome: {marker.Nome}</p>
-                        <p>Indirizzo: {marker.Indirizzo}</p>
-                        <p>Descrizione: {marker.Descrizione}</p>
-                        <p>Desbrev: {marker.Desbrev}</p>
-                        <p>Contatti: {marker.Contatti}</p>
-                        <p>Orari: {marker.Orari}</p>
-                        <p>Costi: {marker.Costi}</p>
-                        <p>Latitudine: {marker.Latitudine}</p>
-                        <p>Longitudine: {marker.Longitudine}</p>
-                        <p>Sfida: {marker.Sfida}</p>
-                        <p> </p>
-                    </div>
-                ))}
-            </div>
+            {marker && (
+             <div className="table-responsive">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Nome</th>
+                      <th>Indirizzo</th>
+                      <th>Descrizione</th>
+                      <th>Desbrev</th>
+                      <th>Contatti</th>
+                      <th>Orari</th>
+                      <th>Costi</th>
+                      <th>Latitudine</th>
+                      <th>Longitudine</th>
+                      <th>Sfida</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{marker.Nome}</td>
+                      <td>{marker.Indirizzo}</td>
+                      <td>{marker.Descrizione}</td>
+                      <td>{marker.Desbrev}</td>
+                      <td>{marker.Contatti}</td>
+                      <td>{marker.Orari}</td>
+                      <td>{marker.Costi}</td>
+                      <td>{marker.Latitudine}</td>
+                      <td>{marker.Longitudine}</td>
+                      <td>{marker.Sfida}</td>
+                    </tr>
+                  </tbody>
+                </table>
+             </div>
+            )}
 
             <h1> Modifica il Marker </h1>
 
@@ -164,6 +170,5 @@ export const UpdateMarker = () => {
         </div>
     );
 };
-
 
 export default UpdateMarker;

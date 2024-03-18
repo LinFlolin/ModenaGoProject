@@ -48,7 +48,7 @@ export const PercorsoCreate = () => {
                         value={percorsoData.Titolo}
                         onChange={handleChange}
                         required
-                    />
+                        />
                 </label>
                 <button type="submit">Aggiungi</button>
             </form>
