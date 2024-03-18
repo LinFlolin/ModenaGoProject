@@ -17,7 +17,9 @@ export const Hero = () => {
     <div className=' relative flex flex-col justify-center mb-6
      shadow-xl
       bg-img1 
-      bg-no-repeat bg-cover 
+      bg-no-repeat bg-cover bg-[center_-150px]
+
+
       h-4/6
       2xl:h-96     
       rounded-b-3xl overflow-hidden'>
