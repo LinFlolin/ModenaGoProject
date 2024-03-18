@@ -12,17 +12,14 @@ export const Hero = () => {
   }
 
   return (
-    <div className=' relative flex flex-col justify-center mb-14
-     shadow-xl
+    <div className='
+      relative flex flex-col justify-center mb-14
+      shadow-xl
       bg-img1 
-      bg-no-repeat bg-cover bg-[center_-100px]
-      bg-no-repeat bg-cover bg-[center_-150px]
-
-
+      bg-no-repeat bg-cover bg-center[]
       h-4/6
       2xl:h-96     
       rounded-b-3xl overflow-hidden
-      
       '>
       <div className=' absolute flex flex-col m-3 '>
         <p className='  text-pretty text-primaria text-lg hover:uppercase 

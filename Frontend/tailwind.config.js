@@ -9,7 +9,7 @@ export default {
   theme: {
     screens: {
       //everything under these px will ...
-      '2xl': {'max': '1535px'},
+      '2xl': {'max': '1590px'},
       // => @media (max-width: 1535px) { ... }
 
       'xl': {'max': '1440px'},
