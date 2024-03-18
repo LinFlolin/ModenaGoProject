@@ -21,7 +21,6 @@ export const Hero = () => {
 
 
       h-4/6
-
       2xl:h-96     
       rounded-b-3xl overflow-hidden'>
       <div className=' absolute flex flex-col m-3 '>

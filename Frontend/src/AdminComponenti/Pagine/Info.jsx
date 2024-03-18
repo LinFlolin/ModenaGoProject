@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import '../Pagine/PagineCss/Info.css'
-import { SearchBar } from './SearchBar';
-import { Link} from 'react-router-dom'
+import React, { useState,useEffect } from 'react';
+import '../Pagine/PagineCss/Info.css';
+import CIcon from '@coreui/icons-react';
+import { cilSearch } from '@coreui/icons';
 
 export const Info  = ({data}) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState(data);
 
   const handleItemClick = (item) => {
      setSelectedItem(item);
   };
+  
+ const handleSearchChange = (e) => {
+    const searchValue = e.target.value;
+    setSearchInput(searchValue);
+    let filteredData = data.filter((item) => {
+      return Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase());
+    });
+    setFilteredResults(filteredData);
+  };
+  useEffect(() => {
+  if (searchInput === '') {
+    setFilteredResults(data);
+  }
+  }, [searchInput, data]);
 
     return(
 
-        <div className="parent">
+        <div className="parent mt-14 ">
           <div className="sezcol">
-            {/*barra input che dovrebbe aiutare a far cercare un
-             luogo specifico. Vorrei che l'input comparisse come compare
-             in Genshindle, che suppongo usi una elastic search*/}
             <div className='searchbarluoghi'>
-            <SearchBar></SearchBar>
-            </div>
-            <ul className='dettaglioluoghi'>
-            {
-              data.map(item => (
-                <li key={item.id} onClick={() => handleItemClick(item)}>
-                    <p> {item.Nome} </p>
+              <input
+                className=' mt-14 '
+                type="search"
+                id="luoghi-search"
+                name="q"
+                placeholder='Cosa scoprirai di Modena oggi?'
+                onChange={handleSearchChange}
+              />
+              {/* <button className='iconaricerca'>
+                <CIcon icon={cilSearch} size="xs" className='iconacore' />
+              </button> */}
+            </div>            
 
-                </li>
-              ))
-            }
-            </ul> 
+            <ul className='dettaglioluoghi'>
+              {
+                filteredResults.map(item => (
+                  <li key={item.id} onClick={() => handleItemClick(item)}>
+                    <p className='text-slate-200'>
+                    {item.Nome}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
           <div className="titolo">
             <div onClick={() => handleItemClick(item)} >
@@ -42,16 +67,15 @@ export const Info  = ({data}) => {
           </div>
           <div className="descrizioneluoghi">
             <div onClick={() => handleItemClick(item)} >
-              {selectedItem && (
+            {selectedItem && (
                 <div>
-                  <h2>Descrizione</h2>
-                  <p>{selectedItem.Descrizione}</p>
+                  <h2>{selectedItem.Descrizione}</h2>
                 </div>
-              )}
+          )}
             </div>
           </div>
           
-          <div className="contattiluoghi">
+          {/* <div className="contattiluoghi">
             <div className='flexcontatti'>
             <h3>Contatti</h3>
             <p>placeholder per i contatti</p>
@@ -60,11 +84,7 @@ export const Info  = ({data}) => {
             <h4>Orari di apertura</h4>
               <p>?</p>
             </div>
-          </div> 
-          
- 
-          
-          
+          </div>  */}
       </div> 
       )
              

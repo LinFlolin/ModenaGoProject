@@ -1,32 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './RegistrationApp.css';
 
 export const MarkerList = () => {
     const [markers, setMarkers] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchMarkers = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:8000/api/Marker');
+                setIsLoading(true);
+                const response = await fetch('http://localhost:8000/api/Marker');
+                if (!response.ok) {
+                    throw new Error('Errore nel recupero dei dati');
+                }
                 const data = await response.json();
                 setMarkers(data);
-                console.log(data);
             } catch (error) {
-                console.error('Errore durante il recupero dei marker:', error);
+                setError(error.message);
+            } finally {
+                setIsLoading(false);
             }
         };
 
         fetchMarkers();
     }, []);
 
+    if (isLoading) {
+        return <p>Caricamento...</p>;
+    }
+
+    if (error) {
+        return <p>Errore: {error}</p>;
+    }
+
     return (
         <div>
             {markers.map(marker => (
-                <div key={marker.id}>
-                    <p>{marker.Nome}</p>
-                    <Link to={`/marker/${marker.id}`}>Visualizza dettagli</Link>
-                </div>
+                <h3>{marker.id} - {marker.Nome}</h3>
             ))}
         </div>
     );

@@ -4,16 +4,9 @@ import CIcon from '@coreui/icons-react';
 import { cilSearch } from '@coreui/icons';
 import '../Pagine/PagineCss/Searchbar.css'
 
-export const SearchBar = () => {
-    const [input, setInput] = useState("");
-
-    const fetchData = (value) => (
-        pass 
-        /*QUI METTERE RIFERIMENTO ALL'API DEL BACKEND
-        STESS LAOVRO CHE VA FATTO NELLA LISTA
-    TODO */
-    );
-
+export const SearchBar = ({data}) => {
+    const [searchInput, setSearchInput] = useState('');
+    const [filteredResults, setFilteredResults] = useState(data);
     
         return(
             <div className='searchbarluoghi'>
