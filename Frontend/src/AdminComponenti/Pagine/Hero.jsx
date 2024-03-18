@@ -1,8 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
-import '../AdminCss/hero.css';
 import {Link } from 'react-router-dom'
- 
 
 export const Hero = () => {
   const location = useLocation()
@@ -14,13 +12,15 @@ export const Hero = () => {
   }
 
   return (
-    <div className=' relative flex flex-col justify-center mb-6
+    <div className=' relative flex flex-col justify-center mb-14
      shadow-xl
       bg-img1 
-      bg-no-repeat bg-cover 
+      bg-no-repeat bg-cover bg-[center_-100px]
       h-4/6
       2xl:h-96     
-      rounded-b-3xl overflow-hidden'>
+      rounded-b-3xl overflow-hidden
+      
+      '>
       <div className=' absolute flex flex-col m-3 '>
         <p className='  text-pretty text-primaria text-lg hover:uppercase 
           sm:bg-slate-100 sm:text-gray-900

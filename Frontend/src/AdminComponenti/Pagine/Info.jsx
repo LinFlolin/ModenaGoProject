@@ -54,6 +54,7 @@ export const Info = ({ data }) => {
             ))
           }
         </ul>
+        
         <div className="descrizioneluoghi">
           {selectedItem && (
             <div>
