@@ -56,7 +56,8 @@ export const Info  = ({data}) => {
               }
             </ul>
           </div>
-          <div className="titolo">
+          
+        <div className="titolo">
             <div onClick={() => handleItemClick(item)} >
             {selectedItem && (
                   <div>
