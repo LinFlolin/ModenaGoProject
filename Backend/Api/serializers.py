@@ -14,7 +14,7 @@ class MarkerSerialiazer(serializers.ModelSerializer):
 class PercorsoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Percorso
-        fields = ('Titolo',)
+        fields = ('Titolo','marker')
         
 class DirectionSerializer(serializers.ModelSerializer):
     class Meta:

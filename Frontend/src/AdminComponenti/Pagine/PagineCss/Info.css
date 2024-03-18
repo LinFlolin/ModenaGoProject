@@ -1,94 +1,57 @@
 .parent {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    border-right: 1px #003049 solid;
-    
-}
-
-
-div.searchbarluoghi {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: 4rem;
-    padding: 2%;
-    margin: 1%;
-}
-
-.iconaricerca {
-    cursor: pointer;
-    background-color: transparent;
-    padding: 2% 1% 4% 1%;
-    margin: 2% 0 2% 0;
-    color: #003049;
-    width: 1.5rem;
-    height: 1.5rem;
-}
-
-.iconaricerca:hover {
-    background-color: transparent;
-}
-
-.iconacore {
-    width: 30px;
-    height: 30px;
-    padding: 1% 2% 4% 2%;
-    margin: 0 0 5px 0;
-    align-items: center;
-}
-
-.searchbarluoghi input {
-    align-items: center;
-    padding: 3% 1% 5% 2%;
-    margin: 1%;
-    background-color: hsl(49, 71%, 66%);
-    border: 2px solid #003049;
-    color: #003049;
-    
-}
+    }
 
 /*Questo codice ha a che fare con
 la ui della lista dei luoghi as a whole*/
-div.listaluoghi { 
-    grid-area:  1 / 1 / 6 / 3;
-    border-right: 1px #003049 solid;
+div.sezcol { 
+    grid-area:   1 / 1 / 7 / 3;
+
+}
+
+div.sezcol { 
+    border-right: 1px #131E49 solid;
     width: 20rem;
     height: 100%;
     margin: 2% 2% 1%;
     padding: 0 3% 0 0;
 }
 
-
-/*Qui prendo in esame solo gli elementi UL dentro alla classe .listaluoghi */
-.listaluoghi ul {
+.sezcol ul {
     width: 100%;
     height: 38.5rem;
     padding: 2%;
-    scrollbar-color: #003049;
+    scrollbar-color: #131E49;
     overflow: scroll;
 }
 
 .dettaglioluoghi li {
     list-style-type: none;
-    border: 1px solid #003049;
+    border: 1px solid #131E49;
     padding: 1%;
     margin: 3% 2% 1%;
     text-align: center;
+    color: #131E49;
 }
 
 .dettaglioluoghi li:hover {
-    background-color: #003049;
-    color: burlywood;
+    background-color: #131E49;
+    color: hsl(49, 71%, 66%);
     box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
+
+/*Qui comincia la sezione descrizione,
+la parte più importante e grossa*/
 .descrizioneluoghi { 
-    grid-area: 3 / 3 / 6 / 9;  
+    grid-area:  2 / 3 / 6 / 9;   
     width: 100%;
-    padding: 2%;
+    padding-top: 2%;
+    color: #131E49;
 }
 
 .descrizioneluoghi div {
@@ -103,44 +66,54 @@ div.listaluoghi {
 
 .descrizioneluoghi p{
      margin: 0 auto;
-     border: 2px solid #003049;
+     border: 2px solid #131E49;
      width: 80%;
      height: 15rem;
      overflow: scroll;
      padding: 1%;
-     color: #003049;
+     color: #131E49;
      font-weight: lighter;
      font-size: 1rem;
      
 }
 
-.contenitoreimmagine { 
-    grid-area: 1 / 3 / 3 / 7;
+
+/*Questo è il titolo del luogo, in sovraimpressione*/
+.titolo { 
+    grid-area: 1 / 3 / 2 / 9;
     width: 100%;
-    height: 26rem;
+    height: 6rem;
+    color: #131E49;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 2%;
 }
 
-.contenitoreimmagine div {
+.titolo div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+.titolo h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
     
 .contattiluoghi { 
-    grid-area: 1 / 7 / 2 / 9; 
+    grid-area: 6 / 3 / 7 / 9; 
+    color: #131E49;
 }
 
 .contattiluoghi div {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: left;
-    padding: 2% 2% 1% 2%;
     background-color: rgba(212, 115, 31, 0.681);
 }
     
 .oraridiapertura { 
-    grid-area: 2 / 7 / 3 / 9;
+    color: #131E49;
 } 
 
 .oraridiapertura div {
@@ -151,30 +124,56 @@ div.listaluoghi {
     padding: 2% 2% 1% 2%;
 }
 
-/*Stylign che riguarda il dettaglio dei luoghi. 
-Dovrebbe diventare possibile interagire e toccare i titoli sopra
-per cambiarli. Logica da fare simile alla mappatura di prima*/
-
-
-
+.flexcontatti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 /* Media query per dispositivi mobili, qui ci sarà da pensare
  a tutto lo stile mobile per bene 
  l'idea sarebbe quella di rendere nascondibile la lista degli elementi
  così che si vedano solo le immagini e la descrizione */
-@media (max-width: 364px) {
-
-    .elementoluoghi {
-        border: 1px solid #003049;
-        padding: 1%;
-        margin: 1%;
-        width: 6rem;
-        
+@media (max-width: 780px) {
+    .parent {
+        display: flex;
+        flex-direction: column;
     }
 
-    .elementoluoghi:active {
-      padding: 5px;
-      margin-bottom: 5px;
+    .listaluoghi {
+        padding: 0;
+    }
+
+    .searchbarluoghi {
+        padding: 0;
+    }
+
+    .iconacore {
+        padding: 0;
+    }
+
+    .iconaricerca {
+        padding: 0;      
+    }
+
+    .dettaglioluoghi {
+        padding: 0;
+    }
+
+    .contenitoreimmagine {
+        padding: 0;
+    }
+
+    .descrizioneluoghi {
+        padding: 0;
+    }
+
+    .contattiluoghi {
+        padding: 0;
+    }
+
+    .oraridiapertura {
+        padding: 0;
     }
   }

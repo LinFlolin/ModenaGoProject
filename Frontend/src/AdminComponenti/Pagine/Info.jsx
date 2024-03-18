@@ -1,75 +1,94 @@
-import '../Pagine/PagineCss/Info.css'
+import React, { useState,useEffect } from 'react';
+import '../Pagine/PagineCss/Info.css';
 import CIcon from '@coreui/icons-react';
 import { cilSearch } from '@coreui/icons';
-import {Link} from 'react-router-dom';
-import {useState } from 'react'
+
 export const Info  = ({data}) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState(data);
 
   const handleItemClick = (item) => {
      setSelectedItem(item);
   };
   
-  return(
-    <div className="parent">
-      <div className="listaluoghi">
-        {/*barra input che dovrebbe aiutare a far cercare un
-          luogo specifico. Vorrei che l'input comparisse come compare
-          in Genshindle, che suppofngo usi una elastic search*/}
-        <div className='searchbarluoghi'>
-        <input type="search" id="luoghi-search" name="q" placeholder='Cosa scoprirai di Modena oggi?'/>
-        <button className='iconaricerca'>
-          <CIcon icon={cilSearch} size="lg" className='iconacore' /></button>
-        </div>
+ const handleSearchChange = (e) => {
+    const searchValue = e.target.value;
+    setSearchInput(searchValue);
+    let filteredData = data.filter((item) => {
+      return Object.values(item).join('').toLowerCase().includes(searchValue.toLowerCase());
+    });
+    setFilteredResults(filteredData);
+  };
+  useEffect(() => {
+  if (searchInput === '') {
+    setFilteredResults(data);
+  }
+  }, [searchInput, data]);
 
-        <ul className='dettaglioluoghi'>
-        {
-          data.map(item => (
-            <li key={item.id} onClick={() => handleItemClick(item)}>
-              <Link to={`/link/${item.id}`} className='text-slate-200'>
-                {item.Nome}
-              </Link>
-            </li>
-          ))
-        }
-      </ul> 
-        {selectedItem && (
-        <div>
-          {/* Render the details of the selected item here */}
-          <h2>{selectedItem.Nome}</h2>
-        </div>
-      )}
+    return(
 
-      {/* </div>
-      <div className="contenitoreimmagine">
-        <div>
-        <h1>Titolo luogo</h1>
-        <img src="src/assets/modenacalcio.png" alt="1ziopera" />
-        </div>
-      </div>
-      <div className="descrizioneluoghi">
-        <div>
-          <h2>Descrizione</h2>
-          <p>Descne descescriozone</p>
-        </div>
-      </div>
-      
-      <div className="contattiluoghi">
-        <div>
-        <h3>Contatti</h3>
-        <p>placeholder per i contatti</p>
-        </div>
-      </div>
+        <div className="parent mt-14 ">
+          <div className="sezcol">
+            <div className='searchbarluoghi'>
+              <input
+                className=' mt-14 '
+                type="search"
+                id="luoghi-search"
+                name="q"
+                placeholder='Cosa scoprirai di Modena oggi?'
+                onChange={handleSearchChange}
+              />
+              {/* <button className='iconaricerca'>
+                <CIcon icon={cilSearch} size="xs" className='iconacore' />
+              </button> */}
+            </div>            
 
-      <div className="oraridiapertura">
-        <div>
+            <ul className='dettaglioluoghi'>
+              {
+                filteredResults.map(item => (
+                  <li key={item.id} onClick={() => handleItemClick(item)}>
+                    <p className='text-slate-200'>
+                    {item.Nome}
+                    </p>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          
+        <div className="titolo">
+            <div onClick={() => handleItemClick(item)} >
+            {selectedItem && (
+                  <div>
+                    <h2>{selectedItem.Nome}</h2>
+                  </div>
+                )}
+            </div>
+          </div>
+          <div className="descrizioneluoghi">
+            <div onClick={() => handleItemClick(item)} >
+            {selectedItem && (
+                <div>
+                  <h2>{selectedItem.Descrizione}</h2>
+                </div>
+          )}
+            </div>
+          </div>
+          
+          {/* <div className="contattiluoghi">
+            <div className='flexcontatti'>
+            <h3>Contatti</h3>
+            <p>placeholder per i contatti</p>
+            </div>
+            <div className='flexcontatti'>
             <h4>Orari di apertura</h4>
-            <p>?</p>
-        </div> */}
+              <p>?</p>
+            </div>
+          </div>  */}
       </div> 
-      
-</div> 
-  )
+      )
+             
 }
 
 

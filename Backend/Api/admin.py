@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Marker, Percorso
 
 class MarkerAdmin (admin.ModelAdmin):
-    list_display = ('Nome', 'Indirizzo', 'Descrizione', 'Desbrev', 'Contatti', 'Orari', 'Costi', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine')
+    list_display = ('Nome', 'Indirizzo', 'Descrizione', 'Desbrev', 'Contatti', 'Orari', 'Costi', 'Latitudine', 'Longitudine', 'Sfida', 'Immagine','percorso')
 
 class PercorsoAdmin(admin.ModelAdmin):
     list_display=('Titolo')
