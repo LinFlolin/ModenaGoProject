@@ -13,13 +13,45 @@ div.sezcol {
 
 }
 
+div.sezcol { 
+    border-right: 1px #131E49 solid;
+    width: 20rem;
+    height: 100%;
+    margin: 2% 2% 1%;
+    padding: 0 3% 0 0;
+}
+
+.sezcol ul {
+    width: 100%;
+    height: 38.5rem;
+    padding: 2%;
+    scrollbar-color: #131E49;
+    overflow: scroll;
+}
+
+.dettaglioluoghi li {
+    list-style-type: none;
+    border: 1px solid #131E49;
+    padding: 1%;
+    margin: 3% 2% 1%;
+    text-align: center;
+    color: #131E49;
+}
+
+.dettaglioluoghi li:hover {
+    background-color: #131E49;
+    color: hsl(49, 71%, 66%);
+    box-shadow: 3px 3px rgb(212, 115, 31);
+}
+
+
 /*Qui comincia la sezione descrizione,
 la parte più importante e grossa*/
 .descrizioneluoghi { 
     grid-area:  2 / 3 / 6 / 9;   
     width: 100%;
     padding-top: 2%;
-    color: hsl(49, 71%, 66%);
+    color: #131E49;
 }
 
 .descrizioneluoghi div {
@@ -34,12 +66,12 @@ la parte più importante e grossa*/
 
 .descrizioneluoghi p{
      margin: 0 auto;
-     border: 2px solid hsl(49, 71%, 66%);
+     border: 2px solid #131E49;
      width: 80%;
      height: 15rem;
      overflow: scroll;
      padding: 1%;
-     color: hsl(49, 71%, 66%);
+     color: #131E49;
      font-weight: lighter;
      font-size: 1rem;
      
@@ -51,7 +83,10 @@ la parte più importante e grossa*/
     grid-area: 1 / 3 / 2 / 9;
     width: 100%;
     height: 6rem;
-    color: hsl(49, 71%, 66%);
+    color: #131E49;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 2%;
 }
 
 .titolo div {
@@ -66,7 +101,7 @@ la parte più importante e grossa*/
     
 .contattiluoghi { 
     grid-area: 6 / 3 / 7 / 9; 
-    color: hsl(49, 71%, 66%);
+    color: #131E49;
 }
 
 .contattiluoghi div {
@@ -78,7 +113,7 @@ la parte più importante e grossa*/
 }
     
 .oraridiapertura { 
-    color: hsl(49, 71%, 66%);
+    color: #131E49;
 } 
 
 .oraridiapertura div {
@@ -87,6 +122,12 @@ la parte più importante e grossa*/
     align-items: center;
     text-align: left;
     padding: 2% 2% 1% 2%;
+}
+
+.flexcontatti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 

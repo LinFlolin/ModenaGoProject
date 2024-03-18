@@ -2,6 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom';
 import '../AdminCss/hero.css';
 import {Link } from 'react-router-dom'
+ 
 
 export const Hero = () => {
   const location = useLocation()
@@ -16,29 +17,22 @@ export const Hero = () => {
     <div className=' relative flex flex-col justify-center mb-6
      shadow-xl
       bg-img1 
-      bg-no-repeat bg-cover bg-center
-    
+      bg-no-repeat bg-cover bg-[center_-150px]
+
+
       h-4/6
 
       2xl:h-96     
       rounded-b-3xl overflow-hidden'>
-      <div className=' absolute flex flex-col m-3 bg-slate-500'>
-      <Link to={'http://localhost:5173/map'} >
-          <h1>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum sequi vero distinctio totam, voluptatum esse error quaerat nisi eos ad nobis possimus laudantium commodi enim ipsam consequatur? Ipsam, aperiam unde.
-          </h1>
-        </Link>
-        <p className='  text-pretty  text-yellow-50 text-lg hover:uppercase 
+      <div className=' absolute flex flex-col m-3 '>
+        <p className='  text-pretty text-primaria text-lg hover:uppercase 
           sm:bg-slate-100 sm:text-gray-900
-          md:text-5xl md:bg-slate-600
+          md:text-5xl md:bg-slate-600 md:bg-opacity-85
           lg:bg-red-500
-          xl:bg-amber-400 xl:text-7xl
-        '>
-          
-          Modena Go
-        </p>
-        <p className='text-pretty 
-         text-yellow-50 text-base
+          xl:bg-amber-400 xl:text-7xl'></p>
+        <p className='text-pretty m-20
+         text-center
+         text-yellow-50 text-lg font-extrabold 
           sm:text-xs
           xl:text-base
           '>

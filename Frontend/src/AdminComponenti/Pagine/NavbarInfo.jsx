@@ -1,24 +1,20 @@
-import { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import '../Pagine/PagineCss/NavbarInfo.css'
-import { SearchBar } from './SearchBar';
+import { Link} from 'react-router-dom'
+import { useState } from 'react'
 
-const [input, setInput] = useState("");
+export const NavbarInfo = ({data}) => {
 
-    const fetchData = (value) => (
-        pass 
-        /*QUI METTERE RIFERIMENTO ALL'API DEL BACKEND
-        STESS LAOVRO CHE VA FATTO NELLA SEARCHBAR, sfruttando i 2 componenti
-    TODO */
-    );
+  const [selectedItem, setSelectedItem] = useState(null);
 
-export const NavbarInfo = () => {
-    <div className='navbarinfo'>
-        <ul className='dettaglioluoghi'>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li>
-            <li>modena</li> 
-        </ul> 
+  const handleItemClick = (item) => {
+     setSelectedItem(item);
+  };
+
+  return (
+    <div>
+      
     </div>
+  )
 }
+

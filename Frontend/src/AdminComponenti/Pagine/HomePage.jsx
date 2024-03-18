@@ -12,7 +12,9 @@ export const HomePage = ({data})=>{
   };
   
     return (  
+      
       <div className=' relatives flex flex-col' >  
+      
         <div className=' flex flex-col gap-6 ' > 
 
           <section className=' flex flex-row-reverse h-60 justify-evenly gap-3
