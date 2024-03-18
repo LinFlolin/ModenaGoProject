@@ -27,68 +27,57 @@ export const Info  = ({data}) => {
   }, [searchInput, data]);
 
     return(
+      <div className="parent mt-14 ">
+        <div className="sezcol">
+          <div className='searchbarluoghi'>
+            <input
+              className=' mt-14 '
+              type="search"
+              id="luoghi-search"
+              name="q"
+              placeholder='Cosa scoprirai di Modena oggi?'
+              onChange={handleSearchChange}
+            />
+            {/* <button className='iconaricerca'>
+              <CIcon icon={cilSearch} size="xs" className='iconacore' />
+            </button> */}
+          </div>            
 
-        <div className="parent mt-14 ">
-          <div className="sezcol">
-            <div className='searchbarluoghi'>
-              <input
-                className=' mt-14 '
-                type="search"
-                id="luoghi-search"
-                name="q"
-                placeholder='Cosa scoprirai di Modena oggi?'
-                onChange={handleSearchChange}
-              />
-              {/* <button className='iconaricerca'>
-                <CIcon icon={cilSearch} size="xs" className='iconacore' />
-              </button> */}
-            </div>            
-
-            <ul className='dettaglioluoghi'>
-              {
-                filteredResults.map(item => (
-                  <li key={item.id} onClick={() => handleItemClick(item)}>
-                    <p className='text-slate-200'>
-                    {item.Nome}
-                    </p>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
-          
-        <div className="titolo">
-            <div onClick={() => handleItemClick(item)} >
-            {selectedItem && (
-                  <div>
-                    <h2>{selectedItem.Nome}</h2>
-                  </div>
-                )}
-            </div>
-          </div>
-          <div className="descrizioneluoghi">
-            <div onClick={() => handleItemClick(item)} >
-            {selectedItem && (
+          <ul className='dettaglioluoghi'>
+            {
+              filteredResults.map(item => (
+                <li key={item.id} onClick={() => handleItemClick(item)}>
+                  <p className='text-slate-200'>
+                  {item.Nome}
+                  </p>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        
+      <div className="titolo">
+          <div onClick={() => handleItemClick(item)} >
+          {selectedItem && (
                 <div>
-                  <h2>{selectedItem.Descrizione}</h2>
+                  <h2>{selectedItem.Nome}</h2>
                 </div>
-          )}
-            </div>
+              )}
           </div>
-          
-          {/* <div className="contattiluoghi">
-            <div className='flexcontatti'>
-            <h3>Contatti</h3>
-            <p>placeholder per i contatti</p>
-            </div>
-            <div className='flexcontatti'>
-            <h4>Orari di apertura</h4>
-              <p>?</p>
-            </div>
-          </div>  */}
-      </div> 
-      )
-             
+        </div>
+        <div className="descrizioneluoghi">
+          <div onClick={() => handleItemClick(item)} >
+          {selectedItem && (
+              <div>
+                <h2>{selectedItem.Descrizione}</h2>
+              </div>
+        )}
+          </div>
+        </div>
+
+    </div> 
+    )
+            
 }
 
 
