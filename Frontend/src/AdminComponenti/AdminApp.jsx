@@ -9,11 +9,13 @@ import { PercorsoCreate } from '../LoginComponent/PercorsoCreate'
 import { MarkerCreate } from '../LoginComponent/MarkerCreate'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import { MarkerGet } from '../LoginComponent/MarkerGet'
+import { AuthProvider } from '../context/AuthContext'
 export const AdminApp = () => {
   return (
     <div>
-      <BrowserRouter> 
-       <Navbar/> 
+      <BrowserRouter>
+      <AuthProvider>
+       <Navbar/>
        <Hero  />  
         <Routes>
           <Route path='/' element={<HomePage/>}/>
@@ -28,6 +30,7 @@ export const AdminApp = () => {
             <Route path="/MarkerGet" element={<MarkerGet />} />
           </Routes>
           {/* <Footer/> */}
+          </AuthProvider>
       </BrowserRouter>
     </div>
   )

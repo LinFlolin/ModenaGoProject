@@ -1,23 +1,23 @@
-import React, { createContext } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import AuthContext from './AuthContext.jsx';
+import { Link, useNavigate } from 'react-router-dom';
+//import AuthContext from './AuthContext.jsx';
+import AuthContext from '../context/AuthContext.jsx';
 
 const LoginApp = () => {
-  const {loginUser} = createContext(AuthContext)
-  const handleSubmit = e => {
-    e.preventDefault()
-    const email = e.target.email.value
-    const password = e.target.password.value
-    console.log(email)
-    console.log(password)
+ const { loginUser } = useContext(AuthContext); // Corrected line
+ const navigate = useNavigate();
 
-    email.length > 0 && loginUser(email, password)
+ const handleSubmit = e => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email);
+    console.log(password);
+    console.log(e.target);
 
-    console.log(email)
-    console.log(password)
-
-  }
+    email.length > 0 && loginUser(email, password);
+ }
 
   return (
     <div>

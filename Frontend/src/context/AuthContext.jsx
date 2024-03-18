@@ -6,9 +6,9 @@ import {useNavigate} from "react-router-dom";
 
 const AuthContext = createContext();
 
-//export default AuthContext
+export default AuthContext
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
     const [authTokens, setAuthTokens] = useState(() =>
         localStorage.getItem("authTokens")
             ? JSON.parse(localStorage.getItem("authTokens"))
@@ -147,5 +147,3 @@ const AuthProvider = ({ children }) => {
     )
 
 }
-
-export default AuthContext;
