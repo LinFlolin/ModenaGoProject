@@ -22,7 +22,7 @@ export const HomePage = ({data})=>{
                   md:hidden
                   lg:object-cover             
                   '>
-                <img src='https://media.istockphoto.com/id/1362373123/it/foto/veduta-di-modena-in-italia.jpg?s=612x612&w=is&k=20&c=51hYfvNDZhudf1_Bjrc0nae5OCQHn9gnSWF44UUTetg='
+                <img src='https://media.istockphoto.com/id/1298644676/it/foto/edificio-del-municipio-al-crepuscolo-di-modena-italia.jpg?s=612x612&w=0&k=20&c=yPL14qUAVnZNnpnYsCk2iegkxEZgeUm6xV60zRMDGBI='
                  className=' absolute object-cover
                   w-full h-full rounded-l-full 
                   lg:rounded-full lg:mr-3          
@@ -46,7 +46,7 @@ export const HomePage = ({data})=>{
           <section className=' flex flex-row h-60 justify-evenly mt-1  '>
               <div className='w-9/12 mr-8'>
                 <img className='w-full h-full rounded-r-full '
-                  src='https://media.istockphoto.com/id/1362373123/it/foto/veduta-di-modena-in-italia.jpg?s=612x612&w=is&k=20&c=51hYfvNDZhudf1_Bjrc0nae5OCQHn9gnSWF44UUTetg='/>
+                  src='https://media.istockphoto.com/id/643365230/it/foto/modena-piazza-grande-duomo-e-torre-ghirlandina.jpg?s=612x612&w=0&k=20&c=NyRFLidfqeJx_zi0GgE7XIGVb4YqoCXrjmzvuaKseLA='/>
               </div>
               <div className=' bg-gray-400 m-10 pt-5'>
                 <h1>Obiettivo del sito</h1>
@@ -59,7 +59,7 @@ export const HomePage = ({data})=>{
                   md:hidden
                   lg:object-cover             
                   '>
-                <img src='https://media.istockphoto.com/id/1362373123/it/foto/veduta-di-modena-in-italia.jpg?s=612x612&w=is&k=20&c=51hYfvNDZhudf1_Bjrc0nae5OCQHn9gnSWF44UUTetg='
+                <img src='https://blog.vantagecircle.com/content/images/2023/07/Featured-Image-Light-1.png'
                  className=' absolute object-cover
                   w-full h-full rounded-l-full 
                   lg:rounded-full lg:mr-3          
@@ -82,7 +82,7 @@ export const HomePage = ({data})=>{
 
 
         
-        </div> 
+        </div> e
 
         <section className='flex flex-col m-10 p-3 gap-2 items-center '>
           <h3 className='text-2xl font-semibold'>

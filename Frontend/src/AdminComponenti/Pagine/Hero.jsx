@@ -16,11 +16,13 @@ export const Hero = () => {
       relative flex flex-col justify-center mb-14
       shadow-xl
       bg-img1 
-      bg-no-repeat bg-cover bg-center[]
+      bg-no-repeat bg-cover
       h-4/6
-      2xl:h-96     
+      xl:bg-center
+      2xl:h-96 2xl:bg-[center_top_-10rem]
       rounded-b-3xl overflow-hidden
       '>
+        <div className=' relative h-24 bg-slate-500 ' />
       <div className=' absolute flex flex-col m-3 '>
         <p className='  text-pretty text-primaria text-lg hover:uppercase 
           sm:bg-slate-100 sm:text-gray-900
