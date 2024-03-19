@@ -10,9 +10,7 @@ import RegistrationApp from '../LoginComponent/RegistrationApp'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import { Navbar } from './Pagine/Navbar'
 import { Footer, Hero, HomePage, Info, Mappa} from './Pagine/index'
-
 import { MarkerGet } from '../LoginComponent/MarkerGet'
-import { AuthProvider } from '../context/AuthContext'
 export const AdminApp = () => {
 
   const [post, setPost] = useState([]);
