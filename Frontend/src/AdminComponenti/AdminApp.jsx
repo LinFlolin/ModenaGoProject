@@ -35,8 +35,7 @@ export const AdminApp = () => {
         <Routes>
         <Route path='/' element={<HomePage data={post} />} />
           <Route path='/map' element={<Mappa data={post} />} />
-          <Route path='/info' element={<Info data={post} />} />
-    
+          <Route path='/info' element={<Info data={post} />} />   
           <Route path='/login' element={<LoginApp />} />
           <Route path='/registration' element={<RegistrationApp />} />
           <Route path='/add-marker' element={<MarkerCreate />} />
@@ -46,7 +45,7 @@ export const AdminApp = () => {
           <Route path="/edit-marker/:id" element={<UpdateMarker />}/>
           {/* <Route path="/Marker/:markerId" element={<UpdateMarker />}/> */} {/* stessa roba della route sopra */}
         </Routes>
-          {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   )
