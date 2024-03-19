@@ -33,7 +33,7 @@ const LoginApp = () => {
         if (response.data.is_staff) {
           navigate('/admin'); // Reindirizza alla pagina dell'amministratore se è un amministratore
         } else {
-          navigate('/'); // Reindirizza alla pagina dell'utente normale altrimenti
+          navigate('/Marker'); // Reindirizza alla pagina dell'utente normale altrimenti
         }
       }
     } catch (error) {
