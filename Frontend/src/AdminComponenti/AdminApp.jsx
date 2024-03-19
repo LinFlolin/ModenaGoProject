@@ -36,7 +36,7 @@ export const AdminApp = () => {
         <Route path='/' element={<HomePage data={post} />} />
           <Route path='/map' element={<Mappa data={post} />} />
           <Route path='/info' element={<Info data={post} />} />
-          
+    
           <Route path='/login' element={<LoginApp />} />
           <Route path='/registration' element={<RegistrationApp />} />
           <Route path='/add-marker' element={<MarkerCreate />} />
