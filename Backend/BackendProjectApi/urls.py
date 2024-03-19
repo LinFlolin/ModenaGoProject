@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from rest_framework import routers
 from Api.views import MarkerView, PercorsoView, DirectionView, MarkerViewSet
-from dj_rest_auth.views import LoginView
+from dj_rest_auth.views import LoginView, LogoutView
 from Api import views
 #from Api.views import UserDetail, UserDetailsView
 #from rest_framework_simplejwt.views import (
@@ -31,6 +31,7 @@ urlpatterns = [
     path('api/dj-rest-auth/', include('dj_rest_auth.urls')),
     path('api/dj-rest-auth/registration/', include('dj_rest_auth.registration.urls')),
     path('api/dj-rest-auth/login/', LoginView.as_view(), name='rest_login'),
+    path('api/dj-rest-auth/logout/', LogoutView.as_view(), name='rest_logout'),
     path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/register/', views.RegisterView.as_view(), name='auth_register'),
