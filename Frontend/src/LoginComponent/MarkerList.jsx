@@ -8,9 +8,9 @@ export const MarkerList = ({ data }) => {
       <Link to={'/add-marker'} >create</Link>
       {data.map(marker => (
         <div key={marker.id} className="table-responsive">
-          <table className="table">
+          <table className="table ">
             <thead>
-              <tr>
+              <tr >
                 <th>Nome</th>
                 <th>Indirizzo</th>
                 <th>Descrizione</th>

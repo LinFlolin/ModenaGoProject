@@ -56,6 +56,7 @@ export const HomePage = ({data})=>{
                       
                       info
                     </button>
+
                   </div>
                   
                 </section>
