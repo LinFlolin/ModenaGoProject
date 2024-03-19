@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 export const UpdateMarker = () => {
-    const { markerId } = useParams();
+    const { id } = useParams();
     const [Nome, setNome] = useState('');
     const [Indirizzo, setIndirizzo] = useState('');
     const [Descrizione, setDescrizione] = useState('');
@@ -23,7 +23,7 @@ export const UpdateMarker = () => {
     useEffect(() => {
         const fetchMarkerData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/Marker/${markerId}/`);
+                const response = await axios.get(`http://localhost:8000/api/Marker/${id}/`);
                 const markerData = response.data;
                 setMarker(markerData);
                 setNome(markerData.Nome || '');
@@ -54,7 +54,7 @@ export const UpdateMarker = () => {
 
         fetchMarkerData();
         fetchPercorsi();
-    }, [markerId]);
+    }, [id]);
 
     const handleRefresh = () => {
         window.location.reload();
@@ -79,7 +79,7 @@ export const UpdateMarker = () => {
         }
 
         try {
-            const response = await axios.put(`http://localhost:8000/api/Marker/${markerId}/`, formData, {
+            const response = await axios.put(`http://localhost:8000/api/Marker/${id}/`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -97,10 +97,12 @@ export const UpdateMarker = () => {
     };
 
     return (
-        <div>
-            <h1> Modifica il Marker </h1>
-            {marker && (
-             <div className="table-responsive">
+  <div className="container ">
+    <h1 className="text-center bg-info">Modifica il Marker</h1>
+        {marker && (
+          <div className="row mt-4 d-flex p-2">
+            <div className="col">
+              <div className="table-responsive">
                 <table className="table">
                   <thead>
                     <tr>
@@ -133,66 +135,85 @@ export const UpdateMarker = () => {
                     </tr>
                   </tbody>
                 </table>
-             </div>
-            )}
+              </div>
+            </div>
+          </div>
+        )}
 
-            <h1> Modifica il Marker </h1>
+         <div className="row mt-4">
+            <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+                <h1>Modifica il Marker</h1>
 
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
-                <label>
-                    Nome:
-                    <input type="text" value={Nome || ''} onChange={(e) => setNome(e.target.value)} />
-                </label>
-                <label>
-                    Indirizzo:
-                    <input type="text" value={Indirizzo} onChange={(e) => setIndirizzo(e.target.value)} />
-                </label>
-                <label>
-                    Descrizione:
-                    <input type="text" value={Descrizione} onChange={(e) => setDescrizione(e.target.value)} />
-                </label>
-                <label>
-                    Desbrev:
-                    <input type="text" value={Desbrev} onChange={(e) => setDesbrev(e.target.value)} />
-                </label>
-                <label>
-                    Contatti:
-                    <input type="text" value={Contatti} onChange={(e) => setContatti(e.target.value)} />
-                </label>
-                <label>
-                    Orari:
-                    <input type="text" value={Orari} onChange={(e) => setOrari(e.target.value)} />
-                </label>
-                <label>
-                    Costi:
-                    <input type="text" value={Costi} onChange={(e) => setCosti(e.target.value)} />
-                </label>
-                <label>
-                    Latitudine:
-                    <input type="text" value={Latitudine} onChange={(e) => setLatitudine(e.target.value)} />
-                </label>
-                <label>
-                    Longitudine:
-                    <input type="text" value={Longitudine} onChange={(e) => setLongitudine(e.target.value)} />
-                </label>
-                <label>
-                    Sfida:
-                    <input type="text" value={Sfida} onChange={(e) => setSfida(e.target.value)} />
-                </label>
-                <h2>Seleziona un Percorso</h2>
-                <select value={selectedPercorso ? selectedPercorso.id : ''} onChange={(e) => setSelectedPercorso(percorsi.find(p => p.id === parseInt(e.target.value)))}>
-                    <option value="">Seleziona un percorso</option>
-                    {percorsi.map(percorso => (
-                        <option key={percorso.id} value={percorso.id}>{percorso.Titolo}</option>
-                    ))}
-                </select>
-                <label>
-                    Immagine:
-                    <input type="file" onChange={handleImageChange} />
-                </label>
-                <button type="submit" onClick={handleRefresh}>Aggiorna</button>
-            </form>
-        </div>
+                <form onSubmit={handleSubmit} encType="multipart/form-data">
+                  <div className="mb-3">
+                    <label htmlFor="nome" className="form-label">Nome:</label>
+                    <input type="text" className="form-control" id="nome" value={Nome || ''} onChange={(e) => setNome(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="indirizzo" className="form-label">Indirizzo:</label>
+                    <input type="text" className="form-control" id="indirizzo" value={Indirizzo} onChange={(e) => setIndirizzo(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="descrizione" className="form-label">Descrizione:</label>
+                    <input type="text" className="form-control" id="descrizione" value={Descrizione} onChange={(e) => setDescrizione(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="desbrev" className="form-label">Desbrev:</label>
+                    <input type="text" className="form-control" id="desbrev" value={Desbrev} onChange={(e) => setDesbrev(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="contatti" className="form-label">Contatti:</label>
+                    <input type="text" className="form-control" id="contatti" value={Contatti} onChange={(e) => setContatti(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="orari" className="form-label">Orari:</label>
+                    <input type="text" className="form-control" id="orari" value={Orari} onChange={(e) => setOrari(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="costi" className="form-label">Costi:</label>
+                    <input type="text" className="form-control" id="costi" value={Costi} onChange={(e) => setCosti(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="latitudine" className="form-label">Latitudine:</label>
+                    <input type="text" className="form-control" id="latitudine" value={Latitudine} onChange={(e) => setLatitudine(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="longitudine" className="form-label">Longitudine:</label>
+                    <input type="text" className="form-control" id="longitudine" value={Longitudine} onChange={(e) => setLongitudine(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="sfida" className="form-label">Sfida:</label>
+                    <input type="text" className="form-control" id="sfida" value={Sfida} onChange={(e) => setSfida(e.target.value)} />
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="percorso" className="form-label">Percorso:</label>
+                    <select
+                      id="percorso"
+                      className="form-select"
+                      value={selectedPercorso ? selectedPercorso.id : ''}
+                      onChange={(e) => setSelectedPercorso(percorsi.find(p => p.id === parseInt(e.target.value)))}
+                      required
+                    >
+                      <option value="">Seleziona un percorso</option>
+                      {percorsi.map((percorso, index) => (
+                        <option
+                          key={percorso.id || index}
+                          value={percorso.id}
+                        >
+                          {percorso.Titolo}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="mb-3">
+                    <label htmlFor="immagine" className="form-label">Immagine:</label>
+                    <input type="file" className="form-control" id="immagine" onChange={handleImageChange} />
+                  </div>
+                  <button type="submit" className="btn btn-primary" onClick={handleRefresh}>Aggiorna</button>
+                </form>
+              </div>
+            </div>
+         </div>
     );
 };
 

@@ -33,7 +33,7 @@ export const AdminApp = () => {
         <Navbar />
         <Hero />
         <Routes>
-        <Route path='/' element={<HomePage data={post} />} />
+          <Route path='/' element={<HomePage data={post} />} />
           <Route path='/map' element={<Mappa data={post} />} />
           <Route path='/info' element={<Info data={post} />} />
           <Route path='/login' element={<LoginApp />} />
@@ -41,11 +41,11 @@ export const AdminApp = () => {
           <Route path='/add-marker' element={<MarkerCreate />} />
           <Route path='/delete-marker/:id' element={<MarkerDelete />} />
           <Route path='/detail-marker/:id' element={<MarkerDetail />} />
-          <Route path='/list-marker' element={<MarkerList data={post}  />} />
-          <Route path="/edit-marker/:id" element={<UpdateMarker />}/>
+          <Route path='/list-marker' element={<MarkerList data={post} />} />
+          <Route path="/edit-marker/:id" element={<UpdateMarker />} />
           {/* <Route path="/Marker/:markerId" element={<UpdateMarker />}/> */} {/* stessa roba della route sopra */}
         </Routes>
-          {/* <Footer/> */}
+        {/* <Footer/> */}
       </BrowserRouter>
     </div>
   )
