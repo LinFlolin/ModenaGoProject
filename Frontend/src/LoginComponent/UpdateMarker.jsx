@@ -102,7 +102,7 @@ export const UpdateMarker = () => {
         {marker && (
           <div className="row mt-4 d-flex p-2">
             <div className="col">
-              <div className="table-responsive">
+              <div className="table-responsive text-center sm:text-left ">
                 <table className="table">
                   <thead>
                     <tr>
@@ -140,6 +140,7 @@ export const UpdateMarker = () => {
           </div>
         )}
 
+       <div class="container-fluid">
          <div className="row mt-4">
             <div className="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                 <h1>Modifica il Marker</h1>
@@ -214,6 +215,7 @@ export const UpdateMarker = () => {
               </div>
             </div>
          </div>
+       </div>
     );
 };
 
