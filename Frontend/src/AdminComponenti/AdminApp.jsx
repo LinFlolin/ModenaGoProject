@@ -45,7 +45,7 @@ export const AdminApp = () => {
           <Route path="/edit-marker/:id" element={<UpdateMarker />} />
           {/* <Route path="/Marker/:markerId" element={<UpdateMarker />}/> */} {/* stessa roba della route sopra */}
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   )

@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import '../Pagine/PagineCss/Info.css';
-import CIcon from '@coreui/icons-react';
-import { cilSearch } from '@coreui/icons';
+
 
 export const Info  = ({data}) => {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -29,25 +28,23 @@ export const Info  = ({data}) => {
     return(
       <div className="parent mt-14 ">
         <div className="sezcol">
-          <div className='searchbarluoghi'>
+          <div className='searchbarluoghi p-10 pb-0'>
             <input
-              className=' mt-14 '
+              className=' h-10 text-center'
               type="search"
               id="luoghi-search"
               name="q"
               placeholder='Cosa scoprirai di Modena oggi?'
               onChange={handleSearchChange}
             />
-            {/* <button className='iconaricerca'>
-              <CIcon icon={cilSearch} size="xs" className='iconacore' />
-            </button> */}
           </div>            
 
           <ul className='dettaglioluoghi'>
             {
               filteredResults.map(item => (
-                <li key={item.id} onClick={() => handleItemClick(item)}>
-                  <p className='text-slate-200'>
+                <li className='' 
+                  key={item.id} onClick={() => handleItemClick(item)}>
+                  <p className=' text-secondo text-lg'>
                   {item.Nome}
                   </p>
                 </li>
@@ -56,25 +53,20 @@ export const Info  = ({data}) => {
           </ul>
         </div>
         
-      <div className="titolo">
+      <div className="titolo  ">
           <div onClick={() => handleItemClick(item)} >
           {selectedItem && (
-                <div>
+                <div className=' flex gap-5 bg-secondo p-11 text-gray-100 rounded-md m-9 '>
                   <h2>{selectedItem.Nome}</h2>
+                  <img
+                    className='max-h-64' 
+                    src={selectedItem.Immagine}/>
+                  <p className=' text-lg '
+                  >{selectedItem.Descrizione}</p>
                 </div>
               )}
           </div>
         </div>
-        <div className="descrizioneluoghi">
-          <div onClick={() => handleItemClick(item)} >
-          {selectedItem && (
-              <div>
-                <h2>{selectedItem.Descrizione}</h2>
-              </div>
-        )}
-          </div>
-        </div>
-
     </div> 
     )
             
