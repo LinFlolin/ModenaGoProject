@@ -9,7 +9,7 @@ import { MarkerList } from '../LoginComponent/MarkerList'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import { Navbar } from './Pagine/Navbar'
-import { Hero, HomePage, Info, Mappa } from './Pagine/index'
+import { Hero, HomePage, Info, Mappa , Footer } from './Pagine/index'
 
 export const AdminApp = () => {
 
@@ -45,7 +45,7 @@ export const AdminApp = () => {
           <Route path="/edit-marker/:id" element={<UpdateMarker />} />
           {/* <Route path="/Marker/:markerId" element={<UpdateMarker />}/> */} {/* stessa roba della route sopra */}
         </Routes>
-        {/* <Footer/> */}
+        <Footer/>
       </BrowserRouter>
     </div>
   )

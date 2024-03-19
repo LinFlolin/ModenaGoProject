@@ -61,20 +61,14 @@ export const Info  = ({data}) => {
           {selectedItem && (
                 <div>
                   <h2>{selectedItem.Nome}</h2>
+                  <img
+                    className=' max-h-64' 
+                    src={selectedItem.Immagine}/>
+                  <p>{selectedItem.Descrizione}</p>
                 </div>
               )}
           </div>
         </div>
-        <div className="descrizioneluoghi">
-          <div onClick={() => handleItemClick(item)} >
-          {selectedItem && (
-              <div>
-                <h2>{selectedItem.Descrizione}</h2>
-              </div>
-        )}
-          </div>
-        </div>
-
     </div> 
     )
             
