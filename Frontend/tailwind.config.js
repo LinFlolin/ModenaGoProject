@@ -39,7 +39,7 @@ export default {
       'img1': "url('https://www.visitmodena.it/en/discover-modena/itineraries-and-routes/discovering-the-flowers-around-modena/alla-scoperta-del-sito-unesco-di-modena/@@images/82763e5b-1266-4d0b-88b0-d17ab46253ca.jpeg')",
       'homeImg1': "url('https://media.istockphoto.com/id/1298644676/it/foto/edificio-del-municipio-al-crepuscolo-di-modena-italia.jpg?s=612x612&w=0&k=20&c=yPL14qUAVnZNnpnYsCk2iegkxEZgeUm6xV60zRMDGBI=')",
       'homeImg2': "url('https://tourismmedia.italia.it/is/image/mitur/20210310112348-shutterstock-1765880312?wid=1080&hei=660&fit=constrain,1&fmt=webp')",
-      'homehwb(49 42% 10%)"url('https://blog.vantagecircle.com/content/images/2023/07/Featured-Image-Light-1.png')",
+      'homeImg3': "url('https://blog.vantagecircle.com/content/images/2023/07/Featured-Image-Light-1.png')",
     
     }
   },
