@@ -78,6 +78,9 @@ class DirectionView(viewsets.ModelViewSet):
     serializer_class = DirectionSerializer
     queryset = Direction.objects.all()
 
+# class MarkerDeleteView(generics.DestroyAPIView):
+#     serializer_class = MarkerSerialiazer
+#     queyset = Marker.objects.all()
 
 # Per la update
 class MarkerViewSet(viewsets.ModelViewSet):

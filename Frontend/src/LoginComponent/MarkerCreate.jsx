@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import {Link} from 'react-router-dom';
+
 import './RegistrationApp.css';
 
 export const MarkerCreate = () => {
@@ -170,6 +171,8 @@ export const MarkerCreate = () => {
                 </label>
                 <button type="submit">Aggiungi</button>
             </form>
+            <Link to={'/list-marker'} >tornare nella lista </Link>
+
         </div>
     );
 };

@@ -36,7 +36,6 @@ export const RegistrationApp = () => {
         });
 
         console.log('Registrazione avvenuta con successo', response.data);
-        // Handle successful registration, e.g., redirect or show success message
     } catch (error) {
         console.error("Errore durante la registrazione", error);
     }

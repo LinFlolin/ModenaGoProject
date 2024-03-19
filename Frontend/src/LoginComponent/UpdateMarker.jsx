@@ -15,7 +15,10 @@ export const UpdateMarker = () => {
     const [Longitudine, setLongitudine] = useState('');
     const [Sfida, setSfida] = useState('');
     const [Immagine, setImmagine] = useState(null);
+    const [percorso, setPercorso] = useState(null);
     const [marker, setMarker] = useState(null);
+    const [percorsi, setPercorsi] = useState([]);
+    const [selectedPercorso, setSelectedPercorso] = useState(null);
 
     useEffect(() => {
         const fetchMarkerData = async () => {
@@ -33,12 +36,24 @@ export const UpdateMarker = () => {
                 setLatitudine(markerData.Latitudine || '');
                 setLongitudine(markerData.Longitudine || '');
                 setSfida(markerData.Sfida || '');
+                setPercorso(markerData.percorso || null);
+                setSelectedPercorso(markerData.percorso || null);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+
+        const fetchPercorsi = async () => {
+            try {
+                const response = await axios.get('http://localhost:8000/api/Percorso/');
+                setPercorsi(response.data); // Imposta i percorsi disponibili
             } catch (error) {
                 console.error(error);
             }
         };
 
         fetchMarkerData();
+        fetchPercorsi();
     }, [markerId]);
 
     const handleRefresh = () => {
@@ -58,6 +73,7 @@ export const UpdateMarker = () => {
         formData.append('Latitudine', Latitudine);
         formData.append('Longitudine', Longitudine);
         formData.append('Sfida', Sfida);
+        formData.append('Percorso', percorso);
         if (Immagine) {
             formData.append('Immagine', Immagine);
         }
@@ -98,6 +114,7 @@ export const UpdateMarker = () => {
                       <th>Latitudine</th>
                       <th>Longitudine</th>
                       <th>Sfida</th>
+                      <th>Percorso</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -112,6 +129,7 @@ export const UpdateMarker = () => {
                       <td>{marker.Latitudine}</td>
                       <td>{marker.Longitudine}</td>
                       <td>{marker.Sfida}</td>
+                      <td>{marker.Percorso}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -161,6 +179,13 @@ export const UpdateMarker = () => {
                     Sfida:
                     <input type="text" value={Sfida} onChange={(e) => setSfida(e.target.value)} />
                 </label>
+                <h2>Seleziona un Percorso</h2>
+                <select value={selectedPercorso ? selectedPercorso.id : ''} onChange={(e) => setSelectedPercorso(percorsi.find(p => p.id === parseInt(e.target.value)))}>
+                    <option value="">Seleziona un percorso</option>
+                    {percorsi.map(percorso => (
+                        <option key={percorso.id} value={percorso.id}>{percorso.Titolo}</option>
+                    ))}
+                </select>
                 <label>
                     Immagine:
                     <input type="file" onChange={handleImageChange} />
