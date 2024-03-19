@@ -29,11 +29,11 @@ export const Navbar = ()=>{
                 </li>
                 <li>
                     <NavLink to="/map" onClick={() => navigateAndCloseMenu('/map')}>Mappa</NavLink>
-                </li>                
+                </li>
                 <li>
                     <NavLink to="/login" onClick={() => navigateAndCloseMenu('/login')}>Login</NavLink>
                 </li>
-                
+
             </ul>
         </nav>
     );

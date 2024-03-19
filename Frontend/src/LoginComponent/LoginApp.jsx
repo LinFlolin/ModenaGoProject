@@ -1,25 +1,47 @@
-import React, { createContext } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import AuthContext from './AuthContext.jsx';
+import { useNavigate } from 'react-router-dom';
 
 const LoginApp = () => {
-  const {loginUser} = createContext(AuthContext)
-  const handleSubmit = e => {
-    e.preventDefault()
-    const email = e.target.email.value
-    const password = e.target.password.value
-    console.log(email)
-    console.log(password)
+  const [data, setData] = useState({
+    email: "",
+    username: "",
+    password: ""
+  });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-    email.length > 0 & loginUser  (email, password)
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+  };
 
-    console.log(email)
-    console.log(password)
 
-  }
+  // let token = response.data.token;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post("http://localhost:8000/api/dj-rest-auth/login/", data);
+      if (response.status === 200) {
+        const token = response.data.token;
+        console.log("data: ", response.data);
 
-  return (
+        // Controlla il ruolo dell'utente e reindirizza di conseguenza
+        if (response.data.is_staff) {
+          navigate('/admin'); // Reindirizza alla pagina dell'amministratore se è un amministratore
+        } else {
+          navigate('/list-marker'); // Reindirizza alla pagina dell'utente normale altrimenti
+        }
+      }
+    } catch (error) {
+      setError("Errore durante il login. Controlla le credenziali e riprova.");
+    }
+  };
+
+return (
     <div>
       <>
   <section className="vh-100" style={{ backgroundColor: "#9A616D" }}>
@@ -64,6 +86,8 @@ const LoginApp = () => {
                         id="form2Example17"
                         className="form-control form-control-lg"
                         name='email'
+                        value={data.email}
+                        onChange={handleChange}
                       />
                       <label className="form-label" htmlFor="form2Example17">
                         Email address
@@ -71,10 +95,25 @@ const LoginApp = () => {
                     </div>
                     <div className="form-outline mb-4">
                       <input
-                        type="password"
+                        type="text"
                         id="form2Example27"
                         className="form-control form-control-lg"
+                        name='username'
+                        value={data.username}
+                        onChange={handleChange}
+                      />
+                      <label className="form-label" htmlFor="form2Example17">
+                        Username
+                      </label>
+                    </div>
+                    <div className="form-outline mb-4">
+                      <input
+                        type="password"
+                        id="form2Example37"
+                        className="form-control form-control-lg"
                         name='password'
+                        value={data.password}
+                        onChange={handleChange}
                       />
                       <label className="form-label" htmlFor="form2Example27">
                         Password
@@ -88,21 +127,6 @@ const LoginApp = () => {
                         Login
                       </button>
                     </div>
-                    <a className="small text-muted" href="#!">
-                      Forgot password?
-                    </a>
-                    <p className="mb-5 pb-lg-2" style={{ color: "#393f81" }}>
-                      Don't have an account?{" "}
-                      <Link to="/register" style={{ color: "#393f81" }}>
-                        Register Now
-                      </Link>
-                    </p>
-                    <a href="#!" className="small text-muted">
-                      Terms of use.
-                    </a>
-                    <a href="#!" className="small text-muted">
-                      Privacy policy
-                    </a>
                   </form>
                 </div>
               </div>
@@ -128,5 +152,7 @@ const LoginApp = () => {
     </div>
   )
 }
+
+
 
 export default LoginApp;

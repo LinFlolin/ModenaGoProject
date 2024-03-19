@@ -9,8 +9,8 @@ import { MarkerList } from '../LoginComponent/MarkerList'
 import RegistrationApp from '../LoginComponent/RegistrationApp'
 import { UpdateMarker } from '../LoginComponent/UpdateMarker'
 import { Navbar } from './Pagine/Navbar'
-import { Hero, HomePage, Info, Mappa } from './Pagine/index'
-
+import { Footer, Hero, HomePage, Info, Mappa} from './Pagine/index'
+import { MarkerGet } from '../LoginComponent/MarkerGet'
 export const AdminApp = () => {
 
   const [post, setPost] = useState([]);
@@ -27,6 +27,7 @@ export const AdminApp = () => {
 
 
   return (
+
     <div className='adcontainer'>
       <BrowserRouter>
         <Navbar />
@@ -35,7 +36,6 @@ export const AdminApp = () => {
           <Route path='/' element={<HomePage data={post} />} />
           <Route path='/map' element={<Mappa data={post} />} />
           <Route path='/info' element={<Info data={post} />} />
-
           <Route path='/login' element={<LoginApp />} />
           <Route path='/registration' element={<RegistrationApp />} />
           <Route path='/add-marker' element={<MarkerCreate />} />
