@@ -1,5 +1,4 @@
 import {createContext, useState, useEffect} from "react";
-import { jwtDecode } from "jwt-decode";
 import {useNavigate} from "react-router-dom";
 
 //const swal = require('sweetalert2')

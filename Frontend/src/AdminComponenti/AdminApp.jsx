@@ -43,7 +43,7 @@ export const AdminApp = () => {
           <Route path='/delete-marker/:id' element={<MarkerDelete />} />
           <Route path='/detail-marker/:id' element={<MarkerDetail />} />
           <Route path='/list-marker' element={<MarkerList data={post}  />} />
-          <Route path="/Marker/:markerId" element={<UpdateMarker />}/>
+          {/* <Route path="/Marker/:markerId" element={<UpdateMarker />}/> */}
         </Routes>
           {/* <Footer/> */}
       </BrowserRouter>

@@ -1,6 +1,6 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import './RegistrationApp.css';
 
@@ -17,12 +17,33 @@ export const MarkerCreate = () => {
         Latitudine: '',
         Longitudine: '',
         Sfida: '',
+        percorso: '',
     })
-    
+
     const [markerFile, setMarkerFile] = useState({
         Immagine: '',
     });
 
+    const [percorsi, setPercorsi] = useState([]);
+
+    useEffect(() => {
+        const fetchPercorsi = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/Percorso');
+                setPercorsi(response.data);
+                console.log('Percorsi caricati:', response.data);
+            } catch (error) {
+                console.error("Errore durante il caricamento dei percorsi", error);
+            }
+        };
+
+        fetchPercorsi();
+    }, []);
+
+    const handleChangePercorsi = (event) => {
+        const { name, value } = event.target;
+        setMarkerData({ ...markerData, [name]: value });
+    };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -168,10 +189,25 @@ export const MarkerCreate = () => {
                         onChange={handleFileChange}
                         required
                     />
+                </label><label htmlFor="percorso">
+                    Percorso
+                    <select
+                        name="percorso"
+                        value={markerData.percorso}
+                        onChange={handleChangePercorsi}
+                        required
+                    >
+                        <option value="">Seleziona un percorso</option>
+                        {percorsi.map((percorso, index) => (
+                            <option key={percorso.id || index} value={percorso.id}>
+                                {percorso.Titolo}
+                            </option>
+                        ))}
+                    </select>
                 </label>
                 <button type="submit">Aggiungi</button>
             </form>
-            <Link to={'/list-marker'} >tornare nella lista </Link>
+            <Link to={'/list-marker'} >Torna alla lista </Link>
 
         </div>
     );
