@@ -34,12 +34,12 @@ div.sezcol {
     padding: 1%;
     margin: 3% 2% 1%;
     text-align: center;
-    background-color: #131E49;
+    background-color: #eec643;
 }
 
 .dettaglioluoghi li:hover {
-    background-color: #131E49;
-    color: hsl(49, 71%, 66%);
+    background-color: #b39122;
+    color: hwb(49 42% 10%);
     box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
