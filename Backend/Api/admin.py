@@ -10,8 +10,9 @@ class ProfileAdmin(admin.ModelAdmin):
     #list_editable = ['verified']
     list_display = ['user', 'full_name']
 
+
 admin.site.register(User, UserAdmin)
-admin.site.register( Profile,ProfileAdmin)
+admin.site.register(Profile, ProfileAdmin)
 
 
 class MarkerAdmin (admin.ModelAdmin):
