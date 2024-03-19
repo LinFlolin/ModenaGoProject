@@ -12,7 +12,7 @@ const LoginApp = () => {
     console.log(email)
     console.log(password)
 
-    email.length > 0 & loginUser (email, password)
+    email.length > 0 & loginUser  (email, password)
 
     console.log(email)
     console.log(password)
