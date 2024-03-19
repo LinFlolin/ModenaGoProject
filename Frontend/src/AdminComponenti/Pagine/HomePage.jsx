@@ -82,7 +82,7 @@ export const HomePage = ({data})=>{
 
 
         
-        </div> 
+        </div> e
 
         <section className='flex flex-col m-10 p-3 gap-2 items-center '>
           <h3 className='text-2xl font-semibold'>
