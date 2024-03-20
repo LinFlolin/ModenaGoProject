@@ -31,10 +31,9 @@ export const Hero = () => {
          text-yellow-50 text-lg font-extrabold 
           sm:text-xs
           xl:text-base 
-          
+          italic
           '>
-          " Immergiti nel cuore pulsante di Modena, dove ogni angolo racconta una storia. Esplora i tesori nascosti, sperimenta le emozioni uniche e scopri il fascino di un patrimonio culturale e artistico che risplende di luce e colore. Questa è la tua occasione per vivere un viaggio indimenticabile, dove ogni passo ti avvicina di più al cuore di Modena "
-        </p>
+Benvenuti e benvenute sul nostro sito, dove vi facciamo vedere il meglio di Modena e tutto ciò che c'è da esplorare in questa fantastica città.  Dalla Ghirlandina al Museo Stanguellini, ciò che c'è da scoprire mette d'accordo ogni persona.        </p>
       </div>
 
     </div>
