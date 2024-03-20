@@ -16,23 +16,24 @@ export const Primosessione = () => {
           lg:rounded-full lg:mr-3          
           '/>
       </div>
-      <div className='relative bg-gray-400 m-10 
+      <div className='relative m-10 
+        bg-slate-700 bg-opacity-25
           md:bg-homeImg1 bg-cover opacity-85 lg:m-0 lg:p-10
           sm:flex sm:flex-col sm:justify-center sm:p-2 sm:pt-0 sm:text-sm 
           lg:flex lg:flex-col justify-center
           '>
           <div className='
             relative
-            bg-blend-luminosity
             lg:m-0 lg:p-10
             sm:p-2 sm:m-4 sm:max-w-full sm:text-sm md:bg-white 
             m-8
-           text-secondo text-base 
+            text-base 
           '>
-            <h1>Obiettivo del sito</h1>
-            <p className=' text-orange-20'>
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ducimus recusandae eligendi eos, inventore accusantium expedita numquam explicabo assumenda illum. Voluptas cum perspiciatis animi et, illum sunt vero expedita atque!
-             </p>
+            <h1>MODENA GO</h1>
+            <p className=' text-lg'>
+            Qui potrete scegliere i luoghi che più vi interessano, vederne i dettagli e seguire i percorsi per scoprire nuove cose su questa città.
+
+            </p>
           </div>
       </div>                         
   </section>

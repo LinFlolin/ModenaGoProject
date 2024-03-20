@@ -195,7 +195,7 @@ export const UpdateMarker = () => {
                             <label htmlFor="immagine" className="form-label">Immagine:</label>
                             <input type="file" className="form-control" id="immagine" onChange={handleImageChange} />
                         </div>
-                        <button type="submit" onClick={handleRefresh}>Aggiorna</button>
+                        <button className="btn bg-secondo text-primaria mb-3" type="submit" onClick={handleRefresh}>Aggiorna</button>
                     </form>
                 </div>
              </div>

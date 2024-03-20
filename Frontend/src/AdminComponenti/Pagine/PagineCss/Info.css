@@ -1,16 +1,18 @@
-.parent {
+.parent {  
+    height: 100vh;
+    overflow: scroll;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    }
+}
 
 /*Questo codice ha a che fare con
 la ui della lista dei luoghi as a whole*/
 div.sezcol { 
-    grid-area:   1 / 1 / 7 / 3;
-
+    grid-area: 1 / 1 / 7 / 3;
+    overflow: scroll;
 }
 
 div.sezcol { 
@@ -24,9 +26,8 @@ div.sezcol {
 .sezcol ul {
     width: 100%;
     height: 38.5rem;
-    padding: 2%;
-    scrollbar-color: #131E49;
-    overflow: scroll;
+    padding: 7%;
+
 }
 
 .dettaglioluoghi li {
@@ -35,12 +36,12 @@ div.sezcol {
     padding: 1%;
     margin: 3% 2% 1%;
     text-align: center;
-    color: #131E49;
+    background-color: #eec643;
 }
 
 .dettaglioluoghi li:hover {
-    background-color: #131E49;
-    color: hsl(49, 71%, 66%);
+    background-color: #b39122;
+    color: hwb(49 42% 10%);
     box-shadow: 3px 3px rgb(212, 115, 31);
 }
 
@@ -58,23 +59,22 @@ la parte più importante e grossa*/
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .descrizioneluoghi h3 {
     text-align: center;
-}
 
+}
 .descrizioneluoghi p{
-     margin: 0 auto;
-     border: 2px solid #131E49;
-     width: 80%;
-     height: 15rem;
-     overflow: scroll;
-     padding: 1%;
-     color: #131E49;
-     font-weight: lighter;
-     font-size: 1rem;
-     
+    margin: 0 auto;
+    border: 2px solid #131E49;
+    width: 80%;
+    height: 15rem;
+    overflow: hidden;
+    padding: 1%;
+    color: #131E49;
+    font-weight: lighter;
 }
 
 
@@ -96,7 +96,6 @@ la parte più importante e grossa*/
 }
 .titolo h1 {
     font-weight: bold;
-    font-size: 3rem;
 }
     
 .contattiluoghi { 
@@ -130,50 +129,3 @@ la parte più importante e grossa*/
     align-items: center;
 }
 
-
-/* Media query per dispositivi mobili, qui ci sarà da pensare
- a tutto lo stile mobile per bene 
- l'idea sarebbe quella di rendere nascondibile la lista degli elementi
- così che si vedano solo le immagini e la descrizione */
-@media (max-width: 780px) {
-    .parent {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .listaluoghi {
-        padding: 0;
-    }
-
-    .searchbarluoghi {
-        padding: 0;
-    }
-
-    .iconacore {
-        padding: 0;
-    }
-
-    .iconaricerca {
-        padding: 0;      
-    }
-
-    .dettaglioluoghi {
-        padding: 0;
-    }
-
-    .contenitoreimmagine {
-        padding: 0;
-    }
-
-    .descrizioneluoghi {
-        padding: 0;
-    }
-
-    .contattiluoghi {
-        padding: 0;
-    }
-
-    .oraridiapertura {
-        padding: 0;
-    }
-  }
