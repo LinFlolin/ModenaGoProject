@@ -41,7 +41,7 @@ export const MarkerList = ({ data }) => {
               <tr>
                 <td colSpan="9">
                   <div className='d-flex gap-2'>
-                    <Link to={`/edit-marker/${marker.id}`} className="btn btn-secondary">modifica</Link>
+                    <Link to={`/marker/${marker.id}`} className="btn btn-secondary">modifica</Link>
                     <Link to={`/delete-marker/${marker.id}`} className="btn btn-danger">elimina</Link>
                   </div>
                 </td>

@@ -120,10 +120,11 @@ export const UpdateMarker = () => {
                       <th>Latitudine</th>
                       <th>Longitudine</th>
                       <th>Sfida</th>
+                      <th>Percorso</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr>qui
                       <td>{marker.Nome}</td>
                       <td>{marker.Indirizzo}</td>
                       <td>{marker.Descrizione}</td>
@@ -134,6 +135,7 @@ export const UpdateMarker = () => {
                       <td>{marker.Latitudine}</td>
                       <td>{marker.Longitudine}</td>
                       <td>{marker.Sfida}</td>
+                      <td>{marker.Percorso}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -195,7 +197,7 @@ export const UpdateMarker = () => {
                             <label htmlFor="immagine" className="form-label">Immagine:</label>
                             <input type="file" className="form-control" id="immagine" onChange={handleImageChange} />
                         </div>
-                        <button className="btn bg-secondo text-primaria mb-3" type="submit" onClick={handleRefresh}>Aggiorna</button>
+                        <button className="btn bg-blue-950 text-yellow-50 my-1.5" type="submit" onClick={handleRefresh}>Aggiorna</button>
                     </form>
                 </div>
              </div>
