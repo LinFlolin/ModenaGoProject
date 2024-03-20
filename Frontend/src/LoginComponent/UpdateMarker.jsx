@@ -103,7 +103,7 @@ export const UpdateMarker = () => {
         <div className="container ">
             <h1 className="text-center fw-bold fs-2"> Modifica il Marker </h1>
             <div>
-                        {marker && (
+            {marker && (
           <div className="row mt-4 d-flex p-2">
             <div className="col">
               <div className="table-responsive text-center sm:text-left ">
@@ -124,7 +124,7 @@ export const UpdateMarker = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>qui
+                    <tr>
                       <td>{marker.Nome}</td>
                       <td>{marker.Indirizzo}</td>
                       <td>{marker.Descrizione}</td>
@@ -135,7 +135,6 @@ export const UpdateMarker = () => {
                       <td>{marker.Latitudine}</td>
                       <td>{marker.Longitudine}</td>
                       <td>{marker.Sfida}</td>
-                      <td>{marker.Percorso}</td>
                     </tr>
                   </tbody>
                 </table>
