@@ -1,15 +1,19 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './List.css';
 
 export const MarkerList = ({ data }) => {
 
   return (
-    <div className='  m-32' >
-      <Link to={'/add-marker'} >create</Link>
+    <div className='container mt-3'>
+      <div className="mb-3">
+        <Link to={'/add-marker'} className="btn btn-primary">Aggiungi un nuovo marker</Link>
+      </div>
       {data.map(marker => (
-        <div key={marker.id} className="table-responsive">
-          <table className="table">
-            <thead>
+        <div key={marker.id} className="table-responsive table-container">
+          <table className="table mytable">
+            <thead style={{ backgroundColor: '#0056b3' }}>
               <tr>
                 <th>Nome</th>
                 <th>Indirizzo</th>
@@ -22,8 +26,8 @@ export const MarkerList = ({ data }) => {
                 <th>Percorso</th>
               </tr>
             </thead>
-            <tbody key={marker.id} >
-              <tr >
+            <tbody>
+              <tr>
                 <td>{marker.Nome}</td>
                 <td>{marker.Indirizzo}</td>
                 <td>{marker.Descrizione}</td>
@@ -33,14 +37,16 @@ export const MarkerList = ({ data }) => {
                 <td>{marker.Latitudine}</td>
                 <td>{marker.Longitudine}</td>
                 <td>{marker.percorso}</td>
-                <div className=' flex gap-2'>
-                  <Link to={`/edit-marker/${marker.id}`}>modifica</Link>
-                  <Link to={`/delete-marker/${marker.id}`}>elimina</Link>
-                </div>
+              </tr>
+              <tr>
+                <td colSpan="9">
+                  <div className='d-flex gap-2'>
+                    <Link to={`/edit-marker/${marker.id}`} className="btn btn-secondary">modifica</Link>
+                    <Link to={`/delete-marker/${marker.id}`} className="btn btn-danger">elimina</Link>
+                  </div>
+                </td>
               </tr>
             </tbody>
-
-
           </table>
         </div>
       ))}
