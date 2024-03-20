@@ -4,7 +4,7 @@ export const Primosessione = () => {
   return (
    
     <section className=' flex flex-row-reverse h-60 justify-evenly gap-3
-    lg:
+    2lg:text-xl
     '>
       <div className=' relative w-9/12 
           md:hidden
@@ -31,7 +31,7 @@ export const Primosessione = () => {
           '>
             <h1>MODENA GO</h1>
             <p className=' text-lg'>
-            Qui potrete scegliere i luoghi che più vi interessano, vederne i dettagli e seguire i percorsi per scoprire nuove cose su questa città.
+            Benvenuti e benvenute sul nostro sito, dove vi facciamo vedere il meglio di Modena e tutto ciò che c'è da esplorare in questa fantastica città.  Dalla Ghirlandina al Museo Stanguellini, ciò che c'è da scoprire mette d'accordo ogni persona.
 
             </p>
           </div>
