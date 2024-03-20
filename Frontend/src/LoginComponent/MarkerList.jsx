@@ -6,15 +6,15 @@ import './List.css';
 export const MarkerList = ({ data }) => {
 
   return (
-    <div className='container mt-3'>
+    <div className='container mt-20'>
       <div className="mb-3">
         <Link to={'/add-marker'} className="btn btn-primary">Aggiungi un nuovo marker</Link>
       </div>
       {data.map(marker => (
         <div key={marker.id} className="table-responsive table-container">
-          <table className="table mytable">
-            <thead style={{ backgroundColor: '#0056b3' }}>
-              <tr>
+          <table className="table bg-primary">
+            <thead className='thead modena-color'>
+              <tr className='table-primary'>
                 <th>Nome</th>
                 <th>Indirizzo</th>
                 <th>Descrizione</th>
