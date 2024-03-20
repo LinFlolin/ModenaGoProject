@@ -120,7 +120,6 @@ export const UpdateMarker = () => {
                       <th>Latitudine</th>
                       <th>Longitudine</th>
                       <th>Sfida</th>
-                      <th>Percorso</th>
                     </tr>
                   </thead>
                   <tbody>
