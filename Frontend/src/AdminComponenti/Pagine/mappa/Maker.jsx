@@ -1,11 +1,13 @@
 // 
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { InfoWindow, Marker } from '@vis.gl/react-google-maps';
 
 export const Maker = () => {
  const [post, setPost] = useState([]);
  const [open, setOpen] = useState(false);
+ const navigate = useNavigate();
  const [selectedMarker, setSelectedMarker] = useState(null);
 
  // Assuming you have a way to determine the current percorso
@@ -33,6 +35,10 @@ export const Maker = () => {
     setSelectedMarker(null);
  };
 
+ const goToInfoPage = () => {
+    navigate('/info ');
+ };
+
  return (
     <div className='markersec'> 
         {post.map(item => (
@@ -56,7 +62,7 @@ export const Maker = () => {
                 <div>
                  <h6>{item.Nome}</h6>
                  <p>{item.Description}</p>
-                 <button type='button' className=' bg-gradient2 text-white'>info</button>
+                 <button type='button' className=' bg-gradient2 text-white' onClick={goToInfoPage}>info</button>
                 </div>
               </InfoWindow>
             ))}

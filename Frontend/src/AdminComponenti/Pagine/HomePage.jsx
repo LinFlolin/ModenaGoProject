@@ -43,7 +43,10 @@ export const HomePage = ({data})=>{
                       onClick={goToInfoPage}>                     
                       info
                     </button>
-                  </div>                  
+
+
+                  </div>
+
                 </section>
               ))
               }
