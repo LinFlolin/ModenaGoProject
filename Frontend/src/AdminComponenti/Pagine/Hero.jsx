@@ -25,7 +25,6 @@ export const Hero = () => {
       <div 
         className=' relative flex flex-col bg-slate-700 bg-opacity-60 p-5 mt-4
         '>
-
         <p className='text-pretty
          text-center
          text-yellow-50 text-lg font-extrabold 

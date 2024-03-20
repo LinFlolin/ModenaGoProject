@@ -28,12 +28,11 @@ export const Info  = ({data}) => {
     return(
       <div className="parent ">
         <div className="sezcol">
-          <div className='searchbarluoghi p-10 pb-0'>
+          <div className='searchbarluoghi pt-16 pb-0'>
             <input
               className=' h-10 text-center'
               type="search"
               id="luoghi-search"
-              name="q"
               placeholder='Cosa scoprirai di Modena oggi?'
               onChange={handleSearchChange}
             />

@@ -17,8 +17,7 @@ export const HomePage = ({data})=>{
           <Primosessione/>
           <Secondosessione/>
           <Terzosessione/>
-
-        
+          
         </div> 
 
         <section className='flex flex-col m-10 p-3 gap-2 items-center bg-secondaria shadow-md bg-terzo m- '>
