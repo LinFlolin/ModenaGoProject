@@ -26,7 +26,7 @@ export const Info  = ({data}) => {
   }, [searchInput, data]);
 
     return(
-      <div className="parent mt-14 ">
+      <div className="parent ">
         <div className="sezcol">
           <div className='searchbarluoghi p-10 pb-0'>
             <input

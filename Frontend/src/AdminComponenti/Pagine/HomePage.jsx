@@ -41,8 +41,7 @@ export const HomePage = ({data})=>{
                     <button type='button' 
                       className=' bg-primaria hover:bg-gradient-to-b from-slate-900 to-slate-600
                       text-terzo text-lg'
-                      onClick={goToInfoPage}>
-                      
+                      onClick={goToInfoPage}>                     
                       info
                     </button>
                   </div>                  
