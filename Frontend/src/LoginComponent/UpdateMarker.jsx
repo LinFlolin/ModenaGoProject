@@ -103,7 +103,7 @@ export const UpdateMarker = () => {
         <div className="container ">
             <h1 className="text-center fw-bold fs-2"> Modifica il Marker </h1>
             <div>
-                        {marker && (
+            {marker && (
           <div className="row mt-4 d-flex p-2">
             <div className="col">
               <div className="table-responsive text-center sm:text-left ">
@@ -195,7 +195,7 @@ export const UpdateMarker = () => {
                             <label htmlFor="immagine" className="form-label">Immagine:</label>
                             <input type="file" className="form-control" id="immagine" onChange={handleImageChange} />
                         </div>
-                        <button className="btn bg-secondo text-primaria mb-3" type="submit" onClick={handleRefresh}>Aggiorna</button>
+                        <button className="btn bg-blue-950 text-yellow-50 my-1.5" type="submit" onClick={handleRefresh}>Aggiorna</button>
                     </form>
                 </div>
              </div>
