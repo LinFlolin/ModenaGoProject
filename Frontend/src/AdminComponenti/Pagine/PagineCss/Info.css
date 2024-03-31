@@ -8,8 +8,7 @@
     grid-row-gap: 0px;
 }
 
-/*Questo codice ha a che fare con
-la ui della lista dei luoghi as a whole*/
+
 div.sezcol { 
     grid-area: 1 / 1 / 7 / 3;
     overflow: scroll;

@@ -32,7 +32,7 @@ export const Secondosessione = () => {
             m-8
            text-secondo text-base 
           '>
-            <h1>Luoghi d'attrazioni </h1>
+            <h1>Luoghi d'attrazione </h1>
             <p className=' text-orange-20'>
             Qui potrete scegliere i luoghi che più vi interessano, vederne i dettagli e seguire i percorsi per scoprire nuove cose su questa città             </p>
             < Link to={'/info'}
